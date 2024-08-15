@@ -7,9 +7,12 @@ FED_RT is a software update to the open-source automated feeding/operant_reward 
 *So far it has been tested on Windows and Mac and it works fine on both operating systems*
 
 ### Step by step instructions for setting up FED_RT
-#### 1) Update FED3 library and flash the board
+#### 1) Update FED3 library with NEW FILES and flash the board
 The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder */scr* replace the FED3.h and FED3.cpp files with files provided here [FED3_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library). 
 After replacing the files,  connect your FED3 to your computer, put it on boot loader mode and flash it just as explained in the original FED3 repository. 
+Optional: You can also flash your board with a new "ClassicFED3" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/ClassicFED3), this file includes Closed_economy mode in addition to previous modes included in ClassicFED3.
+
+**note: There are several changes in this new update of library(this topic is under_construction)**
 
 #### 
 
