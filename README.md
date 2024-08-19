@@ -10,7 +10,8 @@
 #### 1) Update FED3 library with NEW FILES and flash the board
 The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/scr** replace the FED3.h and FED3.cpp files with files provided here [FED3_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library). 
 After replacing the files,  connect your FED3 to your computer, put it on boot loader mode and flash it just as explained in the original FED3 repository. 
-Optional: You can also flash your board with a new "ClassicFED3" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/ClassicFED3), this file includes Closed_economy mode in addition to previous modes included in original ClassicFED3.
+
+Optional: You can also flash your board with a new "ClassicFED3.ino" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/ClassicFED3), this file includes Closed_economy mode in addition to previous modes included in original ClassicFED3.
 
 **note: There are several changes in this new update of library(this topic is under_construction)**
 
@@ -23,13 +24,16 @@ To automatically send data from a local script to a specific Google Spreadsheet 
 1) Go to this [link](https://console.cloud.google.com/projectcreate) to create a new project on you Google Cloud Console, as shown on  the screenshot, assign a name to it and press create.
 ![create_project](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/project_create_1.png)
 
-as soon as you create the project you will be prompted to a new link where you will see notification on the right corner bell, and the image below should show up, if not, click on the notification icon and click on the last notification which says project is created
-
-once in the control panel, form the left panel go to API and Services and select Library 
+As soon as you create the project you will be prompted to a new link where you will see notifications on the right corner bell, and the image below should show up, if not, click on the notification icon and click on the last notification which says "project is created".
+![notification](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/notification_3.png)
+Once in the control panel, form the left side panel go to API and Services and then select Library 
+![Control_panel](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/project_create_2.png)
 
 a new link will open
 
 in the search bar look for Google Drive API
+![API_SEARCH](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_LIB_Search_5.png)
+![API_ENABLE](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/select_google_drive_API_ENABLE_6.png)
 
 Select the Google Drive API (probably the first item) and then ENABLE it. it will open a new link where you can control parameters of your Google Drive API
 
