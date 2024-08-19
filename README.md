@@ -83,7 +83,7 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
 ## Step 5: Open your python IDE(e.g. Jupyter lab) and copy the code from this repository
  With everything setup to this stage, go to the python script provided here [RTFED](https://github.com/Htbibalan/FED_RT/blob/main/scripts/RTFED.ipynb) and replace the variables according to your own spreadsheet and file path.
 
-Replace the CREDS_FILE directory with the pathway to you JSON file, also replace your own Google spreadsheet ID and if you have not installed Humidity and Temperature sensors on your FED3, also remove those column headers Temp and Humidify
+Replace the CREDS_FILE directory with the pathway to you JSON file, also replace your own Google spreadsheet ID and if you have not installed Humidity and Temperature sensors on your FED3, also remove those column headers Temp and Humidify. Moreover you will need to change Ports based on your own Port names and number of FEDs connected to your computer.
 
 Top find you Google spreadsheet ID, open the spreadsheet and in the address bar, copy everything between d/.../edit as shown in the image below
  ![SHEET_ID](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/SHEET_ID.png)
