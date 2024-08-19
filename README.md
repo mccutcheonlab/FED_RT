@@ -79,17 +79,96 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
 2) In  the JSON file you will find the "client email", copy that email address(the quotation mark is not needed)
 3) Go to your Google spreadsheet on your Google drive , click on Share icon on the far right of the screen, Paste the email address from the JSON file and click done, you can edit different levels of access for other people as well.
 
+## Step 5: Setup the JAM Alarm system(email notification for events)
+1) While in your Google Spreadsheet, from menu Extensions, select Apps Script and clear any existing code.
+ ![App_script](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/app_script.png)
 
-## Step 5: Open your python IDE(e.g. Jupyter lab) and copy the code from this repository
- With everything setup to this stage, go to the python script provided here [RTFED](https://github.com/Htbibalan/FED_RT/blob/main/scripts/RTFED.ipynb) and replace the variables according to your own spreadsheet and file path.
 
-Replace the CREDS_FILE directory with the pathway to you JSON file, also replace your own Google spreadsheet ID and if you have not installed Humidity and Temperature sensors on your FED3, also remove those column headers Temp and Humidify. Moreover you will need to change Ports based on your own Port names and number of FEDs connected to your computer.
+2) Paste the code below and press the "save" icon. But There are a few changes to make based on your FED file. If you do not have Humidity and Temp sensors, the column number for "event" and "device number" will be different, replace it accordingly. Also to receive a JAM alert, you need to add your own email address to the last snipped of the code where it says: var emailAddress
 
-Top find you Google spreadsheet ID, open the spreadsheet and in the address bar, copy everything between d/.../edit as shown in the image below
+
+
+            function checkForJam() {
+            var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+            var sheets = spreadsheet.getSheets(); // Get all sheets in the spreadsheet
+            var eventColumn = 10; // Column J where the "Event" data is located
+            var deviceColumn = 6; // Column F where the device number is located
+            var timestampColumn = 1; // Column A where the timestamp is located
+
+            var scriptProperties = PropertiesService.getScriptProperties();
+
+            for (var i = 0; i < sheets.length; i++) {
+                var sheet = sheets[i];
+                var lastRow = sheet.getLastRow();
+                
+                if (lastRow > 0) { // Check if the sheet has any data
+                var event = sheet.getRange(lastRow, eventColumn).getValue();
+                var deviceNumber = sheet.getRange(lastRow, deviceColumn).getValue();
+                var timestamp = sheet.getRange(lastRow, timestampColumn).getValue();
+                
+                // Create a unique key for this event
+                var eventKey = sheet.getName() + "_" + deviceNumber + "_" + timestamp;
+
+                // Check if this event has already been processed
+                var lastProcessedEvent = scriptProperties.getProperty(eventKey);
+                
+                if (event === "JAM" && lastProcessedEvent !== eventKey) {
+                    sendJamAlert(sheet.getName(), lastRow, event, deviceNumber);
+                    scriptProperties.setProperty(eventKey, eventKey); // Store the event as processed
+                }
+                }
+            }
+            }
+
+            function sendJamAlert(sheetName, row, event, deviceNumber) {
+            var emailAddress = "Add_your_email_address"; // Replace with your email address
+            var subject = "FED3 Device Alert: JAM Detected";
+            var message = "A FED unit has failed.\n\n"
+                        + "Details:\n"
+                        + "Sheet: " + sheetName + "\n"
+                        + "Row: " + row + "\n"
+                        + "Device Number: " + deviceNumber + "\n"
+                        + "Event: " + event + "\n"
+                        + "Please go and check your device.";
+
+            MailApp.sendEmail(emailAddress, subject, message);
+            }
+
+
+3) In the Apps Script control panel, from the left panel menu, select Trigger
+
+ ![App_script](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/trigger_APPS_SCRIPT.png)
+
+ Set the settings according to the screenshot below:
+
+  ![Trigger_setup](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Trigger_Setup.png)
+
+
+
+## Step 6: Open your python IDE(e.g. Jupyter lab) and copy the code from this repository
+ With everything setup to this stage, go to the python script provided here [RTFED](https://github.com/Htbibalan/FED_RT/blob/main/scripts/RTFED.ipynb) , install the necessary packages and libraries- section 1 of the script and then before running the code, replace the variables according to your own spreadsheet and file path.
+
+1) Replace the CREDS_FILE directory with the pathway to you JSON file, also replace your own Google spreadsheet ID and if you have not installed Humidity and Temperature sensors on your FED3, also remove those column headers Temp and Humidify. Moreover you will need to change Ports based on your own Port names and number of FEDs connected to your computer.
+
+2) To find your Google spreadsheet ID, open the spreadsheet and in the address bar, copy everything between d/.../edit as shown in the image below
  ![SHEET_ID](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/SHEET_ID.png)
 
  Image below shows the changes you need to make in your python script:
   ![Python_sctipy](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/python_script.png)
+
+3)To find port number, open your Arduino IDE with your FED connected and switched on (you do not need to put it on boot loader mode if you have already flashed it with the library provided in my repository [FED3_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library)). Go to Tools/Ports and there you will find port numbers.
+
+  ![Python_sctipy](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Arduino_Port.png)
+
+In this screenshot, 2 FEDs are connected, which means that in the python script, the user can include COM12 as well.
+                
+                port=["COM16","COM12"]
+
+On Mac systems the port name is not displayed as COM but as a longer name, however you will find it through the same menu on Arduino IDE.
+
+
+
+
 
 
 
