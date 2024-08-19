@@ -22,7 +22,8 @@ Optional: You can also flash your board with a new "ClassicFED3.ino" file availa
 1) This library was initially developed to trigger an alarm LED on FEDs when the device is jammed, in this update FED will make 2 Beeps every 10 sec when it is jammed until it is restarted (this was meant to notify people in the animal facility about the jamming)
 2) When the device fails to deliver a pellet, it will just try 3 times in "Jam clearing" state and then stops clearing the jam, the sound alarm goes off and a JAM event is logged,  
 3) As soon as the JAM is logged, the device is frozen and does not log any new activity, however it will just display the time when jamming happened on the screen
-4) These changes are not necessary to establish the remote data acquisition and one can try to increase the number of motor turns to clear a jam or shut down the beeping alarm. 
+4) The baud rate is set at 115200 to enable FED3 to log events with millisecond resolution 
+5) These changes are not necessary to establish the remote data acquisition and one can try to increase the number of motor turns to clear a jam or shut down the beeping alarm. 
 
 
 # Step 0: Create a Google spreadsheet in your Google Drive, we will get back to it later
