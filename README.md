@@ -25,40 +25,44 @@ To automatically send data from a local script to a specific Google Spreadsheet 
 ![create_project](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/project_create_1.png)
 
 As soon as you create the project you will be prompted to a new link where you will see notifications on the right corner bell, and the image below should show up, if not, click on the notification icon and click on the last notification which says "project is created".
+
 ![notification](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/notification_3.png)
+
 Once in the control panel, form the left side panel go to API and Services and then select Library 
+
 ![Control_panel](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/project_create_2.png)
 
-a new link will open
+A new link will open in the search bar look for Google Drive API.
+Select the Google Drive API (probably the first item) and then ENABLE it. It will open a new link where you can control parameters of your Google Drive API
 
-in the search bar look for Google Drive API
 ![API_SEARCH](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_LIB_Search_5.png)
 ![API_ENABLE](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/select_google_drive_API_ENABLE_6.png)
 
-Select the Google Drive API (probably the first item) and then ENABLE it. it will open a new link where you can control parameters of your Google Drive API
 
-in GOOGLE DRIVE API control panel, go to Credentials in the left panel menu
-select +CREATE CREDENTIALS and from the Menu select OAuth cleint ID
 
-In the new link, select CONFIGURE CONSENT SCREEN
+In GOOGLE DRIVE API control panel, go to Credentials in the left panel menu and then select **+ CREATE CREDENTIALS** and from the menu select **Service Account**
+![API_CONTROL_PANEL](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_CONTROL_PANEL.png)
+![API_SERVICE_ACOUNT](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_CREDENTIAL_SERVICE_ACOUNT.png)
 
-Select External and press Create
-Fill th required information , use your own gmail address whenever asked, and click SAVE and CONTINUE and keep pressing it in the next pages until you reach BACK TO DASHBOARD
 
-When you are back to Dashboard and now that you have created the consent, go to Credentials from the left panel, again click on create Credentials and select  OAuth 2.0 Client ID.
+Enter a service account name and Service ID will be filled automatically,  then press Create and Continue, you can optionally add more users to your project or just press DONE (You can manage it later if needed)
+![API_SERVICE_ACOUNT](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_SERVICE_NAME_TEST.png)
 
-in the new link select Desktop App from the Application type menu and give it a name
 
-After this  a new link opens up where you can also download the JSON file from a pop up window, the file you have downloaded will be used in the python script to interact with the Google Sheets or Google Drive
-## (IT IS NOT CORRECT, the code will not work with this JSON file information, we need to get another JSON file that I will explain now)
+Now on the dashboard of your APIs and Services of your project, in Credentials tab from the left panel, you will find Service Account created. Under **Action** click on the edit icon (pen icon)
+![API_SERVICE_ACOUNT](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_KEY_CREATE.png)
 
-# Create a Service Account and Download the JSON file
-in your project control panel, again go to Credentials from left panel and in the new window select create credentials and this time select Service Account
-fill the necessary information, and press Create and Continue and now you are set
+Click on KEYS
+![PRESS_KEY](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Press_KEY.png)
 
-now on the dashboard of your APIs and Services of your project, in Credentials tab from the left panel, you will wind Service Account created
-Under Action click on the edit (pen icon)
-in the new link, click on KEYS and then add Key and select JSON, as soon as you create the JSON key a file is downloaded, take that file and copy it to your preferred location
+Now click on ADD KEYS and then create a JSON file.
+
+![JSON](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_KEY_JSON.png)
+
+As soon as you create the JSON key a file is downloaded, take that file and copy it to your preferred location, we will use this file location in the python script.
+
+
+![API_SERVICE_ACOUNT](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_KEY_CREATE.png)
 
 this Json file contains information that enables you to interact with the python script
 
