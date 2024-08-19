@@ -8,14 +8,20 @@
 
 *So far it has been tested on Windows and Mac and it works fine on both operating systems.*
 
-### Step by step instructions for setting up RTFED
-#### 1) Update FED3 library with NEW FILES and flash the board
-The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/scr** replace the FED3.h and FED3.cpp files with files provided here [FED3_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library). 
+# Step by step instructions for setting up RTFED
+## Step -1: Update FED3 library with NEW FILES and flash the board
+The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [FED3_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library). 
 After replacing the files,  connect your FED3 to your computer, put it on boot loader mode and flash it just as explained in the original FED3 repository. 
+
+[people should click on the file and then they can download in the next link
+]
+[you should remove the initial files including FED3.h and FED3.cpp and replace them with update files, you can save those files in a safe place in case you want to revert the settings]
 
 Optional: You can also flash your board with a new "ClassicFED3.ino" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/ClassicFED3), this file includes Closed_economy mode in addition to previous modes included in original ClassicFED3.
 
 **note: There are several changes in this new update of library(this topic is under_construction)**
+1) This library was intitally developed to trigger an alarm LED on FEDs.
+
 
 ## Step 0: Create a Google spreadsheet in your Google Drive, we will get back to it later
 
@@ -64,7 +70,7 @@ Now click on ADD KEY and then create a JSON file.
 
 As soon as you create the JSON key a file is downloaded, take that file and copy it to your preferred location, we will use this file location in the python script. This JSON file contains information that enables you to interact with the python script and spreadsheet.
 
-## Step 3: Enable the Google Sheets API:
+## Step 3: Enable the Google Sheets API
 
 Still within the APIs & Services > Credentials page, go to the Library section and search for Google Sheets API.
 
