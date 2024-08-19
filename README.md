@@ -72,7 +72,7 @@ Select Google Sheets API and then click Enable to activate it for your project.
 
 ![GOOGLESHEETS_API](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Activate_GOOGLE_SHEETS_API.png)
 
-## Step 4: Key step - get email add from JSON file
+## Step 4: Critical step - get the email address from JSON file
 Now to allow the Service Account access the Google spreadsheet we need to share the Google spreadsheet with the email associated with your Service account (Go to the JSON file)
 
 1) Open  the JSON file that you just downloaded, it can be opened in any editor(like notepad or VSCode).
@@ -135,7 +135,7 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
             }
 
 
-3) In the Apps Script control panel, from the left panel menu, select Trigger
+3) In the Apps Script control panel, from the left panel menu, select **Triggers**
 
  ![App_script](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/trigger_APPS_SCRIPT.png)
 
@@ -166,7 +166,12 @@ In this screenshot, 2 FEDs are connected, which means that in the python script,
 
 On Mac systems the port name is not displayed as COM but as a longer name, however you will find it through the same menu on Arduino IDE.
 
-
+## Step 7: Run a test
+1) Swtich on FEDs connected with a USB cable to your computer
+2) Run the python script with all variables adjusted based on your own setup
+3) As soon as you run the code sheets get their names from "ports" variable in the python script and are generated on your Google spreadsheet
+4) Make random pokes and pellet deliveries and you should see the data being logged on the spreadsheet
+5) Trigger a jamming by not letting the FED3 deliver a pellet and soon you will receive an alarm email.
 
 
 
