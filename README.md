@@ -10,22 +10,24 @@
 
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
-The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [FED3_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library). 
+The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library). 
 After replacing the files,  connect your FED3 to your computer, put it on boot loader mode and flash it just as explained in the original FED3 repository. 
 
-[people should click on the file and then they can download in the next link
-]
-[you should remove the initial files including FED3.h and FED3.cpp and replace them with update files, you can save those files in a safe place in case you want to revert the settings]
+
+*you should remove the initial files including FED3.h and FED3.cpp and replace them with update files, you can save those files in a safe place in case you want to revert the changes later*
 
 Optional: You can also flash your board with a new "ClassicFED3.ino" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/ClassicFED3), this file includes Closed_economy mode in addition to previous modes included in original ClassicFED3.
 
-**note: There are several changes in this new update of library(this topic is under_construction)**
-1) This library was intitally developed to trigger an alarm LED on FEDs.
+** **IMPORTANT** notes: There are some changes in this new update of library**
+1) This library was initially developed to trigger an alarm LED on FEDs when the device is jammed, in this update FED will make 2 Beeps every 10 sec when it is jammed until it is restarted (this was meant to notify people in the animal facility about the jamming)
+2) When the device fails to deliver a pellet, it will just try 3 times in "Jam clearing" state and then stops clearing the jam, the sound alarm goes off and a JAM event is logged,  
+3) As soon as the JAM is logged, the device is frozen and does not log any new activity, however it will just display the time when jamming happened on the screen
+4) These changes are not necessary to establish the remote data acquisition and one can try to increase the number of motor turns to clear a jam or shut down the beeping alarm. 
 
 
-## Step 0: Create a Google spreadsheet in your Google Drive, we will get back to it later
+# Step 0: Create a Google spreadsheet in your Google Drive, we will get back to it later
 
-## Step 1: Create a project
+# Step 1: Create a project
 To automatically send data from a local script to a specific Google Spreadsheet we need to get Google Service Account credentials which enables your python script to authenticate as a specific account without needing user interaction each time.
 
 
@@ -36,7 +38,7 @@ As soon as you create the project you will be prompted to project control panel,
 
 ![notification](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/notification_3.png)
 
-## Step 2: Set up Service Account Credentials (Get JSON file)
+# Step 2: Set up Service Account Credentials (Get JSON file)
 Once in the control panel of your project, form the left side panel go to API and Services and then select Library.
 
 ![Control_panel](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/project_create_2.png)
@@ -70,7 +72,7 @@ Now click on ADD KEY and then Create Key and then select JSON file.
 
 As soon as you create the JSON key a file is downloaded, take that file and copy it to your preferred location(e.g. where your python script or project folder is located on your computer), we will use this file location in the python script. This JSON file contains information that enables you to interact with the python script and spreadsheet.
 
-## Step 3: Enable the Google Sheets API
+# Step 3: Enable the Google Sheets API
 
 On the APIs & Services > Credentials page, go to the Library section and search for Google Sheets API.
 ![API_SEARCH](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_GOOGLE_SHEET_LIBRARY_WINDOW.png)
@@ -82,14 +84,14 @@ Select Google Sheets API and then click Enable to activate it for your project.
 
 ![GOOGLESHEETS_API](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Activate_GOOGLE_SHEETS_API.png)
 
-## Step 4: Critical step - get the email address from JSON file
+# Step 4: Critical step - get the email address from JSON file
 Now to allow the Service Account access the Google spreadsheet we need to share the Google spreadsheet with the email associated with your Service account (Go to the JSON file)
 
 1) Open  the JSON file that you just downloaded, it can be opened in any editor(like notepad or VSCode).
 2) In  the JSON file you will find the "client email", copy that email address(the quotation mark is not needed)
 3) Go to your Google spreadsheet on your Google drive , click on Share icon on the far right of the screen, Paste the email address from the JSON file, set General Access to "Anyone with the link" and click done, you can edit different levels of access for other people as well (For example View only or Editor).
 
-## Step 5: Setup the JAM Alarm system(email notification for events)
+# Step 5: Setup the JAM Alarm system(email notification for events)
 1) While in your Google Spreadsheet, from menu Extensions, select Apps Script and clear any existing code.
  ![App_script](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/app_script.png)
 
@@ -165,7 +167,7 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
 **Click on Advanced, then click on Go to your project then click on Allow**
 
 
-## Step 6: Open your python IDE(e.g. Jupyter lab) and copy the code from this repository
+# Step 6: Open your python IDE(e.g. Jupyter lab) and copy the code from this repository
  With everything setup to this stage, make a new notebook in your jupyter lab and get the code from the python script provided here [RTFED](https://github.com/Htbibalan/FED_RT/blob/main/scripts/RTFED.ipynb) and copy the script and paste it in your notebook.
  Install the necessary packages and libraries- section 1 of the script and then **before running the code**, replace the variables according to your own spreadsheet and file path.
 
@@ -191,7 +193,7 @@ On Mac systems the port name is not displayed as COM but as a longer name, howev
 
  ![MAC](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/MAC.png)
 
-## Step 7: Run a test
+# Step 7: Run a test
 1) Switch on FEDs connected with a USB cable to your computer
 2) Run the python script with all variables adjusted based on your own setup
 3) As soon as you run the code, new sheets will be generated and they get the sheet name from the Ports variable
