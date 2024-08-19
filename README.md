@@ -194,6 +194,10 @@ On Mac systems the port name is not displayed as COM but as a longer name, howev
 
  ![MAC](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/MAC.png)
 
+
+ **IMPORTANT NOTE**:
+ The python script ignores the timestamp data coming from FEDs and gets the timestamp from the mother computer, which means that all the FEDs connected to the main computer are synchronized
+
 # Step 7: Run a test
 1) Switch on FEDs connected with a USB cable to your computer
 2) Run the python script with all variables adjusted based on your own setup
