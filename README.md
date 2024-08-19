@@ -17,7 +17,7 @@ Optional: You can also flash your board with a new "ClassicFED3.ino" file availa
 
 ## Step 0: Create a Google spreadsheet in your Google Drive, we will get back to it later
 
-## Step 1: Set up Google Sheets API
+## Step 1: Create a project
 To automatically send data from a local script to a specific Google Spreadsheet we need to get Google Service Account credentials which enables your python script to authenticate as a specific account without needing user interaction each time.
 
 
@@ -28,7 +28,8 @@ As soon as you create the project you will be prompted to a new link where you w
 
 ![notification](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/notification_3.png)
 
-Once in the control panel, form the left side panel go to API and Services and then select Library 
+## Step 2: Set up Service Account Credentials (Get JSON file)
+Once in the control panel of your project, form the left side panel go to API and Services and then select Library.
 
 ![Control_panel](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/project_create_2.png)
 
@@ -55,33 +56,37 @@ Now on the dashboard of your APIs and Services of your project, in Credentials t
 Click on KEYS
 ![PRESS_KEY](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Press_KEY.png)
 
-Now click on ADD KEYS and then create a JSON file.
+Now click on ADD KEY and then create a JSON file.
 
 ![JSON](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_KEY_JSON.png)
 
-As soon as you create the JSON key a file is downloaded, take that file and copy it to your preferred location, we will use this file location in the python script.
+As soon as you create the JSON key a file is downloaded, take that file and copy it to your preferred location, we will use this file location in the python script. This JSON file contains information that enables you to interact with the python script and spreadsheet.
+
+## Step 3: Enable the Google Sheets API:
+
+Still within the APIs & Services > Credentials page, go to the Library section and search for Google Sheets API.
+
+![API_SEARCH](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_LIB_Search_5.png)
+
+Select Google Sheets API and then click Enable to activate it for your project.
+
+![GOOGLESHEETS_API](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Activate_GOOGLE_SHEETS_API.png)
+
+## Step 4: Key step - get email add from JSON file
+Now to allow the Service Account access the Google spreadsheet we need to share the Google spreadsheet with the email associated with your Service account (Go to the JSON file)
+
+1) Open  the JSON file that you just downloaded, it can be opened in any editor(like notepad or VSCode).
+2) In  the JSON file you will find the "client email", copy that email address(the quotation mark is not needed)
+3) Go to your Google spreadsheet on your Google drive , click on Share icon on the far right of the screen, Paste the email address from the JSON file and click done, you can edit different levels of access for other people as well.
 
 
-![API_SERVICE_ACOUNT](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_KEY_CREATE.png)
+## Step 5: Open your python IDE(e.g. Jupyter lab) and copy the code from this repository
+ With everything setup to this stage, go to the python script provided here [RTFED](https://github.com/Htbibalan/FED_RT/blob/main/scripts/RTFED.ipynb) and replace the variables according to your own spreadsheet and file path.
 
-this Json file contains information that enables you to interact with the python script
+Replace the CREDS_FILE directory with the pathway to you JSON file.
 
-# Enable the Google Sheets API:
-
-Still within the APIs & Services > Credentials page, go to the Library section.
-Search for Google Sheets API.
-Click on Google Sheets API and then click Enable to activate it for your project.
-
-# key step
-Now to allow the service account access the Google Sheet we need to share the Google Sheet with the email associated with your Service account
-
-1) open  the json file that you just downloaded, it can be opened in any editor
-
-2) in  the json file you will find the "client email", copy that email address
-3) go to your google spreadsheet , click on Share icon on the far right of the screen, Paste the email address from the JSON file and click done, you can edit different levels of access for other people as well
-
-
-# with everything setup to this stage, go to the python script provided in this repository
+Find you Google spreadsheet ID, open the spreadsheet and in the address bar, copy everything between d/.../edit as shown in the image below
+ ![SHEET_ID](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/SHEET_ID.png)
 
 
 
