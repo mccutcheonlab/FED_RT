@@ -20,9 +20,8 @@ Optional: You can also flash your board with a new "ClassicFED3" file available 
 To automatically send data from a local script to a specific Google Spreadsheet we need to get Google Service Account credentials which enables your python script to authenticate as a specific account without needing user interaction each time.
 
 
-1) Go to this [link](https://console.cloud.google.com/projectcreate) to create a new project on you Google Cloud Console 
-as shown on  the screenshot, assign a name to it and press create.
-
+1) Go to this [link](https://console.cloud.google.com/projectcreate) to create a new project on you Google Cloud Console, as shown on  the screenshot, assign a name to it and press create.
+![create_project](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/project_create_1.png)
 
 as soon as you create the project you will be prompted to a new link where you will see notification on the right corner bell, and the image below should show up, if not, click on the notification icon and click on the last notification which says project is created
 
