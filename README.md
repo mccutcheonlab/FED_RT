@@ -56,7 +56,7 @@ As soon as you create the project you will be prompted to project control panel,
 # Step 2: Set up Service Account Credentials (Get JSON file)
 Once in the control panel of your project, form the left side panel go to API and Services and then select Library.
 
-![Control_panel](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/project_create_2.png)
+![Control_panel](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Project_CONTROLPANEL.png)
 
 A new link will open in the search bar look for Google Drive API.
 Select the Google Drive API (probably the first item) and then ENABLE it. It will open a new link where you can control parameters of your Google Drive API.
