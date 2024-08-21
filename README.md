@@ -188,22 +188,22 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
  With everything setup to this stage, make a new notebook in your jupyter lab and get the code from the python script provided here [RTFED](https://github.com/Htbibalan/FED_RT/blob/main/scripts/RTFED.ipynb) and copy the script and paste it in your notebook.
  Install the necessary packages and libraries- section 1 of the script and then **before running the code**, replace the variables according to your own spreadsheet and file path.
 
-1) Replace the CREDS_FILE directory with the pathway to your JSON file, 
+ Image below shows the changes you need to make in your python script, you will find the details below:
+  ![Python_sctipy](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/python_script.png)
+ 
+ 1) If you have not installed Humidity and Temperature sensors on your FED3, remove those column headers Temperature and Humidity. 
 
-1-1) also replace your own Google spreadsheet ID
+2) Replace the CREDS_FILE directory with the pathway to your JSON file, 
 
-1-1-1)To find your Google spreadsheet ID, open the spreadsheet and in the address bar, copy everything between d/.../edit as shown in the image below, excluding the slashes.
+3) Also replace your own Google spreadsheet ID
+
+3-1)To find your Google spreadsheet ID, open the spreadsheet and in the address bar, copy everything between d/.../edit as shown in the image below, excluding the slashes.
 
  ![SHEET_ID](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/SHEET_ID.png)
 
-1-2) if you have not installed Humidity and Temperature sensors on your FED3, also remove those column headers Temperature and Humidity. 
+4)Moreover you will need to change Ports based on your own Port names and number of FEDs connected to your computer.
 
-1-3)Moreover you will need to change Ports based on your own Port names and number of FEDs connected to your computer.
-
-Image below shows the changes you need to make in your python script:
-  ![Python_sctipy](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/python_script.png)
-
-3)To find port number, open your Arduino IDE with your FED connected and switched on (you do not need to put it on boot loader mode if you have already flashed it with the library provided in my repository [FED3_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library)). Go to Tools/Ports and there you will find port numbers.
+4-1)To find port number, open your Arduino IDE with your FED connected and switched on (you do not need to put it on boot loader mode if you have already flashed it with the library provided in my repository [FED3_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library)). Go to Tools/Ports and there you will find port numbers.
 
   ![Python_sctipy](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Arduino_Port.png)
 
