@@ -66,7 +66,7 @@ Select the Google Drive API (probably the first item) and then ENABLE it. It wil
 
 
 
-In GOOGLE DRIVE API control panel, go to Credentials in the left panel menu and then select **+ CREATE CREDENTIALS** and from the menu select **Service Account**
+After enabling your Google Drive API you will be prompted back to APIs and services, click on Credentials in the left panel menu and then select **+ CREATE CREDENTIALS** and from the menu select **Service Account**
 ![API_CONTROL_PANEL](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_CONTROL_PANEL.png)
 ![API_SERVICE_ACOUNT](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_CREDENTIAL_SERVICE_ACOUNT_Arrow.png)
 
@@ -90,7 +90,7 @@ As soon as you create the JSON key a file is downloaded, take that file and copy
 # Step 3: Enable the Google Sheets API
 
 On the APIs & Services > Credentials page, go to the Library section and search for Google Sheets API.
-![API_SEARCH](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_GOOGLE_SHEET_LIBRARY_WINDOW.png)
+![API_SEARCH](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_GOOGLE_SHEET_LIBRARY_WINDOW_arrow.png)
 
 
 ![API_SEARCH](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_LIB_Search_5.png)
