@@ -19,14 +19,14 @@ SCOPE = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/au
          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 
 # Path to your downloaded JSON file(the file you downloaded making API on google console service)
-CREDS_FILE = r"C:\Users\hta031\Github\HOME_PHOTOMETRY\scripts\Python_codes\homephotometry-102601e8b10f.json"
+CREDS_FILE = r""
 
 creds = Credentials.from_service_account_file(CREDS_FILE, scopes=SCOPE)
 client = gspread.authorize(creds)
 
 # Replace with the ID of your Google Sheets document
 # open your spreadsheet on your Google drive, in the address bar, copy the ID which is between "/d/" and "/edit"
-SPREADSHEET_ID = "1oybqWp_7b9_oiR-a1Xy0YLw8LwvGfqtmSz2lYfEzrBk"
+SPREADSHEET_ID = ""
 
 def get_or_create_worksheet(spreadsheet, title):
     try:
