@@ -189,7 +189,7 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
  Install the necessary packages and libraries- section 1 of the script and then **before running the code**, replace the variables according to your own spreadsheet and file path.
 
  Image below shows the changes you need to make in your python script, you will find the details below:
-  ![Python_sctipy](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/python_script.png)
+  ![Python_script](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/python_script_number.png)
  
  1) If you have not installed Humidity and Temperature sensors on your FED3, remove those column headers Temperature and Humidity. 
 
@@ -205,7 +205,7 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
 
 4-1)To find port number, open your Arduino IDE with your FED connected and switched on (you do not need to put it on boot loader mode if you have already flashed it with the library provided in my repository [FED3_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library)). Go to Tools/Ports and there you will find port numbers.
 
-  ![Python_sctipy](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Arduino_Port.png)
+  ![arduino_port_find](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Arduino_Port.png)
 
 In this screenshot, 2 FEDs are connected, which means that in the python script, the user can include COM12 as well.
                 
