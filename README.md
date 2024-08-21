@@ -37,7 +37,6 @@ Optional: You can also flash your board with a new "ClassicFED3.ino" file availa
 4) The baud rate is set at 115200 to enable FED3 to log events with millisecond resolution 
 5) These changes are not necessary to establish the remote data acquisition and one can try to increase the number of motor turns to clear a jam or shut down the beeping alarm. 
 
-{footnote for the directory of Arduino libraries - - - }
 
 
 # Step 0: Create a Google spreadsheet in your Google Drive, we will get back to it later
@@ -187,10 +186,15 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
  Install the necessary packages and libraries- section 1 of the script and then **before running the code**, replace the variables according to your own spreadsheet and file path.
 
 1) Replace the CREDS_FILE directory with the pathway to your JSON file, 
+
 1-1) also replace your own Google spreadsheet ID
-1-1-1)To find your Google spreadsheet ID, open the spreadsheet and in the address bar, copy everything between d/.../edit as shown in the image below, excluding the slashes. 
+
+1-1-1)To find your Google spreadsheet ID, open the spreadsheet and in the address bar, copy everything between d/.../edit as shown in the image below, excluding the slashes.
+
  ![SHEET_ID](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/SHEET_ID.png)
+
 1-2) if you have not installed Humidity and Temperature sensors on your FED3, also remove those column headers Temperature and Humidity. 
+
 1-3)Moreover you will need to change Ports based on your own Port names and number of FEDs connected to your computer.
 
 Image below shows the changes you need to make in your python script:
@@ -220,6 +224,10 @@ On Mac systems the port name is not displayed as COM but as a longer name, howev
 5) Trigger a jamming by not letting the FED3 deliver a pellet and soon you will receive an alarm email.
 
 
+# Extra
+You can use this env file to create a separate environment for you RTFED python code. (IN PROGRESS)
+
+Also you can find the .py file of the RTFED python script [HERE](https://github.com/Htbibalan/FED_RT/tree/main/scripts/FEDRT_V1.py)
 # License
 
         MIT License
