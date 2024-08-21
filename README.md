@@ -12,7 +12,8 @@
 ## Step -1: Update FED3 library with NEW FILES and flash the board
 The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library).
 
-**How to find my Arduino Library folder?**
+***How to find my Arduino Library folder?***
+
 It depends on your arduino installation settings, for example on my computer FED library is located in **C:\Arduino_lib\libraries\FED3\src** or on a Mac it is located in **/Users/your_user_name/Documents/Arduino/libraries** but the easiest way to find it is to go to File menu in your Arduino IDE and then select Preference, there you will find the pathway to your libraries.
 
 ![Arduino_0](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Arduino_lib_finding_0.png)
@@ -25,7 +26,7 @@ After replacing the files,  connect your FED3 to your computer(**Not via the cha
 
 
 
-*You should remove the initial files including FED3.h and FED3.cpp and replace them with update files, you can save those files in a safe place in case you want to revert the changes later*
+**Note**: You should remove the initial files including FED3.h and FED3.cpp and replace them with update files, you can save those files in a safe place in case you want to revert the changes later*
 
 Optional: You can also flash your board with a new "ClassicFED3.ino" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/ClassicFED3), this file includes Closed_economy mode in addition to previous modes included in original ClassicFED3.
 
