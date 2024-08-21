@@ -237,7 +237,7 @@ Alternatively you can use the requirement.txt file to either update packages in 
                 pip install -r requirements.txt
 
 
-Also you can find the .py file of the RTFED python script [HERE](https://github.com/Htbibalan/FED_RT/tree/main/scripts/FEDRT_V1.py)
+Also you can find the .py file of the RTFED python script [HERE](https://github.com/Htbibalan/FED_RT/tree/main/scripts/RTFED_V1.py)
 # License
 
         MIT License
