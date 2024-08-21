@@ -68,7 +68,7 @@ Select the Google Drive API (probably the first item) and then ENABLE it. It wil
 
 In GOOGLE DRIVE API control panel, go to Credentials in the left panel menu and then select **+ CREATE CREDENTIALS** and from the menu select **Service Account**
 ![API_CONTROL_PANEL](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_CONTROL_PANEL.png)
-![API_SERVICE_ACOUNT](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_CREDENTIAL_SERVICE_ACOUNT.png)
+![API_SERVICE_ACOUNT](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/API_CREDENTIAL_SERVICE_ACOUNT_Arrow.png)
 
 
 Enter a service account name(choose your preferred name) and Service ID will be filled automatically,  then press Create and Continue or you can optionally add more users to your project or just press DONE (You can manage it later if needed)
