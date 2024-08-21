@@ -10,11 +10,22 @@
 
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
-The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library). 
-After replacing the files,  connect your FED3 to your computer, put it on boot loader mode and flash it just as explained in the original FED3 repository. 
+The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library).
+
+**How to find my Arduino Library folder?**
+It depends on your arduino installation settings, for example on my computer FED library is located in **C:\Arduino_lib\libraries\FED3\src** or on a Mac it is located in **/Users/your_user_name/Documents/Arduino/libraries** but the easiest way to find it is to go to File menu in your Arduino IDE and then select Preference, there you will find the pathway to your libraries.
+
+![Arduino_0](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Arduino_lib_finding_0.png)
+![Arduino_1](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Arduino_lib_finding_1.png)
 
 
-*you should remove the initial files including FED3.h and FED3.cpp and replace them with update files, you can save those files in a safe place in case you want to revert the changes later*
+After replacing the files,  connect your FED3 to your computer(**Not via the charging port rather use the one on the feather board inside the FED body**), put it on boot loader mode(Double-press the tiny button on feather board) and flash it just as explained in the original FED3 repository. 
+![FED_BOOT](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/FED_BOOT.png)
+*Use the port indicated on the image to flash your FED otherwise your computer won't detect any device*
+
+
+
+*You should remove the initial files including FED3.h and FED3.cpp and replace them with update files, you can save those files in a safe place in case you want to revert the changes later*
 
 Optional: You can also flash your board with a new "ClassicFED3.ino" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/ClassicFED3), this file includes Closed_economy mode in addition to previous modes included in original ClassicFED3.
 
@@ -24,6 +35,8 @@ Optional: You can also flash your board with a new "ClassicFED3.ino" file availa
 3) As soon as the JAM is logged, the device is frozen and does not log any new activity, however it will just display the time when jamming happened on the screen
 4) The baud rate is set at 115200 to enable FED3 to log events with millisecond resolution 
 5) These changes are not necessary to establish the remote data acquisition and one can try to increase the number of motor turns to clear a jam or shut down the beeping alarm. 
+
+{footnote for the directory of Arduino libraries - - - }
 
 
 # Step 0: Create a Google spreadsheet in your Google Drive, we will get back to it later
@@ -204,13 +217,6 @@ On Mac systems the port name is not displayed as COM but as a longer name, howev
 3) As soon as you run the code, new sheets will be generated and they get the sheet name from the Ports variable
 4) Make random pokes and pellet deliveries and you should see the data being logged on the spreadsheet
 5) Trigger a jamming by not letting the FED3 deliver a pellet and soon you will receive an alarm email.
-
-
-
-
-
-
-
 
 
 # License
