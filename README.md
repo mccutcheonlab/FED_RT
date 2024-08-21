@@ -227,8 +227,15 @@ On Mac systems the port name is not displayed as COM but as a longer name, howev
 5) Trigger a jamming by not letting the FED3 deliver a pellet and soon you will receive an alarm email.
 
 
-# Extra
-You can use this env file to create a separate environment for you RTFED python code. (IN PROGRESS)
+# Extra (For expert users)
+You can use either the [.yml file](https://github.com/Htbibalan/FED_RT/tree/main/source/ENV_FILES) to create a separate environment for your RTFED python code, or use the requirement.txt file from the same folder to get the required  python packages. Follow the instructions on [ANACONDA_CHEAT_SHEET](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf), but basically download the above mentioned files and move them to your anaconda environments directory, open your anaconda terminal and navigate to to the directory where the RTFED.yml is located and run the command below:
+
+                conda env create -f RTFED.yml
+
+Alternatively you can use the requirement.txt file to either update packages in your base/current environment or making an env from the scratch,simply navigate to the directory where you have the requirements.txt located, and run the following command:
+
+                pip install -r requirements.txt
+
 
 Also you can find the .py file of the RTFED python script [HERE](https://github.com/Htbibalan/FED_RT/tree/main/scripts/FEDRT_V1.py)
 # License
