@@ -165,8 +165,11 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
             MailApp.sendEmail(emailAddress, subject, message);
             }
 
+ ![Apps_script_email_address](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Apps_script_email.png)
+ *As shown in the image, just change the email address in the "var emailAdress" and leave the emailAddress parameter in the function unchanged*
 
-3) In the Apps Script control panel, from the left panel menu, select **Triggers** and then right bottom corner select **+ Add Trigger** 
+
+3) **To activate the Alarm email**,  in the Apps Script control panel, from the left panel menu, select **Triggers** and then right bottom corner select **+ Add Trigger** 
 
  ![App_script](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/trigger_APPS_SCRIPT.png)
 
