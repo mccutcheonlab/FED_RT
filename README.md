@@ -8,9 +8,12 @@
 
 *So far it has been tested on Windows and Mac and it works fine on both operating systems.*
 
+## Upgrade V2 (NOV 2024):
+**RTFED now handles intruptions in your internet connection by caching the data on RAM and periodically checking the connection**
+
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
-The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library).
+The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/RTFED).
 
 ***How to find my Arduino Library folder?***
 
@@ -113,7 +116,7 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
 2) Paste the code below, make necessary changes described below in **Critical sub-step** and then press the **"save"** icon. 
 
 ### Critical sub-step: 
-**There are a few changes to make based on your FED file. If you do not have Humidity and Temp sensors, the column number for "event" and "device number" will be different, replace it accordingly.**
+**Afer flashing your FED3 using the .cpp and .h files provided in this repository, you will have two extra columns in your FED files for Humidity and Temperature, those columns will remain blank if you do not have those sensors installed on your FED units, however this will not interfere with your data logging**
 
  **Also to receive a JAM alert, you need to add your own email address to the last snipped of the code where it says: var emailAddress**
 

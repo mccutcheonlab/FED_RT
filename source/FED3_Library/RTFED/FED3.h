@@ -27,7 +27,7 @@ This device includes hardware and code from:
 #ifndef FED3_H
 #define FED3_H
 
-//include these libraries
+// Include these libraries
 #include <Arduino.h>
 #include <Adafruit_BusIO_Register.h>
 #include <Adafruit_I2CDevice.h>
@@ -97,7 +97,7 @@ class FED3 {
         void writeFEDmode();
         void error(uint8_t errno);
         void getFilename(char *filename);
-        bool suppressSDerrors = false;  //set to true to suppress SD card errors at startup 
+        bool suppressSDerrors = false;  // Set to true to suppress SD card errors at startup 
 
         // Battery
         float measuredvbat = 1.0;
@@ -134,8 +134,8 @@ class FED3 {
         void FED3MenuScreen();
         void SetClock();
         
-        //BNC input/output
-		void ReadBNC(bool blinkGreen);
+        // BNC input/output
+        void ReadBNC(bool blinkGreen);
         bool BNCinput = false;
         
         // Motor
@@ -158,7 +158,7 @@ class FED3 {
         void Tone(int freq, int duration);
         void stopTone();
         
-        // Pelet and poke functions
+        // Pellet and poke functions
         void CheckRatio();
         void logLeftPoke();
         void logRightPoke();
@@ -173,17 +173,17 @@ class FED3 {
         void randomizeActivePoke(int max);
         int consecutive = 0;
         
-        //jam movements
-		bool RotateDisk(int steps);
+        // Jam movements
+        bool RotateDisk(int steps);
         bool ClearJam();
         bool VibrateJam();
         bool MinorJam();
 
-        //timed feeding variables
-        int timedStart; //hour to start the timed Feeding session, out of 24 hour clock
-        int timedEnd; //hour to start the timed Feeding session, out of 24 hour clock
+        // Timed feeding variables
+        int timedStart; // Hour to start the timed Feeding session, out of 24-hour clock
+        int timedEnd;   // Hour to end the timed Feeding session, out of 24-hour clock
 
-        // mode variables
+        // Mode variables
         int FED;
         int PelletType;
         int FR = 1;
@@ -192,14 +192,14 @@ class FED3 {
         byte FEDmode = 1;
         byte previousFEDmode = FEDmode;
   
-        // event counters
+        // Event counters
         int LeftCount = 0;
         int RightCount = 0;
         int PelletCount = 0;
         int BlockPelletCount = 0;
         int timeout = 0;
         
-        // state variables
+        // State variables
         bool activePoke = 1;  // 0 for right, 1 for left, defaults to left poke active
         bool Left = false;
         bool Right = false;
@@ -208,9 +208,9 @@ class FED3 {
         unsigned long currentMinute;
         unsigned long currentSecond;
         unsigned long displayupdate;
-        String Event = "None";   //What kind of event just happened?
+        String Event = "None";   // What kind of event just happened?
         
-        // timing variables
+        // Timing variables
         int retInterval = 0;
         int leftInterval = 0;
         int rightInterval = 0;
@@ -221,7 +221,7 @@ class FED3 {
         unsigned long unixtime = 0;
         int interPelletInterval = 0;
 
-        // flags
+        // Flags
         bool Ratio_Met = false;
         bool EnableSleep = true;
         void disableSleep();
@@ -253,6 +253,8 @@ class FED3 {
         static void updatePelletTriggerISR();
         static void updateLeftTriggerISR();
         static void updateRightTriggerISR();
+        
+        bool jamOccurred = false;     // Tracks if a jam has occurred
 };
 
 #endif
