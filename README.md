@@ -189,10 +189,11 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
 
 **Click on Advanced, then click on Go to your project then click on Allow**
 
-## If you are using the GUI (UPGRADE V3) you are all set and you do not need to follow the next steps, just plug your FED3s and run the GUI.
+# If you are using the GUI (UPGRADE V3) you are all set and you do not need to follow the next steps, just plug your FED3s and run the GUI. ⚠️
+---------------------------------------------------------------------------------------------------------------------
 
 
-# Step 6: **THIS STEP WORKED IN V1 OF RTFED BUT IT IS NO LONGER NEEDED SINCE YOU ARE USING THE GUI and GUI detects your ports automatically and asks for JSON file and spreadsheet ID** 
+#### Step 6: **THIS STEP WORKED IN V1 OF RTFED BUT IT IS NO LONGER NEEDED SINCE YOU ARE USING THE GUI and GUI detects your ports automatically and asks for JSON file and spreadsheet ID** 
  With everything setup to this stage, make a new notebook in your jupyter lab and get the code from the python script provided here [RTFED](https://github.com/Htbibalan/FED_RT/blob/main/scripts/RTFED.ipynb) and copy the script and paste it in your notebook.
  Install the necessary packages and libraries- section 1 of the script and then **before running the code**, replace the variables according to your own spreadsheet and file path.
 
@@ -227,7 +228,7 @@ On Mac systems the port name is not displayed as COM but as a longer name, howev
  **IMPORTANT NOTE**:
  The python script ignores the timestamp data coming from FEDs and gets the timestamp from the mother computer, which means that all the FEDs connected to the main computer are synchronized
 
-# Step 7: Run a test
+#### Step 7: Run a test
 1) Switch on FEDs connected with a USB cable to your computer
 2) Run the python script with all variables adjusted based on your own setup
 3) As soon as you run the code, new sheets will be generated and they get the sheet name from the Ports variable
