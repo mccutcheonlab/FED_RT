@@ -9,7 +9,10 @@
 *So far it has been tested on Windows and Mac and it works fine on both operating systems.*
 
 ## Upgrade V2 (NOV 2024):
-**RTFED now handles intruptions in your internet connection by caching the data on RAM and periodically checking the connection**
+**RTFED now handles interruptions in your internet connection by caching the data on RAM and periodically checking the connection**
+
+## Upgrade V3 (Dec 2024)
+** RTFED now comes with a GUI (zip file in /source), dynamically detects FED3 devices connected to your computer. Plug and Play! 
 
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
