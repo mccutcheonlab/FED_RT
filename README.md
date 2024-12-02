@@ -190,7 +190,7 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
 **Click on Advanced, then click on Go to your project then click on Allow**
 
 
-# Step 6: Open your python IDE(e.g. Jupyter lab) and copy the code from this repository
+# Step 6: **THIS STEP IS NO LONGER NEEDED SINCE YOU ARE USING THE GUI and GUI detects your ports automatically and asks for JSON file and spreadsheet ID** Open your python IDE(e.g. Jupyter lab) and copy the code from this repository
  With everything setup to this stage, make a new notebook in your jupyter lab and get the code from the python script provided here [RTFED](https://github.com/Htbibalan/FED_RT/blob/main/scripts/RTFED.ipynb) and copy the script and paste it in your notebook.
  Install the necessary packages and libraries- section 1 of the script and then **before running the code**, replace the variables according to your own spreadsheet and file path.
 
