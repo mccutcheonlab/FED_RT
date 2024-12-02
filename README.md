@@ -12,7 +12,7 @@
 **RTFED now handles interruptions in your internet connection by caching the data on RAM and periodically checking the connection**
 
 ## Upgrade V3 (Dec 2024)
-**RTFED now comes with a GUI (zip file in /source), dynamically detects FED3 devices connected to your computer. Plug and Play!** 
+**RTFED now comes with a GUI (zip file in /source), dynamically detects FED3 devices connected to your computer. Plug and Play!** Just setup your Google spreasheet and get the JSON file and connect your FED3s and run your experiment.
 
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
@@ -189,8 +189,10 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
 
 **Click on Advanced, then click on Go to your project then click on Allow**
 
+## If you are using the GUI (UPGRADE V3) you are all set and you do not need to follow the next steps, just plug your FED3s and run the GUI.
 
-# Step 6: **THIS STEP IS NO LONGER NEEDED SINCE YOU ARE USING THE GUI and GUI detects your ports automatically and asks for JSON file and spreadsheet ID** Open your python IDE(e.g. Jupyter lab) and copy the code from this repository
+
+# Step 6: **THIS STEP WORKED IN V1 OF RTFED BUT IT IS NO LONGER NEEDED SINCE YOU ARE USING THE GUI and GUI detects your ports automatically and asks for JSON file and spreadsheet ID** 
  With everything setup to this stage, make a new notebook in your jupyter lab and get the code from the python script provided here [RTFED](https://github.com/Htbibalan/FED_RT/blob/main/scripts/RTFED.ipynb) and copy the script and paste it in your notebook.
  Install the necessary packages and libraries- section 1 of the script and then **before running the code**, replace the variables according to your own spreadsheet and file path.
 
