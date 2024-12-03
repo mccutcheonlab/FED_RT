@@ -2,8 +2,8 @@
 
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/diagram.png)
 
-![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_GUI.png)
-### What is RTFED?
+![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_GUI_UPDATED.png)
+### What is RTFED? ⚠️ (Developed for Windows operating system)
 **RTFED** is a software update to the open-source automated feeding/operant_reward machine [FED3](https://github.com/KravitzLabDevices/FED3/wiki). This update enables you to collect data from FED3 online and remotely without needing any additional hardware change.(e.g. directly to a Google spreadsheet instead of writing to the SD card). Moreover here I share a walkthrough of the process of incorporating a Google Apps Script with your spreadsheet to send you an alarm email in case your FED3 fails to deliver a pellet (e.g. jamming happens)
 
 *Since you need to have your FED3 connected to a computer via a USB cable all the time, this solution works best for labs who do not place the FED3 inside the mouse cage or can protect the FED3 and cable from the mice.*
@@ -14,8 +14,10 @@
 **RTFED now handles interruptions in your internet connection by caching the data on RAM and periodically checking the connection**
 
 ## Upgrade V3 (Dec 2024)
-**RTFED now comes with a GUI (zip file in /source), dynamically detects FED3 devices connected to your computer. Plug and Play!** Just setup your Google spreasheet and get the JSON file and connect your FED3s and run your experiment.
+**RTFED now comes with a GUI (zip file in /source), dynamically detects FED3 devices connected to your computer. Plug and Play!** Just setup your Google spreadsheet and get the JSON file and connect your FED3s and run your experiment.
 
+## Upgrade V4 (Dec 2024) 
+**RTFED has port indicator for each FED3 device connected to it, in case you have many FED3s connected and can not find which port receives data from which FED3, you can make right poke to see a tiny indicator blinking next to the active port**
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
 The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/RTFED).
@@ -191,7 +193,7 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
 
 **Click on Advanced, then click on Go to your project then click on Allow**
 
-# If you are using the GUI (UPGRADE V3) you are all set and you do not need to follow the next steps, just plug your FED3s and run the GUI. ⚠️
+# If you are using the GUI (UPGRADE V4) you are all set and you do not need to follow the next steps, just plug your FED3s and run the GUI. ⚠️
 ---------------------------------------------------------------------------------------------------------------------
 
 
