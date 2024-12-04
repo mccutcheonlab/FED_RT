@@ -1,5 +1,7 @@
 # REALTIME_REMOTE_FED(RTFED)
-# ⚠️ CAUTION: The RTFED GUI on Windows yet does not properly handle logging data after restarting a FED3 during an ongoing experiment (e.g after restarting due to a jamming) and that is due to permission issues on windows. I am currently working on finding a solution.
+
+
+
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/diagram.png)
 
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_GUI_UPDATED.png)
@@ -18,6 +20,11 @@
 
 ## Upgrade V4 (Dec 2024) 
 **RTFED has port indicator for each FED3 device connected to it, in case you have many FED3s connected and can not find which port receives data from which FED3, you can make right poke to see a tiny indicator blinking next to the active port**
+
+# ⚠️ CAUTION: The RTFED GUI on Windows yet does not properly handle logging data after restarting a FED3 during an ongoing experiment (e.g after restarting due to a jamming) and that is because of permission issues on windows. I am currently working on finding a solution. However the not so smart solution is to run a new RTFED (in addition to the running RTFED) and then connect a new FED3 device to another USB port and then start logging data to the same ongoing spreadsheet- with this approach the latter RTFED just reads data from the newly plugged FED and the other RTFED keeps reading data from initial FEDs.
+
+
+
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
 The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/RTFED).
