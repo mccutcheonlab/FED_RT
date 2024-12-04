@@ -1,5 +1,7 @@
 # REALTIME_REMOTE_FED(RTFED)
 
+# ⚠️⚠️⚠️ : GOOD NEWS: The reconnection problem is solved - - - I will update here soon
+
 
 
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/diagram.png)
