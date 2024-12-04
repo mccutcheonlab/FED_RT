@@ -77,6 +77,9 @@ class FED3 {
         void classInterruptHandler(void);
         void begin();
         void run();
+
+
+        
         
         // SD logging
         SdFat SD;
@@ -178,6 +181,23 @@ class FED3 {
         bool ClearJam();
         bool VibrateJam();
         bool MinorJam();
+
+        //JAM EVENT HANDLING
+        void disableInputs() {
+        // Disable motor driver
+        digitalWrite(MOTOR_ENABLE, LOW);
+        // Detach interrupts
+        detachInterrupt(digitalPinToInterrupt(PELLET_WELL));
+        detachInterrupt(digitalPinToInterrupt(LEFT_POKE));
+        detachInterrupt(digitalPinToInterrupt(RIGHT_POKE));
+        // Set all other control pins to LOW
+        digitalWrite(A2, LOW);
+        digitalWrite(A3, LOW);
+        digitalWrite(A4, LOW);
+        digitalWrite(A5, LOW);
+        digitalWrite(BNC_OUT, LOW);
+        }
+
 
         // Timed feeding variables
         int timedStart; // Hour to start the timed Feeding session, out of 24-hour clock

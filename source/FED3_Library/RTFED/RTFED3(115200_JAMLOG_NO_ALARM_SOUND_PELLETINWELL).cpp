@@ -66,10 +66,16 @@ static void outsideRightTriggerHandler(void) {
   pointerToFED3->rightTrigger();
 }
 
+// define a global flag to stop logging data
+bool stopLogging = false;
+
 /**************************************************************************************************************************************************
                                                                                                             Main loop
 **************************************************************************************************************************************************/
 void FED3::run() {
+  if (stopLogging){
+    return;
+  }
   //This should be called at least once per loop.  It updates the time, updates display, and controls sleep 
   if (digitalRead(PELLET_WELL) == HIGH) {  //check for pellet
     PelletAvailable = false;
@@ -89,6 +95,9 @@ void FED3::run() {
 **************************************************************************************************************************************************/
 //log left poke
 void FED3::logLeftPoke(){
+  if (stopLogging){
+    return;
+  }
   // Removed the condition 'if (PelletAvailable == false)' to allow logging regardless of pellet availability
   leftPokeTime = millis();
   LeftCount ++;
@@ -109,6 +118,9 @@ void FED3::logLeftPoke(){
 
 //log right poke
 void FED3::logRightPoke(){
+  if (stopLogging){
+    return;
+  }
   // Removed the condition 'if (PelletAvailable == false)' to allow logging regardless of pellet availability
   rightPokeTime = millis();
   RightCount ++;
@@ -156,6 +168,9 @@ void FED3::randomizeActivePoke(int max){
                                                                                                     Feeding functions
 **************************************************************************************************************************************************/
 void FED3::Feed(int pulse, bool pixelsoff) {
+  if (stopLogging){
+    return;
+  }
   // Exit immediately if a jam has occurred
   if (jamOccurred == true) {
     return; // Exit the function immediately
@@ -583,7 +598,10 @@ void FED3::BNC(int DELAY_MS, int loops) {
 
 //Simple function for generating a beeping pattern when alarm needed
 void FED3::Alarm() {
-  logJamData();
+  Event="JAM";
+  logdata();
+  stopLogging = true;
+  disableInputs();
   jamOccurred = true;  // Set flag to indicate jam has occurred
   // Removed the beeping code and infinite loop
 }
@@ -1029,6 +1047,9 @@ void FED3::writePelletFile() {
 }
 
 void FED3::logdata() {
+    if (stopLogging == true) {
+        return;
+    }
     if (EnableSleep == true) {
         digitalWrite(MOTOR_ENABLE, LOW);  // Disable motor driver and neopixel
     }
@@ -1500,6 +1521,7 @@ void FED3::ReadBatteryLevel() {
 /**************************************************************************************************************************************************
                                                                                                      Interrupts and sleep
 **************************************************************************************************************************************************/
+
 void FED3::disableSleep(){
   EnableSleep = false;                             
 }
