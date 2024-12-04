@@ -1,5 +1,5 @@
 # REALTIME_REMOTE_FED(RTFED)
-# URGENT: DO NOT USE RTFED LIBRARY UNTILL FURTHER NOTICE - - THERE IS A FATAL ERROR AND I AM CURRENTLY WORKING ON FIXING IT - - - IF USING ANY VERSION DOWNLOADED BEFORE DEC 4th 2024, YOUR FED IS OKAY - OTHERWISE DO NOT USE IT
+# ⚠️ CAUTION: The RTFED GUI on Windows yet does not properly handle logging data after restarting a FED3 during an ongoing experiment (e.g after restarting due to a jamming) and that is due to permission issues on windows. I am currently working on finding a solution.
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/diagram.png)
 
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_GUI_UPDATED.png)
