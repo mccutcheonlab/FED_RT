@@ -42,12 +42,15 @@ After replacing the files,  connect your FED3 to your computer(**Not via the cha
 
 Optional: You can also flash your board with a new "ClassicFED3.ino" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/ClassicFED3), this file includes Closed_economy mode in addition to previous modes included in original ClassicFED3.
 
-** **IMPORTANT** notes: There are some changes in this new update of library**
+**IMPORTANT** notes: There are some changes in this new update of library
 1) When the device fails to deliver a pellet, it will just try 5 times in "Jam clearing" state and then stops clearing the jam  
 2) As soon as the JAM is logged, the device is frozen and does not log any new activity, however it will just display the time when jamming happened on the screen.
 3) The baud rate is set at 115200 to enable FED3 to log events with millisecond resolution 
 4) These changes are not necessary to establish the remote data acquisition and one can try to increase the number of motor turns to clear a jam
 
+# Hint
+![RTFED_FLASHED](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_DISPLAY.png)
+To make sure you have properly flashed your FED3 with RTFED library, check the screen of your FED3 unit, it should display RTFED to the left of the battery icon.
 
 
 # Step 0: Create a Google spreadsheet in your Google Drive, we will get back to it later
