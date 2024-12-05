@@ -1,9 +1,5 @@
 # REALTIME_REMOTE_FED(RTFED)
 
-# ⚠️⚠️⚠️ : GOOD NEWS: The reconnection problem is solved - - - I will update here soon
-
-
-
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/diagram.png)
 
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_GUI_UPDATED.png)
@@ -23,9 +19,8 @@
 ## Upgrade V4 (Dec 2024) 
 **RTFED has port indicator for each FED3 device connected to it, in case you have many FED3s connected and can not find which port receives data from which FED3, you can make right poke to see a tiny indicator blinking next to the active port**
 
-# ⚠️ CAUTION: The RTFED GUI on Windows yet does not properly handle logging data after restarting a FED3 during an ongoing experiment (e.g after restarting due to a jamming) and that is because of permission issues on windows. I am currently working on finding a solution. However the not so smart solution is to run a new RTFED (in addition to the running RTFED) and then connect a new FED3 device to another USB port and then start logging data to the same ongoing spreadsheet- with this approach the latter RTFED just reads data from the newly plugged FED and the other RTFED keeps reading data from initial FEDs.
-
-
+## Upgrade V5 ( Dec 2024)
+** RTFED handles reconnecting FED3 devices during a running experiment, e.g. you can switch off a FED to fix jamming and then reconnect it and RTFED keeps logging the data from the device.
 
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
