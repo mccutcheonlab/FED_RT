@@ -25,6 +25,8 @@
 ## Upgrade V5 ( Dec 2024)
 **RTFED handles reconnecting FED3 devices during a running experiment, e.g. you can switch off a FED to fix jamming and then reconnect it and RTFED keeps logging the data from the device.**
 
+# DOWNLOAD THE GUI ![HERE](https://github.com/Htbibalan/FED_RT/blob/main/source/RTFED_GUI.ZIP) and run the RTFED(WINDOWS).exe from /dist.
+
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
 The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/RTFED).
