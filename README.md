@@ -25,7 +25,7 @@
 ## Upgrade V5 ( Dec 2024)
 **RTFED handles reconnecting FED3 devices during a running experiment, e.g. you can switch off a FED to fix jamming and then reconnect it and RTFED keeps logging the data from the device.**
 
-# DOWNLOAD THE GUI ![HERE](https://github.com/Htbibalan/FED_RT/blob/main/source/RTFED_GUI.ZIP) and run the RTFED(WINDOWS).exe from /dist.
+# DOWNLOAD THE [RTFED_GUI.ZIP](https://github.com/Htbibalan/FED_RT/blob/main/source/) and run the RTFED(WINDOWS).exe from /dist.
 
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
