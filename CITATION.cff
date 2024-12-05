@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "RTFED(Windows OS)"
+authors:
+  - family-names: Taghipourbibalan
+    given-names: Hamid
+    orcid: https://orcid.org/0000-0003-4395-4413
+  - family-names: James 
+    given-names: McCutcheon
+    orcid: https://orcid.org/0000-0002-6431-694X
+year: 2024
+version: 1.0.0
+url: https://github.com/mccutcheonlab/FED_RT
+license: Apache-2.0
+abstract: "RTFED (Windows OS)  is a user-friendly interface to collect data from FED3 devices, store the data locally and transmit data from FED3 devices to Google Spreadsheets. It enables the user to connect multiple FED3 units to a Windows computer and collect data in an online manner."
