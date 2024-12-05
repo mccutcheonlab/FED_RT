@@ -2,7 +2,7 @@
 
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/diagram.png)
 
-[![Watch the video](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_GUI_UPDATED.png)](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED.mp4)
+[![Watch the video](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_GUI_UPDATED.png)](https://youtu.be/WifGA4YFR3c)
 
 
 
