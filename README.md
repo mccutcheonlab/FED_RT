@@ -9,7 +9,7 @@
 
 
 ### What is RTFED? ⚠️ (Developed for Windows operating system)
-**RTFED** is a software update to the open-source automated feeding/operant_reward machine [FED3](https://github.com/KravitzLabDevices/FED3/wiki). This update enables you to collect data from FED3 online and remotely without needing any additional hardware change.(e.g. directly to a Google spreadsheet instead of writing to the SD card). Moreover here I share a walkthrough of the process of incorporating a Google Apps Script with your spreadsheet to send you an alarm email in case your FED3 fails to deliver a pellet (e.g. jamming happens)
+**RTFED** is a software that enables you to collect data from [FED3](https://github.com/KravitzLabDevices/FED3/wiki) remotely and online. RTFED stores data locally and also sends it to a Google spreadsheet and this process does not require any additional hardware change to FED3 units.Here I share a walkthrough of the process of setting up RTFED and incorporating a Google Apps Script with your spreadsheet to send you an alarm email in case your FED3 fails to deliver a pellet (e.g. jamming happens)
 
 *Since you need to have your FED3 connected to a computer via a USB cable all the time, this solution works best for labs who do not place the FED3 inside the mouse cage or can protect the FED3 and cable from the mice.*
 
