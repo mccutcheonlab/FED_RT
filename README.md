@@ -49,7 +49,7 @@ Optional: You can also flash your board with a new "ClassicFED3.ino" file availa
 4) These changes are not necessary to establish the remote data acquisition and one can try to increase the number of motor turns to clear a jam
 
 # Hint
-![RTFED_FLASHED](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_DISPLAY.png)
+![RTFED_FLASHED](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_DISPLAY.jpg)
 To make sure you have properly flashed your FED3 with RTFED library, check the screen of your FED3 unit, it should display RTFED to the left of the battery icon.
 
 
