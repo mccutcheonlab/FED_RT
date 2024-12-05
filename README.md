@@ -8,8 +8,6 @@
 
 *Since you need to have your FED3 connected to a computer via a USB cable all the time, this solution works best for labs who do not place the FED3 inside the mouse cage or can protect the FED3 and cable from the mice.*
 
-*So far it has been tested on Windows and Mac and it works fine on both operating systems.*
-
 ## Upgrade V2 (NOV 2024):
 **RTFED now handles interruptions in your internet connection by caching the data on RAM and periodically checking the connection**
 
@@ -20,7 +18,7 @@
 **RTFED has port indicator for each FED3 device connected to it, in case you have many FED3s connected and can not find which port receives data from which FED3, you can make right poke to see a tiny indicator blinking next to the active port**
 
 ## Upgrade V5 ( Dec 2024)
-** RTFED handles reconnecting FED3 devices during a running experiment, e.g. you can switch off a FED to fix jamming and then reconnect it and RTFED keeps logging the data from the device.
+**RTFED handles reconnecting FED3 devices during a running experiment, e.g. you can switch off a FED to fix jamming and then reconnect it and RTFED keeps logging the data from the device.**
 
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
@@ -45,11 +43,10 @@ After replacing the files,  connect your FED3 to your computer(**Not via the cha
 Optional: You can also flash your board with a new "ClassicFED3.ino" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/ClassicFED3), this file includes Closed_economy mode in addition to previous modes included in original ClassicFED3.
 
 ** **IMPORTANT** notes: There are some changes in this new update of library**
-1) This library was initially developed to trigger an alarm LED on FEDs when the device is jammed, in this update FED will make 2 Beeps every 10 sec when it is jammed until it is restarted (this was meant to notify people in the animal facility about the jamming)
-2) When the device fails to deliver a pellet, it will just try 3 times in "Jam clearing" state and then stops clearing the jam, the sound alarm goes off and a JAM event is logged,  
-3) As soon as the JAM is logged, the device is frozen and does not log any new activity, however it will just display the time when jamming happened on the screen
-4) The baud rate is set at 115200 to enable FED3 to log events with millisecond resolution 
-5) These changes are not necessary to establish the remote data acquisition and one can try to increase the number of motor turns to clear a jam or shut down the beeping alarm. 
+1) When the device fails to deliver a pellet, it will just try 5 times in "Jam clearing" state and then stops clearing the jam  
+2) As soon as the JAM is logged, the device is frozen and does not log any new activity, however it will just display the time when jamming happened on the screen.
+3) The baud rate is set at 115200 to enable FED3 to log events with millisecond resolution 
+4) These changes are not necessary to establish the remote data acquisition and one can try to increase the number of motor turns to clear a jam
 
 
 
@@ -197,54 +194,13 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
 
 **Click on Advanced, then click on Go to your project then click on Allow**
 
-# If you are using the GUI (UPGRADE V4) you are all set and you do not need to follow the next steps, just plug your FED3s and run the GUI. ⚠️
----------------------------------------------------------------------------------------------------------------------
-
-
-#### Step 6: **THIS STEP WORKED IN V1 OF RTFED BUT IT IS NO LONGER NEEDED SINCE YOU ARE USING THE GUI and GUI detects your ports automatically and asks for JSON file and spreadsheet ID** 
- With everything setup to this stage, make a new notebook in your jupyter lab and get the code from the python script provided here [RTFED](https://github.com/Htbibalan/FED_RT/blob/main/scripts/RTFED.ipynb) and copy the script and paste it in your notebook.
- Install the necessary packages and libraries- section 1 of the script and then **before running the code**, replace the variables according to your own spreadsheet and file path.
-
- Image below shows the changes you need to make in your python script, you will find the details below:
-  ![Python_script](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/python_script_number.png)
- 
- 1) If you have not installed Humidity and Temperature sensors on your FED3, remove those column headers Temperature and Humidity. 
-
-2) Replace the CREDS_FILE directory with the pathway to your JSON file, 
-
-3) Also replace your own Google spreadsheet ID
-
-3-1)To find your Google spreadsheet ID, open the spreadsheet and in the address bar, copy everything between d/.../edit as shown in the image below, excluding the slashes.
-
- ![SHEET_ID](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/SHEET_ID.png)
-
-4)Moreover you will need to change Ports based on your own Port names and number of FEDs connected to your computer.
-
-4-1)To find port number, open your Arduino IDE with your FED connected and switched on (you do not need to put it on boot loader mode if you have already flashed it with the library provided in my repository [FED3_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library)). Go to Tools/Ports and there you will find port numbers.
-
-  ![arduino_port_find](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Arduino_Port.png)
-
-In this screenshot, 2 FEDs are connected, which means that in the python script, the user can include COM12 as well.
-                
-                port=["COM16","COM12"]
-
-On Mac systems the port name is not displayed as COM but as a longer name, however you will find it through the same menu on Arduino IDE.(Image below - copy the highlighted part)
-
- ![MAC](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/MAC.png)
+--------------------------------------------------------------------------------------------------------------------
 
 
  **IMPORTANT NOTE**:
- The python script ignores the timestamp data coming from FEDs and gets the timestamp from the mother computer, which means that all the FEDs connected to the main computer are synchronized
+ The RTFED ignores the timestamp data coming from FEDs and gets the timestamp from the mother computer, which means that all the FEDs connected to the main computer will be synchronized.
 
-#### Step 7: Run a test
-1) Switch on FEDs connected with a USB cable to your computer
-2) Run the python script with all variables adjusted based on your own setup
-3) As soon as you run the code, new sheets will be generated and they get the sheet name from the Ports variable
-4) Make random pokes and pellet deliveries and you should see the data being logged on the spreadsheet
-5) Trigger a jamming by not letting the FED3 deliver a pellet and soon you will receive an alarm email.
-
-
-# Extra (For expert users)
+# Extra (For expert users who want to make changes in the codes)
 You can use either the [.yml file](https://github.com/Htbibalan/FED_RT/tree/main/source/ENV_FILES) to create a separate environment for your RTFED python code, or use the requirement.txt file from the same folder to get the required  python packages. Follow the instructions on [ANACONDA_CHEAT_SHEET](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf), but basically download the above mentioned files and move them to your anaconda environments directory, open your anaconda terminal and navigate to to the directory where the RTFED.yml is located and run the command below:
 
                 conda env create -f RTFED.yml
@@ -254,12 +210,10 @@ Alternatively you can use the requirement.txt file to either update packages in 
                 pip install -r requirements.txt
 
 
-Also you can find the .py file of the RTFED python script [HERE](https://github.com/Htbibalan/FED_RT/tree/main/scripts/RTFED_V1.py)
-
 # License
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-# Author
+# Author of this repository
 Hamid Taghipourbibalan, Ph.D. student at [McCutcheon_lab](https://www.mccutcheonlab.com/) at UiT The Arctic University of Norway.
 
 
