@@ -3,7 +3,8 @@
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/diagram.png)
 
 [![Watch the video](https://img.youtube.com/vi/WifGA4YFR3c/0.jpg)](https://www.youtube.com/watch?v=WifGA4YFR3c)
-**Watch tutorial to use RTFED**
+
+**Click on the thumbnail above to watch a tutorial of RTFED**
 
 
 
