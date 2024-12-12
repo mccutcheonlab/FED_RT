@@ -16,6 +16,8 @@ import serial
 import serial.tools.list_ports
 import queue
 import time
+import re
+import webbrowser
 
 # Column headers for Google Spreadsheet
 column_headers = [
@@ -26,8 +28,12 @@ column_headers = [
 ]
 
 # Google Sheets Scope
-SCOPE = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
-         "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+SCOPE = [
+    "https://spreadsheets.google.com/feeds",
+    'https://www.googleapis.com/auth/spreadsheets',
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+]
 
 # Splash Screen Class
 class SplashScreen:
@@ -105,51 +111,48 @@ class FED3MonitorApp:
         self.serial_ports = set(self.detect_serial_ports())
         self.threads = []
         self.port_widgets = {}
-        self.port_queues = {}  # For inter-thread communication
-        self.port_threads = {}  # Mapping from port to thread
-        self.identification_threads = {}  # Threads for identification before logging
-        self.identification_stop_events = {}  # Events to stop identification threads
-        self.log_queue = queue.Queue()  # For logging messages
+        self.port_queues = {}
+        self.port_threads = {}
+        self.identification_threads = {}
+        self.identification_stop_events = {}
+        self.log_queue = queue.Queue()
         self.recording_circle = None
         self.recording_label = None
         self.data_to_save = {}
-        self.stop_event = threading.Event()  # Event to stop logging threads
+        self.stop_event = threading.Event()
         self.logging_active = False
-        self.data_saved = False  # Flag to prevent duplicate data saving
+        self.data_saved = False
 
         self.gspread_client = None
+        self.last_device_check_time = time.time()
 
-        self.last_device_check_time = time.time()  # Initialize device check timer
-
-        # Retry parameters
         self.retry_attempts = 5
-        self.retry_delay = 2  # seconds
+        self.retry_delay = 2
+
+        # Port -> Device Number
+        self.port_to_device_number = {}
 
         self.setup_gui()
 
-        # Schedule startup methods after mainloop starts with slight delays
+        # After mainloop starts
         self.root.after(0, self.update_gui)
         self.root.after(100, self.show_instruction_popup)
         self.root.after(200, self.start_identification_threads)
-
-        # Handle window close event
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def detect_serial_ports(self):
         ports = list(serial.tools.list_ports.comports())
         fed3_ports = []
         for port in ports:
-            # Check for VID and PID matching Adafruit Feather M0
+            # Check for VID and PID matching the device
             if port.vid == 0x239A and port.pid == 0x800B:
                 fed3_ports.append(port.device)
         return fed3_ports
 
     def setup_gui(self):
-        # Main frame to hold all widgets
         main_frame = tk.Frame(self.root)
         main_frame.pack(fill=tk.BOTH, expand=True)
 
-        # Frame for top section
         top_frame = tk.Frame(main_frame)
         top_frame.pack(pady=10)
 
@@ -175,11 +178,10 @@ class FED3MonitorApp:
         self.spreadsheet_entry.grid(column=1, row=2, columnspan=2, padx=5, pady=5, sticky=tk.W)
         tk.Button(top_frame, text="Browse Data Folder", command=self.browse_folder).grid(column=3, row=2, padx=5, pady=5)
 
-        # Start and Stop Buttons
+        # Start / Stop
         tk.Button(top_frame, text="START", bg="green", fg="white", font=("Cascadia Code", 12, "bold"), command=self.start_logging).grid(column=1, row=3, padx=5, pady=5)
         tk.Button(top_frame, text="STOP and SAVE", bg="slategrey", fg="white", font=("Cascadia Code", 12, "bold"), command=self.stop_logging).grid(column=2, row=3, padx=5, pady=5)
 
-        # Make ports_frame scrollable
         ports_frame_container = tk.Frame(main_frame)
         ports_frame_container.pack(pady=10, fill=tk.BOTH, expand=True)
 
@@ -191,13 +193,8 @@ class FED3MonitorApp:
 
         self.ports_canvas.configure(yscrollcommand=ports_scrollbar.set)
         self.ports_inner_frame = tk.Frame(self.ports_canvas)
-
-        # Bind the frame's change in size to update the scroll region
         self.ports_inner_frame.bind("<Configure>", lambda e: self.ports_canvas.configure(scrollregion=self.ports_canvas.bbox("all")))
-
         self.ports_canvas.create_window((0,0), window=self.ports_inner_frame, anchor="nw")
-
-        # Now use self.ports_inner_frame instead of self.ports_frame to hold the devices
         self.ports_frame = self.ports_inner_frame
 
         if self.serial_ports:
@@ -206,19 +203,15 @@ class FED3MonitorApp:
         else:
             tk.Label(self.ports_frame, text="Connect your FED3 and restart!", font=("Cascadia Code", 12), fg="red").pack()
 
-        # Recording Indicator Frame
         indicator_frame = tk.Frame(main_frame)
         indicator_frame.pack(pady=10)
-
         self.canvas = tk.Canvas(indicator_frame, width=100, height=100)
         self.canvas.pack()
         self.recording_circle = self.canvas.create_oval(25, 25, 75, 75, fill="Orange")
         self.recording_label = self.canvas.create_text(50, 90, text="Standby", font=("Cascadia Code", 12), fill="black")
 
-        # Log Section
         log_frame = tk.Frame(main_frame)
         log_frame.pack(pady=10, fill=tk.BOTH, expand=True)
-
         self.log_text = tk.Text(log_frame, height=10, width=100)
         self.log_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
@@ -226,31 +219,27 @@ class FED3MonitorApp:
         log_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.log_text.configure(yscrollcommand=log_scrollbar.set)
 
-        # Copyright Information
         bottom_frame = tk.Frame(self.root)
         bottom_frame.pack(side=tk.BOTTOM, fill=tk.X)
-
         tk.Label(bottom_frame, text="© 2024 McCutcheonLab | UiT | Norway", font=("Cascadia Code", 10), fg="royalblue").pack(pady=5)
         hyperlink_label = tk.Label(
             bottom_frame,
-            text= "Developed by Hamid Taghipourbibalan",
-            font= ("Cascadia Code", 8, "italic"),
+            text="Developed by Hamid Taghipourbibalan",
+            font=("Cascadia Code", 8, "italic"),
             cursor="hand2"
         )
         hyperlink_label.pack(pady=2)
-        hyperlink_label.bind("<Button-1>",lambda e: self.open_hyperlink("https://www.linkedin.com/in/hamid-taghipourbibalan-b7239088/"))
+        hyperlink_label.bind("<Button-1>", lambda e: self.open_hyperlink("https://www.linkedin.com/in/hamid-taghipourbibalan-b7239088/"))
 
-    def open_hyperlink(self, URL ):
-        import webbrowser
+    def open_hyperlink(self, URL):
         webbrowser.open_new(URL)
-        
+
     def show_instruction_popup(self):
-        messagebox.showinfo("Instructions", "Make a right poke or trigger the pellet sensor on each FED3 to find the port!")
-        messagebox.showwarning("Caution", "If you need to restart a FED3 during an experiment(e.g. after fixing a jam), we recommend doing it while the internet connection is on")
+        messagebox.showinfo("Instructions", "Make a poke or trigger the pellet sensor on each FED3 identify device number")
+        messagebox.showwarning("Caution", "If you need to restart a FED3 during an experiment(e.g. after fixing a jam), we recommend doing it while the internet connection is on. Moreover, restart and reconnect your FED3s one at a time")
 
     def initialize_port_widgets(self, port, idx=None):
         if port in self.port_widgets:
-            # Widgets already initialized
             return
 
         if idx is None:
@@ -263,7 +252,6 @@ class FED3MonitorApp:
         text_widget = tk.Text(frame, width=40, height=5)
         text_widget.grid(column=0, row=1, sticky=(tk.N, tk.S, tk.E, tk.W))
 
-        # Add the indicator canvas
         indicator_canvas = tk.Canvas(frame, width=20, height=20)
         indicator_canvas.grid(column=1, row=0, padx=5)
         indicator_circle = indicator_canvas.create_oval(5, 5, 15, 15, fill="gray")
@@ -274,9 +262,8 @@ class FED3MonitorApp:
             'indicator_canvas': indicator_canvas,
             'indicator_circle': indicator_circle
         }
-        self.port_queues[port] = queue.Queue()  # Initialize queue for each port
+        self.port_queues[port] = queue.Queue()
 
-        # Attempt to open serial port to check readiness
         try:
             ser = serial.Serial(port, 115200, timeout=1)
             ser.close()
@@ -292,20 +279,18 @@ class FED3MonitorApp:
         self.save_path = filedialog.askdirectory(title="Select Folder to Save Data")
 
     def start_identification_threads(self):
-        # Start identification threads for each port
         for port in list(self.serial_ports):
             self.start_identification_thread(port)
 
     def start_identification_thread(self, port):
         if port in self.identification_threads:
-            # Identification thread already running
             return
 
         stop_event = threading.Event()
         self.identification_stop_events[port] = stop_event
 
         def identification_with_delay():
-            time.sleep(1)  # Wait for 1 second before attempting to connect
+            time.sleep(1)
             self.identification_thread(port, stop_event)
 
         t = threading.Thread(target=identification_with_delay)
@@ -315,7 +300,6 @@ class FED3MonitorApp:
         self.log_queue.put(f"Started identification thread for {port}.")
 
     def stop_identification_threads(self):
-        # Stop identification threads
         for port, event in list(self.identification_stop_events.items()):
             event.set()
         for port, t in list(self.identification_threads.items()):
@@ -325,35 +309,35 @@ class FED3MonitorApp:
             del self.identification_stop_events[port]
 
     def identification_thread(self, port, stop_event):
-        # Avoid opening the port if it's already in use
         if port in self.port_threads:
             self.log_queue.put(f"Skipping identification for {port} as it is already in use.")
             return
-    
+
+        event_index = column_headers.index("Event") - 1
+        device_number_index = column_headers.index("Device_Number") - 1
+        device_number_found = None
+
         try:
             ser = serial.Serial(port, 115200, timeout=0.1)
-            # Get index of 'Event' column
-            event_index_in_headers = column_headers.index("Event")
-            event_index_in_data = event_index_in_headers - 1  # Adjust for timestamp
-    
             while not stop_event.is_set():
                 try:
                     data = ser.readline().decode('utf-8', errors='replace').strip()
                     if data:
-                        data_list = data.split(",")
-                        data_list = data_list[1:]  # Skip the first item if necessary
-                        if len(data_list) == len(column_headers) - 1:
-                            event_value = data_list[event_index_in_data].strip()
-                            if event_value in ["Right","Pellet"]:
-                                # Send message to GUI to trigger indicator
+                        data_list = data.split(",")[1:]  # Skip first item, as in original code
+                        if len(data_list) == len(column_headers)-1:
+                            event_value = data_list[event_index].strip()
+                            dn = data_list[device_number_index].strip()
+                            if event_value in ["Right","Left","Pellet","LeftWithPellet","RightWithPellet"]:
                                 self.port_queues[port].put("RIGHT_POKE")
+                            if dn:
+                                device_number_found = dn
+                                break
                 except serial.SerialException as e:
                     self.log_queue.put(f"Device on {port} disconnected during identification: {e}")
-                    break  # Exit the loop and end the thread
+                    break
                 except Exception as e:
                     self.log_queue.put(f"Error in identification thread for {port}: {e}")
         except serial.SerialException as e:
-            # Log only if port is truly inaccessible
             if "PermissionError" not in str(e):
                 self.log_queue.put(f"Could not open serial port {port} for identification: {e}")
         except Exception as e:
@@ -364,22 +348,33 @@ class FED3MonitorApp:
             except:
                 pass
 
+        if device_number_found:
+            self.log_queue.put(f"Identified device_number={device_number_found} on port={port}")
+            self.register_device_number(port, device_number_found)
+
+    def register_device_number(self, port, device_number):
+        self.port_to_device_number[port] = device_number
+        # If logging already started, start logging for this new device
+        if self.logging_active:
+            self.start_logging_for_port(port)
 
     def start_logging(self):
-        # Stop identification threads before starting logging
         self.stop_identification_threads()
-
-        # Reset stop event and threads list
         self.stop_event.clear()
-        self.threads = []
         self.logging_active = True
 
-        # Validate input fields
+        # Validate input
         if not self.json_path.get() or not self.spreadsheet_id.get():
             messagebox.showerror("Error", "Please provide the JSON file path and Spreadsheet ID.")
             return
 
-        # Set up Google Sheets client
+        # Clean up experimenter and experiment names
+        experimenter_name = re.sub(r'[<>:"/\\|?*]', '_', self.experimenter_name.get().strip().lower())
+        experiment_name = re.sub(r'[<>:"/\\|?*]', '_', self.experiment_name.get().strip().lower())
+        self.experimenter_name.set(experimenter_name)
+        self.experiment_name.set(experiment_name)
+
+        # Setup Sheets
         try:
             creds = Credentials.from_service_account_file(self.json_path.get(), scopes=SCOPE)
             self.gspread_client = gspread.authorize(creds)
@@ -388,16 +383,14 @@ class FED3MonitorApp:
             messagebox.showerror("Error", f"Failed to connect to Google Sheets: {e}")
             return
 
-        # Disable input fields
         self.disable_input_fields()
-
-        # Change recording indicator to ON
         self.canvas.itemconfig(self.recording_circle, fill="yellow")
         self.canvas.itemconfig(self.recording_label, text="Logging...", fill="black")
 
-        # Start serial threads with retry logic
         for port in list(self.serial_ports):
-            self.start_logging_for_port(port)
+            # Start logging if device number is known, otherwise wait until identified
+            if port in self.port_to_device_number:
+                self.start_logging_for_port(port)
 
     def disable_input_fields(self):
         self.experimenter_entry.config(state='disabled')
@@ -415,18 +408,30 @@ class FED3MonitorApp:
         if port in self.port_threads:
             return
 
+        # Must have device_number by now
+        if port not in self.port_to_device_number:
+            # If we don't have device number yet, we won't start logging now.
+            self.log_queue.put(f"Cannot start logging for {port}, no device_number known yet.")
+            return
+
+        device_number = self.port_to_device_number[port]
+        worksheet_name = f"Device_{device_number}"
+
         def attempt_connection(retries=self.retry_attempts, delay=self.retry_delay):
             for attempt in range(retries):
                 try:
                     ser = serial.Serial(port, 115200, timeout=0.1)
                     self.data_to_save[port] = []
-                    t = threading.Thread(target=self.read_from_port, args=(ser, f"Port_{port}", port))
+                    t = threading.Thread(
+                        target=self.read_from_port,
+                        args=(ser, worksheet_name, port)
+                    )
                     t.daemon = True
                     t.start()
                     self.port_threads[port] = t
                     if self.port_widgets[port]['status_label'].cget("text") != "Ready":
                         self.port_widgets[port]['status_label'].config(text="Ready", foreground="green")
-                    self.log_queue.put(f"Started logging from {port}.")
+                    self.log_queue.put(f"Started logging from {port} with sheet {worksheet_name}.")
                     return
                 except serial.SerialException as e:
                     self.log_queue.put(f"Attempt {attempt+1}: Error with port {port}: {e}")
@@ -440,25 +445,19 @@ class FED3MonitorApp:
         self.logging_active = False
         self.log_queue.put("Stopping logging...")
 
-        # Change recording indicator to OFF
         self.canvas.itemconfig(self.recording_circle, fill="red")
         self.canvas.itemconfig(self.recording_label, text="OFF", fill="red")
 
-        # Re-enable input fields
         self.enable_input_fields()
 
-        # Start a background thread to join threads and save data
         threading.Thread(target=self._join_threads_and_exit).start()
 
     def _join_threads_and_exit(self):
         for t in list(self.port_threads.values()):
             t.join()
         self.log_queue.put("Logging stopped.")
-
-        # Save data
         self.save_all_data()
         self.data_saved = True
-
         self.root.after(0, self._finalize_exit)
 
     def _finalize_exit(self):
@@ -479,7 +478,9 @@ class FED3MonitorApp:
         os.makedirs(experiment_folder, exist_ok=True)
 
         for port, data_rows in self.data_to_save.items():
-            filename_user = f"{experiment_folder}/{port}_{current_time}.csv"
+            device_number = self.port_to_device_number.get(port, "unknown")
+            safe_port_name = re.sub(r'[<>:"/\\|?*]', '_', os.path.basename(port))
+            filename_user = os.path.join(experiment_folder, f"{safe_port_name}_device_{device_number}_{current_time}.csv")
             try:
                 with open(filename_user, mode='w', newline='') as file:
                     writer = csv.writer(file)
@@ -490,7 +491,6 @@ class FED3MonitorApp:
                 self.log_queue.put(f"Failed to save data for {port}: {e}")
 
     def update_gui(self):
-        # Update port text widgets
         for port_identifier, q in list(self.port_queues.items()):
             try:
                 while True:
@@ -504,7 +504,6 @@ class FED3MonitorApp:
             except queue.Empty:
                 pass
 
-        # Update log messages
         try:
             while True:
                 log_message = self.log_queue.get_nowait()
@@ -513,7 +512,6 @@ class FED3MonitorApp:
         except queue.Empty:
             pass
 
-        # Periodically check device connections every 5 seconds
         current_time = time.time()
         if current_time - self.last_device_check_time >= 5:
             self.check_device_connections()
@@ -523,7 +521,6 @@ class FED3MonitorApp:
 
     def check_device_connections(self):
         current_ports = set(self.detect_serial_ports())
-        # Check for disconnected devices
         for port in list(self.serial_ports):
             if port not in current_ports:
                 self.serial_ports.remove(port)
@@ -538,87 +535,94 @@ class FED3MonitorApp:
                     del self.identification_threads[port]
                     del self.identification_stop_events[port]
 
-        # Check for newly connected devices
         for port in current_ports:
             if port not in self.serial_ports:
                 self.serial_ports.add(port)
                 idx = len(self.port_widgets)
                 self.initialize_port_widgets(port, idx)
                 self.start_identification_thread(port)
-                if self.logging_active:
+                if self.logging_active and port in self.port_to_device_number:
                     self.start_logging_for_port(port)
 
     def read_from_port(self, ser, worksheet_name, port_identifier):
+        sheet = None
+        cached_data = []
+        send_interval = 5
+        last_send_time = time.time()
+        jam_event_occurred = False
+
+        event_index = column_headers.index("Event") - 1
+        device_number_index = column_headers.index("Device_Number") - 1
+
+        device_number = self.port_to_device_number.get(port_identifier, "unknown")
+
         try:
             spreadsheet = self.gspread_client.open_by_key(self.spreadsheet_id.get())
             sheet = self.get_or_create_worksheet(spreadsheet, worksheet_name)
-            cached_data = []
-            send_interval = 5
-            last_send_time = time.time()
-            jam_event_occurred = False
-            device_number = None
+        except Exception as e:
+            self.log_queue.put(f"Failed to access sheet {worksheet_name} at start for {port_identifier}: {e}")
+            sheet = None
 
-            event_index_in_headers = column_headers.index("Event")
-            event_index_in_data = event_index_in_headers - 1
+        while not self.stop_event.is_set():
+            try:
+                data = ser.readline().decode('utf-8', errors='replace').strip()
+            except serial.SerialException as e:
+                self.log_queue.put(f"Device on {port_identifier} disconnected: {e}")
+                if port_identifier in self.port_widgets:
+                    self.port_widgets[port_identifier]['status_label'].config(text="Not Ready", foreground="red")
+                break
 
-            device_number_index_in_headers = column_headers.index("Device_Number")
-            device_number_index_in_data = device_number_index_in_headers - 1
-
-            while not self.stop_event.is_set():
-                try:
-                    data = ser.readline().decode('utf-8', errors='replace').strip()
-                except serial.SerialException as e:
-                    self.log_queue.put(f"Device on {port_identifier} disconnected: {e}")
-                    if port_identifier in self.port_widgets:
-                        self.port_widgets[port_identifier]['status_label'].config(text="Not Ready", foreground="red")
-                    break
-                if data:
-                    data_list = data.split(",")
-                    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
-                    data_list = data_list[1:]
-                    if len(data_list) == len(column_headers) - 1:
-                        row_data = [timestamp] + data_list
-                        cached_data.append(row_data)
+            if data:
+                data_list = data.split(",")[1:]
+                timestamp = datetime.datetime.now().strftime("%m/%d/%Y %H:%M:%S.%f")[:-3]
+                if len(data_list) == len(column_headers) - 1:
+                    event_value = data_list[event_index].strip()
+                    row_data = [timestamp] + data_list
+                    cached_data.append(row_data)
+                    if port_identifier in self.port_queues:
                         self.port_queues[port_identifier].put(f"Data logged: {data_list}")
-                        self.data_to_save[port_identifier].append(row_data)
+                    self.data_to_save.setdefault(port_identifier, []).append(row_data)
 
-                        device_number = data_list[device_number_index_in_data].strip()
+                    if event_value == "JAM":
+                        jam_event_occurred = True
 
-                        event_value = data_list[event_index_in_data].strip()
-                        if event_value == "JAM":
-                            jam_event_occurred = True
-
-                        if event_value in ["Right","Pellet"]:
+                    if event_value in ["Right","Pellet","Left","LeftWithPellet","RightWithPellet"]:
+                        if port_identifier in self.port_queues:
                             self.port_queues[port_identifier].put("RIGHT_POKE")
-                    else:
-                        self.log_queue.put(f"Warning: Data length mismatch on {port_identifier}")
+                else:
+                    self.log_queue.put(f"Warning: Data length mismatch on {port_identifier}")
 
-                current_time = time.time()
-                if cached_data and (current_time - last_send_time >= send_interval):
+            current_time = time.time()
+            if (current_time - last_send_time >= send_interval) and sheet:
+                if cached_data:
                     try:
                         sheet.append_rows(cached_data)
+                        self.log_queue.put(f"Appended {len(cached_data)} rows from {port_identifier} to Google Sheets.")
                         cached_data.clear()
-
-                        if jam_event_occurred:
-                            jam_row = [''] * len(column_headers)
-                            jam_row[0] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
-                            jam_row[event_index_in_headers] = "JAM"
-                            jam_row[device_number_index_in_headers] = device_number
-                            sheet.append_row(jam_row)
-                            self.log_queue.put(f"Additional JAM event logged for {port_identifier} due to prior outage.")
-                            jam_event_occurred = False
                     except Exception as e:
                         self.log_queue.put(f"Failed to send data to Google Sheets for {port_identifier}: {e}")
-                    last_send_time = current_time
-                time.sleep(0.01)
-        except Exception as e:
-            self.log_queue.put(f"Error reading from {ser.port}: {e}")
-        finally:
-            try:
-                ser.close()
-                self.log_queue.put(f"Closed serial port {ser.port}")
-            except:
-                pass
+
+                if jam_event_occurred:
+                    try:
+                        jam_row = [''] * len(column_headers)
+                        jam_row[0] = datetime.datetime.now().strftime("%m/%d/%Y %H:%M:%S.%f")[:-3]
+                        jam_row[column_headers.index("Event")] = "JAM"
+                        jam_row[column_headers.index("Device_Number")] = device_number
+                        sheet.append_row(jam_row)
+                        self.log_queue.put(f"JAM event logged for {port_identifier}")
+                        jam_event_occurred = False
+                    except Exception as e:
+                        self.log_queue.put(f"Failed to send JAM event to Google Sheets for {port_identifier}: {e}")
+
+                last_send_time = current_time
+
+            time.sleep(0.1)
+
+        try:
+            ser.close()
+        except:
+            pass
+        self.log_queue.put(f"Closed serial port {port_identifier}")
 
     def get_or_create_worksheet(self, spreadsheet, title):
         try:
@@ -629,6 +633,8 @@ class FED3MonitorApp:
             return sheet
 
     def trigger_indicator(self, port_identifier):
+        if port_identifier not in self.port_widgets:
+            return
         indicator_canvas = self.port_widgets[port_identifier]['indicator_canvas']
         indicator_circle = self.port_widgets[port_identifier]['indicator_circle']
         def blink(times):
@@ -654,7 +660,6 @@ class FED3MonitorApp:
             self.data_saved = True
         self.root.destroy()
 
-# Main execution
 if __name__ == "__main__":
     # Splash screen
     splash_root = tk.Tk()
@@ -666,10 +671,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = FED3MonitorApp(root)
     root.mainloop()
-
-
-# In[ ]:
-
-
-
 
