@@ -29,6 +29,8 @@
 ## Upgrade V7 (Dec 2024)
 **Device number is now identified when RTFED runs and sheets will be named based on device number.** 
 
+## Upgrade V8 (Dec 2024)
+**Dark mode toggle added to the GUI in addition to some more instructions and hints for users**
 
 # DOWNLOAD THE [RTFED_GUI.ZIP](https://github.com/Htbibalan/FED_RT/blob/main/source/) and run the RTFED(WINDOWS).exe from /dist.
 
