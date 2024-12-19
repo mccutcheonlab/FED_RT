@@ -78,7 +78,8 @@ class FED3 {
         void begin();
         void run();
         bool stopLogging = false;
-       
+       // Adding this line to declare the checkSerialCommands function to sync clocks based on windows time
+        void checkSerialCommands();
 
 
         

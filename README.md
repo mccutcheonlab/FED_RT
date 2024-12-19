@@ -32,7 +32,10 @@
 ## Upgrade V8 (Dec 2024)
 **Dark mode toggle added to the GUI in addition to some more instructions and hints for users**
 
-# DOWNLOAD THE [RTFED_GUI.ZIP](https://github.com/Htbibalan/FED_RT/blob/main/source/) and run the RTFED(WINDOWS_DARK).exe from /dist.
+## Upgrade V9 (Dec 2024)
+**Sync FED3 Time: A new feature added to the GUI which synchronizes the clock of your FED3 units based on your host computer. This is especially good for people who are having issues with the coin battery of clocks or need very accurate Timed Feeding across their FED3 devices.**
+
+# DOWNLOAD THE [RTFED_GUI.ZIP](https://github.com/Htbibalan/FED_RT/blob/main/source/) and run the RTFED(WINDOWS_DARK)_SYNC.exe from /dist.
 
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
@@ -64,7 +67,7 @@ Optional: You can also flash your board with a new "ClassicFED3.ino" file availa
 
 # Hint
 ![RTFED_FLASHED](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_DISPLAY.jpg)
-To make sure you have properly flashed your FED3 with RTFED library, check the screen of your FED3 unit, it should display RTFED to the left of the battery icon.
+To make sure you have properly flashed your FED3 with RTFED library, check the screen of your FED3 unit, it should display RTS to the left of the battery icon.
 
 
 # Step 0: Create a Google spreadsheet in your Google Drive, we will get back to it later
