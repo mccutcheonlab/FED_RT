@@ -39,11 +39,15 @@
 ## Upgrade V9 (Dec 2024)
 **Sync FED3 Time: A new feature added to the GUI which synchronizes the clock of your FED3 units based on your host computer. This is especially good for people who are having issues with the coin battery of clocks or need very accurate Timed Feeding across their FED3 devices.**
 
-# DOWNLOAD THE [RTFED_GUI.ZIP](https://github.com/Htbibalan/FED_RT/blob/main/source/) and run the RTFED(WINDOWS_DARK)_SYNC.exe from /dist.
+## Upgrade V10 (March 2025)
+**Device Identification function added and RTS library updated to listen to a command to trigger poke when the user sends a poke request. This feature helps the user easily identify many devices once all the FED units are mounted and cages are ready to go online!**
+
+# DOWNLOAD THE [RTFED_GUI.ZIP](https://github.com/Htbibalan/FED_RT/blob/main/source/) and run the RTFED(WINDOWS_DARK)_TRIGGER.exe from /dist.
+## If you have IT Security issues to run the .exe file, you can run the code under the hood by running the RTFED(WINDOWS_DARK)_TRIGGER.py file from ../scripts/ folder
 
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
-The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/RTFED).
+The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/RTS).
 
 ***How to find my Arduino Library folder?***
 
