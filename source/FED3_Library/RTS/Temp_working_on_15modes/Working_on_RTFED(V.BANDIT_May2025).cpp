@@ -1102,31 +1102,42 @@ void FED3::CreateDataFile () {
   }
 }
 
-//Write the header to the datafile
 void FED3::writeHeader() {
-  digitalWrite (MOTOR_ENABLE, LOW);  //Disable motor driver and neopixel
-  // Write data header to file of microSD card
+  digitalWrite(MOTOR_ENABLE, LOW);  // Disable motor driver and neopixel
 
-
-  if (tempSensor == false){
-    logfile.println("MM:DD:YYYY hh:mm:ss,Library_Version,Session_type,Device_Number,Battery_Voltage,Motor_Turns,FR,Event,Active_Poke,Left_Poke_Count,Right_Poke_Count,Pellet_Count,Block_Pellet_Count,Retrieval_Time,InterPelletInterval,Poke_Time");
-  }
-
-
-  if (tempSensor == true){
-    logfile.println("MM:DD:YYYY hh:mm:ss,Temp,Humidity,Library_Version,Session_type,Device_Number,Battery_Voltage,Motor_Turns,FR,Event,Active_Poke,Left_Poke_Count,Right_Poke_Count,Pellet_Count,Block_Pellet_Count,Retrieval_Time,InterPelletInterval,Poke_Time");
-  }
-
-  if (sessiontype == "Bandit" || sessiontype == "DetBandit" || sessiontype == "ProbRev") {
-    logfile.println(",PelletsToSwitch,Prob_left,Prob_right,High_prob_poke");
+  // 1) Build the “base” header
+  String header;
+  if (! tempSensor) {
+    header = "MM:DD:YYYY hh:mm:ss,"
+             "Library_Version,Session_type,Device_Number,"
+             "Battery_Voltage,Motor_Turns,FR,Event,Active_Poke,"
+             "Left_Poke_Count,Right_Poke_Count,Pellet_Count,"
+             "Block_Pellet_Count,Retrieval_Time,"
+             "InterPelletInterval,Poke_Time";
   } else {
-    logfile.println();  // close line if no bandit fields
+    header = "MM:DD:YYYY hh:mm:ss,Temp,Humidity,"
+             "Library_Version,Session_type,Device_Number,"
+             "Battery_Voltage,Motor_Turns,FR,Event,Active_Poke,"
+             "Left_Poke_Count,Right_Poke_Count,Pellet_Count,"
+             "Block_Pellet_Count,Retrieval_Time,"
+             "InterPelletInterval,Poke_Time";
   }
-   
 
+  // 2) Append either the 4 bandit columns, or 4 blanks
+  if (sessiontype == "Bandit8020"
+   || sessiontype == "DetBandit"
+   || sessiontype == "ProbRev")
+  {
+    header += ",PelletsOrTrialToSwitch,Prob_left,Prob_right,High_prob_poke";
+  } else {
+    header += ",,,,";   // four empty placeholders
+  }
 
+  // 3) Write it all out in one go
+  logfile.println(header);
   logfile.close();
 }
+
 
 //write a configfile (this contains the FED device number)
 void FED3::writeConfigFile() {
@@ -1287,20 +1298,38 @@ void FED3::logdata() {
 
 
     // Append Bandit-specific fields if relevant
-    if (sessiontype == "Bandit" || sessiontype == "DetBandit" || sessiontype == "ProbRev") {
+    // if (sessiontype == "Bandit8020" || sessiontype == "DetBandit" || sessiontype == "ProbRev") {
+    //   logData += "," + String(pelletsToSwitch);
+    //   logData += "," + String(prob_left);
+    //   logData += "," + String(prob_right);
+    //   // logData += "," + (prob_left > prob_right ? "Left" : "Right");
+    //   logData += "," + String(prob_left > prob_right ? "Left" : "Right");
+
+    // }
+
+    if (sessiontype == "Bandit8020" || sessiontype == "DetBandit") {
+      // pellet‐based counter
       logData += "," + String(pelletsToSwitch);
       logData += "," + String(prob_left);
       logData += "," + String(prob_right);
-      // logData += "," + (prob_left > prob_right ? "Left" : "Right");
       logData += "," + String(prob_left > prob_right ? "Left" : "Right");
-
+    }
+    else if (sessiontype == "ProbRev") {
+      // trial‐based counter
+      logData += "," + String(trialsToSwitch);
+      logData += "," + String(prob_left);
+      logData += "," + String(prob_right);
+      logData += "," + String(activePoke == 1 ? "Left" : "Right");
+    }
+    else {
+      // **PAD** with four empty fields in every non‐bandit mode
+      logData += ",,,,";  
     }
 
-    // Print the log data to the Serial Monitor
+    // now *every* logData has exactly 4 extra commas → fixed length
     Serial.println(logData);
-
-    // Write the log data to the SD card
     logfile.println(logData);
+
 
     /////////////////////////////////
     // Flush and close logfile
@@ -1874,10 +1903,10 @@ void FED3::SelectMode() {
     if (FEDmode == 9) display.print("Self-Stim");
     if (FEDmode == 10) display.print("Self-Stim (Rev)");
     if (FEDmode == 11) display.print("Timed feeding");
-    if (FEDmode == 12) display.print("ClosedEconomy_PR1");
+    if (FEDmode == 12) display.print("ClosedEconomy_PR2");
     if (FEDmode == 13) display.print("Probabilistic Reversal");
-    if (FEDmode == 14) display.print("Bandit Task");
-    if (FEDmode == 15) display.print("Deterministic Bandit");
+    if (FEDmode == 14) display.print("Bandit8020");
+    if (FEDmode == 15) display.print("DetBandit");
 
     
     display.refresh();

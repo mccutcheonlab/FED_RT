@@ -22,7 +22,7 @@ This device includes hardware and code from:
   Copyright (c) 2019, 2020 Lex Kravitz
 */
 
-#define VER "RTS525"
+#define VER "RTT525"
 
 #ifndef FED3_H
 #define FED3_H
@@ -202,9 +202,10 @@ class FED3 {
         int FR = 1;
         bool DisplayPokes = true;
         bool DisplayTimed = false;
-        int pelletsToSwitch = 30;
+        int pelletsToSwitch = 20;
         int prob_left = 80;
         int prob_right = 20;
+        int trialsToSwitch = 0;
         bool allowBlockRepeat = false;
         byte FEDmode = 1;
         byte previousFEDmode = FEDmode;
