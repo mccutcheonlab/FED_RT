@@ -1,5 +1,5 @@
 # REALTIME_REMOTE_FED(RTFED)
-
+# Update in progress############95%
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/diagram.png)
 
 [![Watch the video](https://img.youtube.com/vi/WifGA4YFR3c/0.jpg)](https://www.youtube.com/watch?v=WifGA4YFR3c)
@@ -8,7 +8,7 @@
 
 # What is RTFED? ⚠️ (Developed for Windows operating system)
 
-![RTFED_HOME](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/GUI_HOME.jpg)
+![RTFED_HOME](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_GUI_UPDATED.png)
 
 
 **RTFED** is a software that enables you to collect data from [FED3](https://github.com/KravitzLabDevices/FED3/wiki) remotely and online. RTFED stores data locally and also sends it to a Google spreadsheet and this process does not require any additional hardware change to FED3 units.Here I share a walkthrough of the process of setting up RTFED and incorporating a Google Apps Script with your spreadsheet to send you an alarm email in case your FED3 fails to deliver a pellet (e.g. jamming happens).
