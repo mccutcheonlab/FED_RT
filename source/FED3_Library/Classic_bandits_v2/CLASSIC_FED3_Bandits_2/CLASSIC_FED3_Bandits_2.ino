@@ -4,8 +4,22 @@
 */
 
 #include <FED3.h>
+
 String sketch = "Classic_with_ProbRev";
 FED3 fed3(sketch);
+
+//
+// Two-tone “low-probability” beep
+void wrongBeep() {
+  // 700 Hz for 75 ms
+  fed3.Tone(700, 75);
+  delay(75);
+  // 500 Hz for 75 ms
+  fed3.Tone(500, 75);
+  delay(75);
+}
+// 
+
 
 
 
@@ -382,7 +396,7 @@ else if (fed3.FEDmode == 14) {
                         + "  R=" + String(fed3.prob_right));
       }
     } else {
-      fed3.Click();
+      wrongBeep();
     }
     fed3.BlockPelletCount = pellet_counter;
   }
@@ -405,7 +419,7 @@ else if (fed3.FEDmode == 14) {
                         + "  R=" + String(fed3.prob_right));
       }
     } else {
-      fed3.Click();
+      wrongBeep();
     }
     fed3.BlockPelletCount = pellet_counter;
   }
@@ -443,7 +457,7 @@ else if (fed3.FEDmode == 15) {
       fed3.ConditionedStimulus(); fed3.Feed();
       pellet_counter_det++;
     } else {
-      fed3.Click();
+      wrongBeep();
     }
   }
 
@@ -454,7 +468,7 @@ else if (fed3.FEDmode == 15) {
       fed3.ConditionedStimulus(); fed3.Feed();
       pellet_counter_det++;
     } else {
-      fed3.Click();
+      wrongBeep();
     }
   }
 }
