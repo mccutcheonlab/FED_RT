@@ -2,16 +2,17 @@
 # Update in progress############95%
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/diagram.png)
 
-[![Watch the video](https://img.youtube.com/vi/WifGA4YFR3c/0.jpg)](https://www.youtube.com/watch?v=WifGA4YFR3c)
+<!-- [![Watch the video](https://img.youtube.com/vi/WifGA4YFR3c/0.jpg)](https://www.youtube.com/watch?v=WifGA4YFR3c)
 
-**Click on the thumbnail above to watch a tutorial of RTFED**
+**Click on the thumbnail above to watch a tutorial of RTFED** -->
 
 # What is RTFED? ⚠️ (Developed for Windows operating system)
 
 ![RTFED_HOME](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_GUI_UPDATED.png)
 
 
-**RTFED** is a software that enables you to collect data from [FED3](https://github.com/KravitzLabDevices/FED3/wiki) remotely and online. RTFED stores data locally and also sends it to a Google spreadsheet and this process does not require any additional hardware change to FED3 units.Here I share a walkthrough of the process of setting up RTFED and incorporating a Google Apps Script with your spreadsheet to send you an alarm email in case your FED3 fails to deliver a pellet (e.g. jamming happens).
+**RTFED** is a software that enables you to collect data from [FED3](https://github.com/KravitzLabDevices/FED3/wiki) remotely and online. RTFED stores data locally and also sends it to a Google spreadsheet and this process does not require any additional hardware change to FED3 units. With RTFED you can synchronize the time on all of your FEDs and set the modes on each of your FED3 devices via your computer instead of poking. 
+Here I share a walkthrough of the process of setting up RTFED and incorporating a Google Apps Script with your spreadsheet to send you an alarm email in case your FED3 fails to deliver a pellet (e.g. jamming happens).
 
 *Since you need to have your FED3 connected to a computer via a USB cable all the time, this solution works best for labs who do not place the FED3 inside the mouse cage or can protect the FED3 and cable from the mice.*
 
@@ -42,12 +43,18 @@
 ## Upgrade V10 (March 2025)
 **Device Identification function added and RTS library updated to listen to a command to trigger poke when the user sends a poke request. This feature helps the user easily identify many devices once all the FED units are mounted and cages are ready to go online!**
 
-# DOWNLOAD THE [RTFED_GUI.ZIP](https://github.com/Htbibalan/FED_RT/blob/main/source/) and run the RTFED(WINDOWS_DARK)_TRIGGER.exe from /dist.
-## If you have IT Security issues to run the .exe file, you can run the code under the hood by running the RTFED(WINDOWS_DARK)_TRIGGER.py file from ../scripts/ folder
+## Upgrade V11 (April_May 2025)
+**Now the users can select modes directly from their computer, once the FEDs are plugged and identified by RTFED, you can choose which FED (or all FEDs) you want to change the modes on and RTFED handles it by restarting the FEDs with the new mode.**
+**Additionally, new modes are included in the .ino file, that includes Deterministic Bandit, Bandit (80/20), ProbReversal and ClosedEconomy_PR2** 
+
+# DOWNLOAD THE [RTFED_GUI.ZIP](https://github.com/Htbibalan/FED_RT/blob/main/source/) and run the RTFED.exe from /dist.
+## The first time you run the RTFED.exe file you might face a security error,  to fix it, right click on the RTFED icon and go to properties, under the General tab you will find an Unblock option.
+![EXE](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/exe_security.png)
+## If your IT Security issues persist, you can run the code under the hood by running the RTFED.py or the notebook RTFED.ipynb file from ../scripts/ folder, but you need to make sure that you have installed the packages on your environment, to find more information, please look at the Extra section at the bottom of this page.
 
 # Step by step instructions for setting up RTFED
 ## Step -1: Update FED3 library with NEW FILES and flash the board
-The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/RTS).
+The process of  flashing FED3 is explained in detail on the original [FED3 repository](https://github.com/KravitzLabDevices/FED3_library), the only process you need to follow is to go to your Arduino library folder, find the FED3 library and in folder **/src** replace the FED3.h and FED3.cpp files with files provided here [RTFED_Library](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/RTT).
 
 ***How to find my Arduino Library folder?***
 
@@ -65,9 +72,10 @@ After replacing the files,  connect your FED3 to your computer(**Not via the cha
 
 **Note**: You should remove the initial files including FED3.h and FED3.cpp and replace them with update files, you can save those files in a safe place in case you want to revert the changes later*
 
-Optional: You can also flash your board with a new "ClassicFED3.ino" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/ClassicFED3), this file includes Closed_economy mode in addition to previous modes included in original ClassicFED3.
+# You are recommended to also flash your board with a new "Classic_FED3_Bandits.ino" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/RTFED/Classic_FED3_Bandits), this file includes Closed_economy_PR2, DetBandit, Bandit8020 and ProbReversal modes in addition to previous modes included in original ClassicFED3.
 
-**IMPORTANT** notes: There are some changes in this new update of library
+**IMPORTANT Notes** 
+There are some changes in this new update of library
 1) When the device fails to deliver a pellet, it will just try 5 times in "Jam clearing" state and then stops clearing the jam  
 2) As soon as the JAM is logged, the device is frozen and does not log any new activity, however it will just display the time when jamming happened on the screen.
 3) The baud rate is set at 115200 to enable FED3 to log events with millisecond resolution 
@@ -75,7 +83,7 @@ Optional: You can also flash your board with a new "ClassicFED3.ino" file availa
 
 # Hint
 ![RTFED_FLASHED](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_DISPLAY.jpg)
-To make sure you have properly flashed your FED3 with RTFED library, check the screen of your FED3 unit, it should display RTS to the left of the battery icon.
+To make sure you have properly flashed your FED3 with RTFED library, check the screen of your FED3 unit, it should display RTT to the left of the battery icon.
 
 
 # Step 0: Create a Google spreadsheet in your Google Drive, we will get back to it later
@@ -144,7 +152,7 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
 2) In  the JSON file you will find the "client email", copy that email address(the quotation mark is not needed)
 3) Go to your Google spreadsheet on your Google drive , click on Share icon on the far right of the screen, Paste the email address from the JSON file, set General Access to "Anyone with the link" and click done, you can edit different levels of access for other people as well (For example View only or Editor).
 
-# Step 5: Setup the JAM Alarm system(email notification for events)
+# Step 5: Setup the Alarm system(email notification for events)
 1) While in your Google Spreadsheet, from menu Extensions, select Apps Script and clear any existing code.
  ![App_script](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/app_script.png)
 
@@ -152,57 +160,81 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
 2) Paste the code below, make necessary changes described below in **Critical sub-step** and then press the **"save"** icon. 
 
 ### Critical sub-step: 
-**Afer flashing your FED3 using the .cpp and .h files provided in this repository, you will have two extra columns in your FED files for Humidity and Temperature, those columns will remain blank if you do not have those sensors installed on your FED units, however this will not interfere with your data logging**
+**After flashing your FED3 using the .cpp and .h files provided in this repository, you will have two extra columns in your FED files for Humidity and Temperature, those columns will remain blank if you do not have those sensors installed on your FED units, however this will not interfere with your data logging, just make sure correct column number are passed to the Apps Script code**
 
- **Also to receive a JAM alert, you need to add your own email address to the last snipped of the code where it says: var emailAddress**
+ **Also to receive a email alerts for JAM and Pellets Consumed, you need to add your own email address to the last snippet of the code where it indicates: var emailAddress. You can also change the variable ***var pelletThreshold*** to set a threshold in case you want to receive emails when certain amounts of pellets are consumed by mice**
 
 
 
-            function checkForJam() {
-            var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-            var sheets = spreadsheet.getSheets(); // Get all sheets in the spreadsheet
-            var eventColumn = 10; // Column J where the "Event" data is located
-            var deviceColumn = 6; // Column F where the device number is located
-            var timestampColumn = 1; // Column A where the timestamp is located
+        function checkForJam() {
+        var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+        var sheets = spreadsheet.getSheets(); // Get all sheets in the spreadsheet
+        var eventColumn = 10; // Column J where the "Event" data is located
+        var deviceColumn = 6; // Column F where the device number is located
+        var timestampColumn = 1; // Column A where the timestamp is located
+        var pelletCountColumn = 14; // Column N where the Pellet_Count data is located
+        var pelletThreshold = 3; // Threshold for Pellet_Count
 
-            var scriptProperties = PropertiesService.getScriptProperties();
+        var scriptProperties = PropertiesService.getScriptProperties();
 
-            for (var i = 0; i < sheets.length; i++) {
-                var sheet = sheets[i];
-                var lastRow = sheet.getLastRow();
-                
-                if (lastRow > 0) { // Check if the sheet has any data
-                var event = sheet.getRange(lastRow, eventColumn).getValue();
-                var deviceNumber = sheet.getRange(lastRow, deviceColumn).getValue();
-                var timestamp = sheet.getRange(lastRow, timestampColumn).getValue();
-                
-                // Create a unique key for this event
-                var eventKey = sheet.getName() + "_" + deviceNumber + "_" + timestamp;
+        for (var i = 0; i < sheets.length; i++) {
+            var sheet = sheets[i];
+            var lastRow = sheet.getLastRow();
+            
+            if (lastRow > 0) { // Check if the sheet has any data
+            var event = sheet.getRange(lastRow, eventColumn).getValue();
+            var deviceNumber = sheet.getRange(lastRow, deviceColumn).getValue();
+            var timestamp = sheet.getRange(lastRow, timestampColumn).getValue();
+            var pelletCount = sheet.getRange(lastRow, pelletCountColumn).getValue();
+            
+            // Create unique keys for JAM and Pellet Count alerts
+            var jamEventKey = "JAM_" + sheet.getName() + "_" + deviceNumber + "_" + timestamp;
+            var pelletEventKey = "PELLET_" + sheet.getName() + "_" + deviceNumber;
 
-                // Check if this event has already been processed
-                var lastProcessedEvent = scriptProperties.getProperty(eventKey);
-                
-                if (event === "JAM" && lastProcessedEvent !== eventKey) {
-                    sendJamAlert(sheet.getName(), lastRow, event, deviceNumber);
-                    scriptProperties.setProperty(eventKey, eventKey); // Store the event as processed
-                }
-                }
+            // Check and send JAM alert
+            var lastProcessedJamEvent = scriptProperties.getProperty(jamEventKey);
+            if (event === "JAM" && lastProcessedJamEvent !== jamEventKey) {
+                sendJamAlert(sheet.getName(), lastRow, event, deviceNumber);
+                scriptProperties.setProperty(jamEventKey, jamEventKey); // Mark JAM event as processed
+            }
+
+            // Check and send Pellet Count alert
+            var lastProcessedPelletEvent = scriptProperties.getProperty(pelletEventKey);
+            if (pelletCount >= pelletThreshold && lastProcessedPelletEvent !== pelletEventKey) {
+                sendPelletAlert(sheet.getName(), deviceNumber, pelletCount);
+                scriptProperties.setProperty(pelletEventKey, pelletEventKey); // Mark Pellet Count event as processed
             }
             }
+        }
+        }
 
-            function sendJamAlert(sheetName, row, event, deviceNumber) {
-            var emailAddress = "Add_your_email_address"; // Replace with your email address
-            var subject = "FED3 Device Alert: JAM Detected";
-            var message = "A FED unit has failed.\n\n"
-                        + "Details:\n"
-                        + "Sheet: " + sheetName + "\n"
-                        + "Row: " + row + "\n"
-                        + "Device Number: " + deviceNumber + "\n"
-                        + "Event: " + event + "\n"
-                        + "Please go and check your device.";
+        function sendJamAlert(sheetName, row, event, deviceNumber) {
+        var emailAddress = "Add_your_email_address"; // Replace with your email address
+        var subject = "FED3 Device Alert: JAM Detected";
+        var message = "A FED unit has failed.\n\n"
+                    + "Details:\n"
+                    + "Sheet: " + sheetName + "\n"
+                    + "Row: " + row + "\n"
+                    + "Device Number: " + deviceNumber + "\n"
+                    + "Event: " + event + "\n"
+                    + "Please go and check your device.";
+        
+        MailApp.sendEmail(emailAddress, subject, message);
+        }
 
-            MailApp.sendEmail(emailAddress, subject, message);
-            }
+        function sendPelletAlert(sheetName, deviceNumber, pelletCount) {
+        var emailAddress = "Add_your_email_address"; // Replace with your email address
+        var subject = "FED3 Device Alert: Pellet Threshold Reached";
+        var message = "A FED unit has reached the pellet count threshold.\n\n"
+                    + "Details:\n"
+                    + "Sheet: " + sheetName + "\n"
+                    + "Device Number: " + deviceNumber + "\n"
+                    + "Pellet Count: " + pelletCount + "\n"
+                    + "Please review the data or refill pellets as needed.";
+        
+        MailApp.sendEmail(emailAddress, subject, message);
+        }
+
 
  ![Apps_script_email_address](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Apps_script_email.png)
  *As shown in the image, just change the email address in the "var emailAdress" and leave the emailAddress parameter in the function unchanged*
