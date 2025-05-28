@@ -1,5 +1,5 @@
 # REALTIME_REMOTE_FED(RTFED)
-# Update in progress############95%
+
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/diagram.png)
 
 <!-- [![Watch the video](https://img.youtube.com/vi/WifGA4YFR3c/0.jpg)](https://www.youtube.com/watch?v=WifGA4YFR3c)
@@ -72,7 +72,7 @@ After replacing the files,  connect your FED3 to your computer(**Not via the cha
 
 **Note**: You should remove the initial files including FED3.h and FED3.cpp and replace them with update files, you can save those files in a safe place in case you want to revert the changes later*
 
-# You are recommended to also flash your board with a new "Classic_FED3_Bandits.ino" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/RTFED/Classic_FED3_Bandits), this file includes Closed_economy_PR2, DetBandit, Bandit8020 and ProbReversal modes in addition to previous modes included in original ClassicFED3.
+# You are recommended to also flash your board with a new "Classic_FED3_Bandits.ino" file available [here](https://github.com/Htbibalan/FED_RT/tree/main/source/FED3_Library/RTFED/), this file includes Closed_economy_PR2, DetBandit, Bandit8020 and ProbReversal modes in addition to previous modes included in original ClassicFED3.
 
 **IMPORTANT Notes** 
 There are some changes in this new update of library
