@@ -1,11 +1,11 @@
-# REALTIME_REMOTE_FED(RTFED)
+# REALTIME and REMOTE FED3(RTFED)
 
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/diagram.png)
 
 <!-- [![Watch the video](https://img.youtube.com/vi/WifGA4YFR3c/0.jpg)](https://www.youtube.com/watch?v=WifGA4YFR3c)
 
 **Click on the thumbnail above to watch a tutorial of RTFED** -->
-
+# This branch (main) of the repository contains all the information you need to run the RTFED(BASIC) on Windows for online and remote data collection from FED3 devices, if you prefer to use the full-featured RTFED on Raspberry Pi, please visit the other branch [RTFEDPi](https://github.com/mccutcheonlab/FED_RT/tree/RTFEDPi).
 # What is RTFED? 
 
 ![RTFED_HOME](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_GUI_UPDATED.png)
