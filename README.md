@@ -1,44 +1,37 @@
+
+# Under construction👷‍♂️🚧
+
+
 # RTFEDPi
 
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/Cover.png)
 
 
 
-* RTFEDPi is the Raspberry Pi variant of the classic ([RTFED](https://github.com/mccutcheonlab/FED_RT/tree/main)) and  is an open-source versatile tool for home-cage monitoring of behaviour and fiber photometry recording in mice. The RTFEDPi comes with 3 separate GUIs including RTFED(PiOS), RTFED(PiCAM) and RTFED(PiTTL). This system is developed as a home-cage setup to incorporate [FED3](https://github.com/KravitzLabDevices/FED3/wiki) units with TDT [RZ10](https://www.tdt.com/docs/hardware/rz10-lux-integrated-processor/) photometry processor fro TTL-locked brain recording or to couple with USB cameras to capture event-triggered videos of behaviour.
+* RTFEDPi is the Raspberry Pi variant of the classic ([RTFED](https://github.com/mccutcheonlab/FED_RT/tree/main)) and  is an open-source versatile tool for home-cage monitoring of behaviour and fiber photometry recording in mice. The RTFEDPi comes with 3 separate GUIs including RTFED(PiOS), RTFED(PiCAM) and RTFED(PiTTL). This system is developed as a home-cage setup to incorporate [FED3](https://github.com/KravitzLabDevices/FED3/wiki) units with TDT [RZ10](https://www.tdt.com/docs/hardware/rz10-lux-integrated-processor/) photometry processor for TTL-locked brain recording or to couple with USB cameras to capture event-triggered videos of behaviour.
+
+
+# RTFED(PiOS)
+RTFED(PiOS) can be used to remotely monitor feeding behaviour and other interactions made by mice on FED3, the data is automatically transferred to a Google spreadsheet where you can view it or define alarm notification using the Google Apps Scripts. Using the RTFEDPiOS you can also change the Mode of your FED3s without the hassle of poking one by one! However, if you are just aiming for monitoring feeding behaviour, we recommend using the basic([RTFED](https://github.com/mccutcheonlab/FED_RT/tree/main)) on Windows. 
+![RTFED_PiOS](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/RTFED_Pi.png)
+
+
+# RTFED(PiCAM)
+RTFED(PiCAM) is an additional feature to the basic RTFED where you can enhance your behavioural studies by having event-triggered video recording. Primarily the RTFED(PiCAM) can record videos of mice using common USB cameras after taking Pellets, making Left or Right pokes or a combination of All of these events. Videos are limited to 30 sec length to capture only relevant behaviours while saving storage space, in this configuration, e.g. after taking a pellet, the GUI records the behaviour for 30 sec, if another pellet is taken within this 30 sec, it keeps recording for an extra 30 sec until no more pellet is taken.
+![RTFED_PiCAM](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/RTFED(PiCAM).png)
+
+# RTFED(PiTTL)
+The TTL station of RTFED logs behavioural events made on FED3 devices and transmit them to the TDT RZ10 processors as TTL pulses. This features enables you to study event-locked signals in your experiments. However the PiTTL version does not send data online to reduce any processing load that might delay the rapid TTL puls transmission.
+
+![RTFED_PiTTL](https://github.com/Htbibalan/HOME_PHOTOMETRY/blob/main/source/RTFED(PiTTL).png)
+
+
+🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
 
 
 
 
-## Upgrade V2 (NOV 2024):
-**RTFED now handles interruptions in your internet connection by caching the data on RAM and periodically checking the connection**
 
-## Upgrade V3 (Dec 2024)
-**RTFED now comes with a GUI (zip file in /source), dynamically detects FED3 devices connected to your computer. Plug and Play!** Just setup your Google spreadsheet and get the JSON file and connect your FED3s and run your experiment.
-
-## Upgrade V4 (Dec 2024) 
-**RTFED has port indicator for each FED3 device connected to it, in case you have many FED3s connected and can not find which port receives data from which FED3, you can make right poke to see a tiny indicator blinking next to the active port**
-
-## Upgrade V5 ( Dec 2024)
-**RTFED handles reconnecting FED3 devices during a running experiment, e.g. you can switch off a FED to fix jamming and then reconnect it and RTFED keeps logging the data from the device.**
-
-## Upgrade V6 (Dec 2024)
-**RTFED GUI handles multiple FED3 units better than before. Some issues are also fixed for FR vs Free Feeding modes.**
-
-## Upgrade V7 (Dec 2024)
-**Device number is now identified when RTFED runs and sheets will be named based on device number.** 
-
-## Upgrade V8 (Dec 2024)
-**Dark mode toggle added to the GUI in addition to some more instructions and hints for users**
-
-## Upgrade V9 (Dec 2024)
-**Sync FED3 Time: A new feature added to the GUI which synchronizes the clock of your FED3 units based on your host computer. This is especially good for people who are having issues with the coin battery of clocks or need very accurate Timed Feeding across their FED3 devices.**
-
-## Upgrade V10 (March 2025)
-**Device Identification function added and RTS library updated to listen to a command to trigger poke when the user sends a poke request. This feature helps the user easily identify many devices once all the FED units are mounted and cages are ready to go online!**
-
-## Upgrade V11 (April_May 2025)
-**Now the users can select modes directly from their computer, once the FEDs are plugged and identified by RTFED, you can choose which FED (or all FEDs) you want to change the modes on and RTFED handles it by restarting the FEDs with the new mode.**
-**Additionally, new modes are included in the .ino file, that includes Deterministic Bandit, Bandit (80/20), ProbReversal and ClosedEconomy_PR2** 
 
 # DOWNLOAD THE [RTFED_GUI.ZIP](https://github.com/Htbibalan/FED_RT/blob/main/source/) and run the RTFED.exe from /dist.
 ## The first time you run the RTFED.exe file you might face a security error,  to fix it, right click on the RTFED icon and go to properties, under the General tab you will find an Unblock option.
