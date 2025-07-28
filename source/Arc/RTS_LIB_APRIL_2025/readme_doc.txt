@@ -1,1 +1,0 @@
-note to self: This lib can be used with FEDs connected to RbPi TTL station and PiCAM

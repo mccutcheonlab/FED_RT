@@ -1,6 +1,8 @@
 
 # Under construction👷‍♂️🚧⚠️
-![RTFED_HOME_CAGE](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/20250424_125536(1).gif)*Mice in a contact-housed setting plugged into the photometry system and being recorded using the RTFED(PiTTL) module and FED3 devices.*
+![RTFED_HOME_CAGE](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/20250424_125536(1).gif)
+
+*Mice in a contact-housed setting plugged into the photometry system and being recorded using the RTFED(PiTTL) module and FED3 devices.*
 
 # ❓ What is RTFEDPi?
 
@@ -35,7 +37,7 @@
 # 🛒 Shopping list
 ##### The list of items you need to purchase to run RTFEDPi is available at this ([LINK](https://github.com/mccutcheonlab/FED_RT/blob/RTFEDPi/source/RTFED_SHOPPING_LIST.pdf)) , you can download the PDF file and by clicking on each component, you will access a suggested link to an online store.
 
-1️⃣2️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣🔟
+
 # 🚀How to use RTFED on a Raspberry Pi?
 #### 0️⃣Initial setups:
 ##### To use the GUIs included on the RTFEDPi, first you need to follow most of the instructions explained on our main repository ([RTFED](https://github.com/mccutcheonlab/FED_RT/tree/main)), that includes updating your FED3 devices with RTFED library;  if you need to use the PiCAM system or the Basic RTFED, you will need to also follow the instructions to make a Google project and the other settings on a Google spreadsheet, otherwise, to use the PiTTL system, you only need to update your FED3 firmware with RTFED library.
