@@ -5,6 +5,7 @@
 # ❓ What is RTFEDPi?
 
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/Cover.png)
+*Mice in a contact-housed setting plugged into the photometry system and being recorded using the RTFED(PiTTL) module and FED3 devices.*
 
 
 
@@ -22,13 +23,15 @@
 ## 📽️🐭🧀RTFED(PiCAM)
 ##### RTFED(PiCAM) is an additional feature to the basic RTFED where you can enhance your behavioural studies by having event-triggered video recording. Primarily the RTFED(PiCAM) can record videos of mice using common USB cameras after taking Pellets, making Left or Right pokes or a combination of All of these events. Videos are limited to 30 sec length to capture only relevant behaviours while saving storage space, in this configuration, e.g. after collecting a pellet, the GUI records the behaviour for 30 sec, if another pellet is taken within this 30 sec, it keeps recording for an extra 30 sec until no more pellet is taken.
 ![RTFED_PiCAM](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/RTFED(PiCAM).png)
+![RTFEDPiCAM](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/V4(1).gif)
+*An example of a video captured using RTFEDPiCAM at the moment a mouse collects a food pellet from a FED3 device.*
 
 ## 🚨🐭🧀RTFED(PiTTL)
 ##### The TTL station of RTFED logs behavioural events made on FED3 devices and transmit them to the TDT RZ10 processors as TTL pulses. This feature enables you to study event-locked signals in your experiments. However the PiTTL version does not send data online to reduce any processing load that might delay the rapid TTL puls transmission. The PiTTL also stores the behavioural session data in structured folders and provides a summary of behavioural events at the end of the recording session.
 
 ![RTFED_PiTTL](https://github.com/Htbibalan/HOME_PHOTOMETRY/blob/main/source/RTFED(PiTTL).png)
-
-
+![RTFEDPiTTL](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/InShot_20250410_001637725(1).gif)
+*PiTTL relays the behavioural events to the photometry system, in this example, a surge of dopamine in the Nucleus accumbens is observed at the moment of pellet retrieval.*
 
 # 🛒 Shopping list
 ##### The list of items you need to purchase to run RTFEDPi is available at this ([LINK](https://github.com/mccutcheonlab/FED_RT/blob/RTFEDPi/source/RTFED_SHOPPING_LIST.pdf)) , you can download the PDF file and by clicking on each component, you will access a suggested link to an online store.
