@@ -2,24 +2,9 @@
 
 ![Banner Image](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/Cover.png)
 
-<!-- [![Watch the video](https://img.youtube.com/vi/WifGA4YFR3c/0.jpg)](https://www.youtube.com/watch?v=WifGA4YFR3c)
-
-**Click on the thumbnail above to watch a tutorial of RTFED** -->
-
-# What is RTFED? 
-
-![RTFED_HOME](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/RTFED_GUI_UPDATED.png)
 
 
-**RTFED** is a software that enables you to collect data from [FED3](https://github.com/KravitzLabDevices/FED3/wiki) remotely and online. RTFED stores data locally and also sends it to a Google spreadsheet and this process does not require any additional hardware change to FED3 units. With RTFED you can synchronize the time on all of your FEDs and set the modes on each of your FED3 devices via your computer instead of poking. 
-Here I share a walkthrough of the process of setting up RTFED and incorporating a Google Apps Script with your spreadsheet to send you an alarm email in case your FED3 fails to deliver a pellet (e.g. jamming happens).
-
-*Since you need to have your FED3 connected to a computer via a USB cable all the time, this solution works best for labs who do not place the FED3 inside the mouse cage or can protect the FED3 and cable from the mice.*
-
-## A video tutorial
-[![Watch the video](https://img.youtube.com/vi/EGvIVicxB_o/0.jpg)](https://youtu.be/EGvIVicxB_o)
-
-**▶️ Click on the thumbnail above to watch a walkthrough of RTFED**
+* RTFEDPi is the Raspberry Pi variant of the classic ([RTFED](https://github.com/mccutcheonlab/FED_RT/tree/main)) and  is an open-source versatile tool for home-cage monitoring of behaviour and fiber photometry recording in mice. The RTFEDPi comes with 3 separate GUIs including RTFED(PiOS), RTFED(PiCAM) and RTFED(PiTTL). This system is developed as a home-cage setup to incorporate [FED3](https://github.com/KravitzLabDevices/FED3/wiki) units with TDT [RZ10](https://www.tdt.com/docs/hardware/rz10-lux-integrated-processor/) photometry processor fro TTL-locked brain recording or to couple with USB cameras to capture event-triggered videos of behaviour.
 
 
 
