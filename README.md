@@ -77,23 +77,8 @@
 
 
 
-🚧🚧👷‍♂️🚧🚧🚧🚧👷‍♂️🚧🚧🚧🚧⚠️🚧⚠️🚧⚠️🚧⚠️🚧🚧🚧🚧👷‍♂️🚧
+# 🚧👷‍♂️
 
-
-
-
-
-
-
-
-# Extra (For expert users who want to make changes in the codes)
-You can use either the [.yml file](https://github.com/Htbibalan/FED_RT/tree/main/source/ENV_FILES) to create a separate environment for your RTFED python code, or use the requirement.txt file from the same folder to get the required  python packages. Follow the instructions on [ANACONDA_CHEAT_SHEET](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf), but basically download the above mentioned files and move them to your anaconda environments directory, open your anaconda terminal and navigate to to the directory where the RTFED.yml is located and run the command below:
-
-                conda env create -f RTFED.yml
-
-Alternatively you can use the requirement.txt file to either update packages in your base/current environment or making an env from the scratch,simply navigate to the directory where you have the requirements.txt located, and run the following command:
-
-                pip install -r requirements.txt
 
 
 # License
