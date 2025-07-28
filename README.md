@@ -1,8 +1,17 @@
 
 # Under construction👷‍♂️🚧⚠️
-![RTFED_HOME_CAGE](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/20250424_125536(1).gif)
+<!-- ![RTFED_HOME_CAGE](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/20250424_125536(1).gif) -->
+
+
+
+
+<div align="center">
+  <img src="https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/20250424_125536(1).gif" alt="RTFED_HOME_CAGE">
+</div>
 
 *Mice in a contact-housed setting plugged into the photometry system and being recorded using the RTFED(PiTTL) module and FED3 devices.*
+
+
 
 # ❓ What is RTFEDPi?
 
