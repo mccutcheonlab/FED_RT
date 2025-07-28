@@ -47,6 +47,11 @@
 #### 1️⃣ Get a Raspberry Pi
 ##### As noted on our [shopping list](https://github.com/mccutcheonlab/FED_RT/blob/RTFEDPi/source/RTFED_SHOPPING_LIST.pdf), we used a Raspberry Pi 4 B model (4GB RAM version), and we recommend using the similar model since we have tested the system on this particular model. You can visit the Raspberrypi ([webpage](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)) to choose your location and online supplier to order the board.
 
+![RTFEDPi_TOWER](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/20241213_104636(1).gif)
+
+*We recommend purchasing a Raspberry Pi tower case, listed on our shopping list, to help with management of cables and wires and protecting your electronic parts in the animal facility.*
+
+
 #### 2️⃣ Quick route
 ##### You can use this IMAGE file (🚧🚧🚧Under construction 🚧🚧🚧 ) to flash your Raspberry Pi's microSD card, this way, you will have exactly the same folders and files that we used in our validation experiments. After connecting your Pi to a monitor, you will find 3 folders named RTFED(PiTTL, PiCAM and PiOS), inside each folder you will find a subfolder named /dist and there you can run the executable file to access the GUIs. 
 
