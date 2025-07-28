@@ -1,6 +1,6 @@
-# REALTIME_REMOTE_FED(RTFED)
+# RTFEDPi
 
-![Banner Image](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/diagram.png)
+![Banner Image](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/cover.png)
 
 <!-- [![Watch the video](https://img.youtube.com/vi/WifGA4YFR3c/0.jpg)](https://www.youtube.com/watch?v=WifGA4YFR3c)
 
