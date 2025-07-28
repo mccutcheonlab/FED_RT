@@ -32,6 +32,8 @@ The TTL station of RTFED logs behavioural events made on FED3 devices and transm
 ##### To use RTFEDPi, first you need to follow most of the instructions explained on our main repository ([RTFED](https://github.com/mccutcheonlab/FED_RT/tree/main)), that includes updating your FED3 devices with RTFED library;  if you need to use the PiCAM system, you will need to also follow the instructions to make a Google project and the other setting on a Google spreadsheet, otherwise, to use the PiTTL system, you only need to update your FED3 firmware with RTFED library.
 
 
+# Shopping list
+The list of items you need to purchase to run RTFEDPi is available at this ([LINK](https://github.com/mccutcheonlab/FED_RT/blob/RTFEDPi/source/RTFED_SHOPPING_LIST.pdf)) , you can download the PDF file and by clicking on each component, you will access a suggested link to an online store.
 
 🚧🚧👷‍♂️🚧🚧🚧🚧👷‍♂️🚧🚧🚧🚧⚠️🚧⚠️🚧⚠️🚧⚠️🚧🚧🚧🚧👷‍♂️🚧
 
