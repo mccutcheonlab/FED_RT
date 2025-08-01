@@ -1,0 +1,586 @@
+"2025-04-16 11:24:22: Port 2 raw data: ['4/16/2025 11:24:22', '25.86', '26.36', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Right', 'Left', '8', '30', '7', '0', 'NaN', 'NaN', '0.82']"
+2025-04-16 11:24:22: [2025-04-16 11:24:22.220] Port 2 - Event: Right
+2025-04-16 11:24:22: TTL signal sent on Port 2 for Right
+2025-04-16 11:24:22: Delay from FED3 data received to TTL start: 0.000169 seconds
+2025-04-16 11:24:22: Delay from TTL start to end (GPIO toggling): 0.100089 seconds
+"2025-04-16 11:24:22: Port 1 raw data: ['4/16/2025 11:24:22', '24.05', '35.60', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Right', 'Left', '6', '31', '6', '0', 'NaN', 'NaN', '1.65']"
+2025-04-16 11:24:22: [2025-04-16 11:24:22.866] Port 1 - Event: Right
+2025-04-16 11:24:23: TTL signal sent on Port 1 for Right
+2025-04-16 11:24:23: Delay from FED3 data received to TTL start: 0.000187 seconds
+2025-04-16 11:24:23: Delay from TTL start to end (GPIO toggling): 0.100166 seconds
+"2025-04-16 11:24:27: Port 4 raw data: ['4/16/2025 11:24:27', '23.99', '32.58', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Right', 'Left', '4', '23', '4', '0', 'NaN', 'NaN', '1.09']"
+2025-04-16 11:24:27: [2025-04-16 11:24:27.199] Port 4 - Event: Right
+"2025-04-16 11:24:27: Port 3 raw data: ['7/11/2085 11:27:03', '24.83', '29.09', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Right', 'Left', '0', '10', '0', '0', 'NaN', 'NaN', '1.29']"
+2025-04-16 11:24:27: [2025-04-16 11:24:27.312] Port 3 - Event: Right
+2025-04-16 11:24:27: TTL signal sent on Port 4 for Right
+2025-04-16 11:24:27: Delay from FED3 data received to TTL start: 0.000363 seconds
+2025-04-16 11:24:27: Delay from TTL start to end (GPIO toggling): 0.100166 seconds
+2025-04-16 11:24:27: TTL signal sent on Port 3 for Right
+2025-04-16 11:24:27: Delay from FED3 data received to TTL start: 0.000455 seconds
+2025-04-16 11:24:27: Delay from TTL start to end (GPIO toggling): 0.100162 seconds
+"2025-04-16 11:24:39: Port 1 raw data: ['4/16/2025 11:24:39', '24.08', '35.58', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Right', 'Left', '6', '32', '6', '0', 'NaN', 'NaN', '0.85']"
+2025-04-16 11:24:39: [2025-04-16 11:24:39.842] Port 1 - Event: Right
+"2025-04-16 11:24:39: Port 2 raw data: ['4/16/2025 11:24:39', '25.88', '26.35', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Right', 'Left', '8', '31', '7', '0', 'NaN', 'NaN', '0.76']"
+2025-04-16 11:24:39: [2025-04-16 11:24:39.837] Port 2 - Event: Right
+2025-04-16 11:24:39: TTL signal sent on Port 1 for Right
+2025-04-16 11:24:39: Delay from FED3 data received to TTL start: 0.000233 seconds
+2025-04-16 11:24:39: Delay from TTL start to end (GPIO toggling): 0.100229 seconds
+2025-04-16 11:24:39: TTL signal sent on Port 2 for Right
+2025-04-16 11:24:39: Delay from FED3 data received to TTL start: 0.000554 seconds
+2025-04-16 11:24:39: Delay from TTL start to end (GPIO toggling): 0.100220 seconds
+"2025-04-16 11:24:48: Port 3 raw data: ['7/11/2085 11:27:24', '24.80', '29.23', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Right', 'Left', '0', '11', '0', '0', 'NaN', 'NaN', '2.19']"
+2025-04-16 11:24:48: [2025-04-16 11:24:48.903] Port 3 - Event: Right
+"2025-04-16 11:24:48: Port 4 raw data: ['4/16/2025 11:24:48', '23.96', '32.69', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Right', 'Left', '4', '24', '4', '0', 'NaN', 'NaN', '1.47']"
+2025-04-16 11:24:48: [2025-04-16 11:24:48.866] Port 4 - Event: Right
+2025-04-16 11:24:49: TTL signal sent on Port 3 for Right
+2025-04-16 11:24:49: Delay from FED3 data received to TTL start: 0.000241 seconds
+2025-04-16 11:24:49: Delay from TTL start to end (GPIO toggling): 0.100163 seconds
+2025-04-16 11:24:49: TTL signal sent on Port 4 for Right
+2025-04-16 11:24:49: Delay from FED3 data received to TTL start: 0.000318 seconds
+2025-04-16 11:24:49: Delay from TTL start to end (GPIO toggling): 0.100176 seconds
+"2025-04-16 11:24:52: Port 1 raw data: ['4/16/2025 11:24:52', '24.07', '35.53', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Right', 'Left', '6', '33', '6', '0', 'NaN', 'NaN', '0.19']"
+2025-04-16 11:24:52: [2025-04-16 11:24:52.586] Port 1 - Event: Right
+2025-04-16 11:24:52: TTL signal sent on Port 1 for Right
+2025-04-16 11:24:52: Delay from FED3 data received to TTL start: 0.000143 seconds
+2025-04-16 11:24:52: Delay from TTL start to end (GPIO toggling): 0.100127 seconds
+"2025-04-16 11:24:55: Port 2 raw data: ['4/16/2025 11:24:55', '25.88', '26.38', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Right', 'Left', '8', '32', '7', '0', 'NaN', 'NaN', '0.26']"
+2025-04-16 11:24:55: [2025-04-16 11:24:55.294] Port 2 - Event: Right
+2025-04-16 11:24:55: TTL signal sent on Port 2 for Right
+2025-04-16 11:24:55: Delay from FED3 data received to TTL start: 0.000169 seconds
+2025-04-16 11:24:55: Delay from TTL start to end (GPIO toggling): 0.100153 seconds
+"2025-04-16 11:24:58: Port 3 raw data: ['7/11/2085 11:27:34', '24.78', '29.26', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Right', 'Left', '0', '12', '0', '0', 'NaN', 'NaN', '0.45']"
+2025-04-16 11:24:58: [2025-04-16 11:24:58.306] Port 3 - Event: Right
+2025-04-16 11:24:58: TTL signal sent on Port 3 for Right
+2025-04-16 11:24:58: Delay from FED3 data received to TTL start: 0.000358 seconds
+2025-04-16 11:24:58: Delay from TTL start to end (GPIO toggling): 0.100170 seconds
+"2025-04-16 11:25:01: Port 4 raw data: ['4/16/2025 11:25:01', '23.99', '32.65', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Right', 'Left', '4', '25', '4', '0', 'NaN', 'NaN', '0.48']"
+2025-04-16 11:25:01: [2025-04-16 11:25:01.191] Port 4 - Event: Right
+2025-04-16 11:25:01: TTL signal sent on Port 4 for Right
+2025-04-16 11:25:01: Delay from FED3 data received to TTL start: 0.000290 seconds
+2025-04-16 11:25:01: Delay from TTL start to end (GPIO toggling): 0.100150 seconds
+"2025-04-16 11:25:09: Port 4 raw data: ['4/16/2025 11:25:09', '23.98', '32.66', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Right', 'Left', '4', '26', '4', '0', 'NaN', 'NaN', '0.18']"
+2025-04-16 11:25:09: [2025-04-16 11:25:09.640] Port 4 - Event: Right
+2025-04-16 11:25:09: TTL signal sent on Port 4 for Right
+2025-04-16 11:25:09: Delay from FED3 data received to TTL start: 0.000276 seconds
+2025-04-16 11:25:09: Delay from TTL start to end (GPIO toggling): 0.100623 seconds
+"2025-04-16 11:25:12: Port 3 raw data: ['7/11/2085 11:27:47', '24.77', '29.24', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Right', 'Left', '0', '13', '0', '0', 'NaN', 'NaN', '0.20']"
+2025-04-16 11:25:12: [2025-04-16 11:25:11.936] Port 3 - Event: Right
+2025-04-16 11:25:12: TTL signal sent on Port 3 for Right
+2025-04-16 11:25:12: Delay from FED3 data received to TTL start: 0.000216 seconds
+2025-04-16 11:25:12: Delay from TTL start to end (GPIO toggling): 0.100134 seconds
+"2025-04-16 11:25:13: Port 2 raw data: ['4/16/2025 11:25:13', '25.89', '26.28', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Right', 'Left', '8', '33', '7', '0', 'NaN', 'NaN', '0.10']"
+2025-04-16 11:25:13: [2025-04-16 11:25:13.754] Port 2 - Event: Right
+2025-04-16 11:25:13: TTL signal sent on Port 2 for Right
+2025-04-16 11:25:13: Delay from FED3 data received to TTL start: 0.000261 seconds
+2025-04-16 11:25:13: Delay from TTL start to end (GPIO toggling): 0.100354 seconds
+"2025-04-16 11:25:15: Port 1 raw data: ['4/16/2025 11:25:15', '24.07', '35.50', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Right', 'Left', '6', '34', '6', '0', 'NaN', 'NaN', '0.57']"
+2025-04-16 11:25:15: [2025-04-16 11:25:15.871] Port 1 - Event: Right
+2025-04-16 11:25:16: TTL signal sent on Port 1 for Right
+2025-04-16 11:25:16: Delay from FED3 data received to TTL start: 0.000250 seconds
+2025-04-16 11:25:16: Delay from TTL start to end (GPIO toggling): 0.100140 seconds
+"2025-04-16 11:25:21: Port 1 raw data: ['4/16/2025 11:25:21', '24.07', '35.54', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Left', 'Left', '7', '34', '6', '0', 'NaN', 'NaN', '0.24']"
+2025-04-16 11:25:21: [2025-04-16 11:25:21.500] Port 1 - Event: Left
+2025-04-16 11:25:21: TTL signal sent on Port 1 for Left
+2025-04-16 11:25:21: Delay from FED3 data received to TTL start: 0.000267 seconds
+2025-04-16 11:25:21: Delay from TTL start to end (GPIO toggling): 0.100224 seconds
+"2025-04-16 11:25:23: Port 2 raw data: ['4/16/2025 11:25:23', '25.90', '26.34', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Left', 'Left', '9', '33', '7', '0', 'NaN', 'NaN', '0.20']"
+2025-04-16 11:25:23: [2025-04-16 11:25:23.199] Port 2 - Event: Left
+2025-04-16 11:25:23: TTL signal sent on Port 2 for Left
+2025-04-16 11:25:23: Delay from FED3 data received to TTL start: 0.000282 seconds
+2025-04-16 11:25:23: Delay from TTL start to end (GPIO toggling): 0.100164 seconds
+"2025-04-16 11:25:24: Port 3 raw data: ['7/11/2085 11:28:00', '24.74', '29.24', '1.16.3', 'FR1', '20', '4.19', 'NaN', '1', 'Left', 'Left', '1', '13', '0', '0', 'NaN', 'NaN', '0.27']"
+2025-04-16 11:25:24: [2025-04-16 11:25:24.896] Port 3 - Event: Left
+2025-04-16 11:25:25: TTL signal sent on Port 3 for Left
+2025-04-16 11:25:25: Delay from FED3 data received to TTL start: 0.000373 seconds
+2025-04-16 11:25:25: Delay from TTL start to end (GPIO toggling): 0.100171 seconds
+"2025-04-16 11:25:26: Port 4 raw data: ['4/16/2025 11:25:26', '23.96', '32.67', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Left', 'Left', '5', '26', '4', '0', 'NaN', 'NaN', '0.26']"
+2025-04-16 11:25:26: [2025-04-16 11:25:26.376] Port 4 - Event: Left
+2025-04-16 11:25:26: TTL signal sent on Port 4 for Left
+2025-04-16 11:25:26: Delay from FED3 data received to TTL start: 0.000351 seconds
+2025-04-16 11:25:26: Delay from TTL start to end (GPIO toggling): 0.100170 seconds
+"2025-04-16 11:25:29: Port 4 raw data: ['4/16/2025 11:25:29', '23.95', '32.68', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'PelletInWell', 'Left', '5', '26', '4', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:25:29: [2025-04-16 11:25:29.646] Port 4 - Event: PelletInWell
+"2025-04-16 11:25:29: Pellet dispensed in well, signal ON."
+"2025-04-16 11:25:30: Port 4 raw data: ['4/16/2025 11:25:30', '23.98', '32.68', '1.16.3', 'FR1', '11', '4.20', '3', '1', 'Pellet', 'Left', '5', '26', '5', '0', '0.82', '289', 'NaN']"
+2025-04-16 11:25:30: [2025-04-16 11:25:30.535] Port 4 - Event: Pellet
+"2025-04-16 11:25:30: Pellet taken, signal turned OFF."
+2025-04-16 11:25:30: TTL signal sent on Port 4 for Pellet
+2025-04-16 11:25:30: Delay from FED3 data received to TTL start: 0.000274 seconds
+2025-04-16 11:25:30: Delay from TTL start to end (GPIO toggling): 0.100259 seconds
+"2025-04-16 11:25:32: Port 3 raw data: ['7/11/2085 11:28:08', '24.73', '29.30', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'PelletInWell', 'Left', '1', '13', '0', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:25:32: [2025-04-16 11:25:32.642] Port 3 - Event: PelletInWell
+"2025-04-16 11:25:32: Pellet dispensed in well, signal ON."
+"2025-04-16 11:25:33: Port 3 raw data: ['7/11/2085 11:28:09', '24.73', '29.28', '1.16.3', 'FR1', '20', '4.20', '5', '1', 'Pellet', 'Left', '1', '13', '1', '0', '0.79', 'NaN', 'NaN']"
+2025-04-16 11:25:33: [2025-04-16 11:25:33.496] Port 3 - Event: Pellet
+"2025-04-16 11:25:33: Pellet taken, signal turned OFF."
+2025-04-16 11:25:33: TTL signal sent on Port 3 for Pellet
+2025-04-16 11:25:33: Delay from FED3 data received to TTL start: 0.000282 seconds
+2025-04-16 11:25:33: Delay from TTL start to end (GPIO toggling): 0.100194 seconds
+"2025-04-16 11:25:34: Port 2 raw data: ['4/16/2025 11:25:34', '25.90', '26.36', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'PelletInWell', 'Left', '9', '33', '7', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:25:34: [2025-04-16 11:25:34.659] Port 2 - Event: PelletInWell
+"2025-04-16 11:25:34: Pellet dispensed in well, signal ON."
+"2025-04-16 11:25:35: Port 2 raw data: ['4/16/2025 11:25:35', '25.90', '26.36', '1.16.3', 'FR1', '10', '4.14', '6', '1', 'Pellet', 'Left', '9', '33', '8', '0', '0.77', '292', 'NaN']"
+2025-04-16 11:25:35: [2025-04-16 11:25:35.489] Port 2 - Event: Pellet
+"2025-04-16 11:25:35: Pellet taken, signal turned OFF."
+2025-04-16 11:25:35: TTL signal sent on Port 2 for Pellet
+2025-04-16 11:25:35: Delay from FED3 data received to TTL start: 0.000400 seconds
+2025-04-16 11:25:35: Delay from TTL start to end (GPIO toggling): 0.100172 seconds
+"2025-04-16 11:25:37: Port 1 raw data: ['4/16/2025 11:25:36', '24.08', '35.59', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'PelletInWell', 'Left', '7', '34', '6', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:25:37: [2025-04-16 11:25:37.093] Port 1 - Event: PelletInWell
+"2025-04-16 11:25:37: Pellet dispensed in well, signal ON."
+"2025-04-16 11:25:37: Port 1 raw data: ['4/16/2025 11:25:37', '24.09', '35.59', '1.16.3', 'FR1', '14', '4.19', '8', '1', 'Pellet', 'Left', '7', '34', '7', '0', '0.65', '292', 'NaN']"
+2025-04-16 11:25:37: [2025-04-16 11:25:37.809] Port 1 - Event: Pellet
+"2025-04-16 11:25:37: Pellet taken, signal turned OFF."
+2025-04-16 11:25:38: TTL signal sent on Port 1 for Pellet
+2025-04-16 11:25:38: Delay from FED3 data received to TTL start: 0.000324 seconds
+2025-04-16 11:25:38: Delay from TTL start to end (GPIO toggling): 0.100207 seconds
+"2025-04-16 11:25:42: Port 2 raw data: ['4/16/2025 11:25:42', '25.88', '26.39', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Left', 'Left', '10', '33', '8', '0', 'NaN', 'NaN', '1.93']"
+2025-04-16 11:25:42: [2025-04-16 11:25:42.775] Port 2 - Event: Left
+2025-04-16 11:25:42: TTL signal sent on Port 2 for Left
+2025-04-16 11:25:42: Delay from FED3 data received to TTL start: 0.000139 seconds
+2025-04-16 11:25:42: Delay from TTL start to end (GPIO toggling): 0.100115 seconds
+"2025-04-16 11:25:43: Port 1 raw data: ['4/16/2025 11:25:43', '24.09', '35.62', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Left', 'Left', '8', '34', '7', '0', 'NaN', 'NaN', '2.34']"
+2025-04-16 11:25:43: [2025-04-16 11:25:43.283] Port 1 - Event: Left
+2025-04-16 11:25:43: TTL signal sent on Port 1 for Left
+2025-04-16 11:25:43: Delay from FED3 data received to TTL start: 0.000314 seconds
+2025-04-16 11:25:43: Delay from TTL start to end (GPIO toggling): 0.100144 seconds
+"2025-04-16 11:25:47: Port 4 raw data: ['4/16/2025 11:25:47', '23.96', '32.64', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Left', 'Left', '6', '26', '5', '0', 'NaN', 'NaN', '0.94']"
+2025-04-16 11:25:47: [2025-04-16 11:25:47.211] Port 4 - Event: Left
+2025-04-16 11:25:47: TTL signal sent on Port 4 for Left
+2025-04-16 11:25:47: Delay from FED3 data received to TTL start: 0.000188 seconds
+2025-04-16 11:25:47: Delay from TTL start to end (GPIO toggling): 0.100192 seconds
+"2025-04-16 11:25:47: Port 3 raw data: ['7/11/2085 11:28:23', '24.72', '29.23', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Left', 'Left', '2', '13', '1', '0', 'NaN', 'NaN', '1.23']"
+2025-04-16 11:25:47: [2025-04-16 11:25:47.409] Port 3 - Event: Left
+2025-04-16 11:25:47: TTL signal sent on Port 3 for Left
+2025-04-16 11:25:47: Delay from FED3 data received to TTL start: 0.000317 seconds
+2025-04-16 11:25:47: Delay from TTL start to end (GPIO toggling): 0.100134 seconds
+"2025-04-16 11:25:50: Port 1 raw data: ['4/16/2025 11:25:50', '24.08', '35.63', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'PelletInWell', 'Left', '8', '34', '7', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:25:50: [2025-04-16 11:25:50.935] Port 1 - Event: PelletInWell
+"2025-04-16 11:25:50: Pellet dispensed in well, signal ON."
+"2025-04-16 11:25:51: Port 1 raw data: ['4/16/2025 11:25:51', '24.08', '35.63', '1.16.3', 'FR1', '14', '4.20', '5', '1', 'Pellet', 'Left', '8', '34', '8', '0', '0.65', '14', 'NaN']"
+2025-04-16 11:25:51: [2025-04-16 11:25:51.646] Port 1 - Event: Pellet
+"2025-04-16 11:25:51: Pellet taken, signal turned OFF."
+2025-04-16 11:25:51: TTL signal sent on Port 1 for Pellet
+2025-04-16 11:25:51: Delay from FED3 data received to TTL start: 0.000166 seconds
+2025-04-16 11:25:51: Delay from TTL start to end (GPIO toggling): 0.100115 seconds
+"2025-04-16 11:25:53: Port 2 raw data: ['4/16/2025 11:25:53', '25.87', '26.36', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'PelletInWell', 'Left', '10', '33', '8', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:25:53: [2025-04-16 11:25:53.226] Port 2 - Event: PelletInWell
+"2025-04-16 11:25:53: Pellet dispensed in well, signal ON."
+"2025-04-16 11:25:54: Port 2 raw data: ['4/16/2025 11:25:54', '25.88', '26.33', '1.16.3', 'FR1', '10', '4.14', '6', '1', 'Pellet', 'Left', '10', '33', '9', '0', '1.11', '19', 'NaN']"
+2025-04-16 11:25:54: [2025-04-16 11:25:54.402] Port 2 - Event: Pellet
+"2025-04-16 11:25:54: Pellet taken, signal turned OFF."
+2025-04-16 11:25:54: TTL signal sent on Port 2 for Pellet
+2025-04-16 11:25:54: Delay from FED3 data received to TTL start: 0.000344 seconds
+2025-04-16 11:25:54: Delay from TTL start to end (GPIO toggling): 0.100186 seconds
+"2025-04-16 11:25:56: Port 3 raw data: ['7/11/2085 11:28:31', '24.71', '29.24', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'PelletInWell', 'Left', '2', '13', '1', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:25:56: [2025-04-16 11:25:56.077] Port 3 - Event: PelletInWell
+"2025-04-16 11:25:56: Pellet dispensed in well, signal ON."
+"2025-04-16 11:25:57: Port 3 raw data: ['7/11/2085 11:28:32', '24.70', '29.23', '1.16.3', 'FR1', '20', '4.20', '5', '1', 'Pellet', 'Left', '2', '13', '2', '0', '0.92', '23', 'NaN']"
+2025-04-16 11:25:57: [2025-04-16 11:25:57.060] Port 3 - Event: Pellet
+"2025-04-16 11:25:57: Pellet taken, signal turned OFF."
+2025-04-16 11:25:57: TTL signal sent on Port 3 for Pellet
+2025-04-16 11:25:57: Delay from FED3 data received to TTL start: 0.000158 seconds
+2025-04-16 11:25:57: Delay from TTL start to end (GPIO toggling): 0.100123 seconds
+"2025-04-16 11:25:58: Port 4 raw data: ['4/16/2025 11:25:58', '23.95', '32.70', '1.16.3', 'FR1', '11', '4.19', 'NaN', '1', 'PelletInWell', 'Left', '6', '26', '5', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:25:58: [2025-04-16 11:25:58.193] Port 4 - Event: PelletInWell
+"2025-04-16 11:25:58: Pellet dispensed in well, signal ON."
+"2025-04-16 11:25:59: Port 4 raw data: ['4/16/2025 11:25:59', '23.94', '32.68', '1.16.3', 'FR1', '11', '4.20', '6', '1', 'Pellet', 'Left', '6', '26', '6', '0', '1.03', '29', 'NaN']"
+2025-04-16 11:25:59: [2025-04-16 11:25:59.291] Port 4 - Event: Pellet
+"2025-04-16 11:25:59: Pellet taken, signal turned OFF."
+2025-04-16 11:25:59: TTL signal sent on Port 4 for Pellet
+2025-04-16 11:25:59: Delay from FED3 data received to TTL start: 0.000260 seconds
+2025-04-16 11:25:59: Delay from TTL start to end (GPIO toggling): 0.100124 seconds
+"2025-04-16 11:26:03: Port 1 raw data: ['4/16/2025 11:26:03', '24.10', '35.59', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Right', 'Left', '8', '35', '8', '0', 'NaN', 'NaN', '2.15']"
+2025-04-16 11:26:03: [2025-04-16 11:26:03.518] Port 1 - Event: Right
+2025-04-16 11:26:03: TTL signal sent on Port 1 for Right
+2025-04-16 11:26:03: Delay from FED3 data received to TTL start: 0.000276 seconds
+2025-04-16 11:26:03: Delay from TTL start to end (GPIO toggling): 0.100178 seconds
+"2025-04-16 11:26:03: Port 3 raw data: ['7/11/2085 11:28:39', '24.69', '29.23', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Right', 'Left', '2', '14', '2', '0', 'NaN', 'NaN', '1.23']"
+2025-04-16 11:26:03: [2025-04-16 11:26:03.662] Port 3 - Event: Right
+2025-04-16 11:26:03: TTL signal sent on Port 3 for Right
+2025-04-16 11:26:03: Delay from FED3 data received to TTL start: 0.000299 seconds
+2025-04-16 11:26:03: Delay from TTL start to end (GPIO toggling): 0.100152 seconds
+"2025-04-16 11:26:08: Port 4 raw data: ['4/16/2025 11:26:08', '23.94', '32.68', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Right', 'Left', '6', '27', '6', '0', 'NaN', 'NaN', '1.32']"
+2025-04-16 11:26:08: [2025-04-16 11:26:08.130] Port 4 - Event: Right
+2025-04-16 11:26:08: TTL signal sent on Port 4 for Right
+2025-04-16 11:26:08: Delay from FED3 data received to TTL start: 0.000218 seconds
+2025-04-16 11:26:08: Delay from TTL start to end (GPIO toggling): 0.100186 seconds
+"2025-04-16 11:26:08: Port 2 raw data: ['4/16/2025 11:26:08', '25.86', '26.37', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Right', 'Left', '10', '34', '9', '0', 'NaN', 'NaN', '1.65']"
+2025-04-16 11:26:08: [2025-04-16 11:26:08.298] Port 2 - Event: Right
+2025-04-16 11:26:08: TTL signal sent on Port 2 for Right
+2025-04-16 11:26:08: Delay from FED3 data received to TTL start: 0.000341 seconds
+2025-04-16 11:26:08: Delay from TTL start to end (GPIO toggling): 0.100153 seconds
+"2025-04-16 11:26:13: Port 2 raw data: ['4/16/2025 11:26:13', '25.85', '26.37', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Right', 'Left', '10', '35', '9', '0', 'NaN', 'NaN', '1.32']"
+2025-04-16 11:26:13: [2025-04-16 11:26:13.192] Port 2 - Event: Right
+"2025-04-16 11:26:13: Port 4 raw data: ['4/16/2025 11:26:13', '23.95', '32.68', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Right', 'Left', '6', '28', '6', '0', 'NaN', 'NaN', '1.00']"
+2025-04-16 11:26:13: [2025-04-16 11:26:13.206] Port 4 - Event: Right
+2025-04-16 11:26:13: TTL signal sent on Port 2 for Right
+2025-04-16 11:26:13: Delay from FED3 data received to TTL start: 0.000139 seconds
+2025-04-16 11:26:13: Delay from TTL start to end (GPIO toggling): 0.100128 seconds
+2025-04-16 11:26:13: TTL signal sent on Port 4 for Right
+2025-04-16 11:26:13: Delay from FED3 data received to TTL start: 0.000069 seconds
+2025-04-16 11:26:13: Delay from TTL start to end (GPIO toggling): 0.100108 seconds
+"2025-04-16 11:26:17: Port 1 raw data: ['4/16/2025 11:26:17', '24.11', '35.58', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Right', 'Left', '8', '36', '8', '0', 'NaN', 'NaN', '1.02']"
+2025-04-16 11:26:17: [2025-04-16 11:26:17.398] Port 1 - Event: Right
+2025-04-16 11:26:17: TTL signal sent on Port 1 for Right
+2025-04-16 11:26:17: Delay from FED3 data received to TTL start: 0.000265 seconds
+2025-04-16 11:26:17: Delay from TTL start to end (GPIO toggling): 0.100118 seconds
+"2025-04-16 11:26:17: Port 3 raw data: ['7/11/2085 11:28:53', '24.67', '29.25', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Right', 'Left', '2', '15', '2', '0', 'NaN', 'NaN', '1.16']"
+2025-04-16 11:26:17: [2025-04-16 11:26:17.522] Port 3 - Event: Right
+2025-04-16 11:26:17: TTL signal sent on Port 3 for Right
+2025-04-16 11:26:17: Delay from FED3 data received to TTL start: 0.000513 seconds
+2025-04-16 11:26:17: Delay from TTL start to end (GPIO toggling): 0.100154 seconds
+"2025-04-16 11:26:22: Port 4 raw data: ['4/16/2025 11:26:22', '23.92', '32.66', '1.16.3', 'FR1', '11', '4.21', 'NaN', '1', 'Left', 'Left', '7', '28', '6', '0', 'NaN', 'NaN', '0.97']"
+2025-04-16 11:26:22: [2025-04-16 11:26:22.749] Port 4 - Event: Left
+2025-04-16 11:26:22: TTL signal sent on Port 4 for Left
+2025-04-16 11:26:22: Delay from FED3 data received to TTL start: 0.000281 seconds
+2025-04-16 11:26:22: Delay from TTL start to end (GPIO toggling): 0.100156 seconds
+"2025-04-16 11:26:22: Port 1 raw data: ['4/16/2025 11:26:22', '24.12', '35.56', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Left', 'Left', '9', '36', '8', '0', 'NaN', 'NaN', '1.20']"
+2025-04-16 11:26:22: [2025-04-16 11:26:22.945] Port 1 - Event: Left
+2025-04-16 11:26:23: TTL signal sent on Port 1 for Left
+2025-04-16 11:26:23: Delay from FED3 data received to TTL start: 0.000286 seconds
+2025-04-16 11:26:23: Delay from TTL start to end (GPIO toggling): 0.100165 seconds
+"2025-04-16 11:26:27: Port 2 raw data: ['4/16/2025 11:26:27', '25.81', '26.34', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Left', 'Left', '11', '35', '9', '0', 'NaN', 'NaN', '1.73']"
+2025-04-16 11:26:27: [2025-04-16 11:26:27.170] Port 2 - Event: Left
+"2025-04-16 11:26:27: Port 3 raw data: ['7/11/2085 11:29:02', '24.67', '29.27', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Left', 'Left', '3', '15', '2', '0', 'NaN', 'NaN', '1.62']"
+2025-04-16 11:26:27: [2025-04-16 11:26:27.217] Port 3 - Event: Left
+2025-04-16 11:26:27: TTL signal sent on Port 2 for Left
+2025-04-16 11:26:27: Delay from FED3 data received to TTL start: 0.000269 seconds
+2025-04-16 11:26:27: Delay from TTL start to end (GPIO toggling): 0.100142 seconds
+2025-04-16 11:26:27: TTL signal sent on Port 3 for Left
+2025-04-16 11:26:27: Delay from FED3 data received to TTL start: 0.000385 seconds
+2025-04-16 11:26:27: Delay from TTL start to end (GPIO toggling): 0.100437 seconds
+"2025-04-16 11:26:30: Port 4 raw data: ['4/16/2025 11:26:30', '23.94', '32.65', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'PelletInWell', 'Left', '7', '28', '6', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:26:30: [2025-04-16 11:26:30.443] Port 4 - Event: PelletInWell
+"2025-04-16 11:26:30: Pellet dispensed in well, signal ON."
+"2025-04-16 11:26:32: Port 4 raw data: ['4/16/2025 11:26:31', '23.92', '32.66', '1.16.3', 'FR1', '11', '4.20', '5', '1', 'Pellet', 'Left', '7', '28', '7', '0', '1.44', '32', 'NaN']"
+2025-04-16 11:26:32: [2025-04-16 11:26:31.948] Port 4 - Event: Pellet
+"2025-04-16 11:26:32: Pellet taken, signal turned OFF."
+2025-04-16 11:26:32: TTL signal sent on Port 4 for Pellet
+2025-04-16 11:26:32: Delay from FED3 data received to TTL start: 0.000330 seconds
+2025-04-16 11:26:32: Delay from TTL start to end (GPIO toggling): 0.100186 seconds
+"2025-04-16 11:26:33: Port 3 raw data: ['7/11/2085 11:29:09', '24.67', '29.25', '1.16.3', 'FR1', '20', '4.19', 'NaN', '1', 'PelletInWell', 'Left', '3', '15', '2', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:26:33: [2025-04-16 11:26:33.741] Port 3 - Event: PelletInWell
+"2025-04-16 11:26:33: Pellet dispensed in well, signal ON."
+"2025-04-16 11:26:34: Port 3 raw data: ['7/11/2085 11:29:10', '24.68', '29.22', '1.16.3', 'FR1', '20', '4.20', '4', '1', 'Pellet', 'Left', '3', '15', '3', '0', '0.78', '38', 'NaN']"
+2025-04-16 11:26:34: [2025-04-16 11:26:34.590] Port 3 - Event: Pellet
+"2025-04-16 11:26:34: Pellet taken, signal turned OFF."
+2025-04-16 11:26:34: TTL signal sent on Port 3 for Pellet
+2025-04-16 11:26:34: Delay from FED3 data received to TTL start: 0.000480 seconds
+2025-04-16 11:26:34: Delay from TTL start to end (GPIO toggling): 0.100140 seconds
+"2025-04-16 11:26:35: Port 2 raw data: ['4/16/2025 11:26:35', '25.84', '26.37', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'PelletInWell', 'Left', '11', '35', '9', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:26:35: [2025-04-16 11:26:35.924] Port 2 - Event: PelletInWell
+"2025-04-16 11:26:35: Pellet dispensed in well, signal ON."
+"2025-04-16 11:26:37: Port 2 raw data: ['4/16/2025 11:26:37', '25.85', '26.35', '1.16.3', 'FR1', '10', '4.14', '5', '1', 'Pellet', 'Left', '11', '35', '10', '0', '1.38', '43', 'NaN']"
+2025-04-16 11:26:37: [2025-04-16 11:26:37.372] Port 2 - Event: Pellet
+"2025-04-16 11:26:37: Pellet taken, signal turned OFF."
+2025-04-16 11:26:37: TTL signal sent on Port 2 for Pellet
+2025-04-16 11:26:37: Delay from FED3 data received to TTL start: 0.000318 seconds
+2025-04-16 11:26:37: Delay from TTL start to end (GPIO toggling): 0.100143 seconds
+"2025-04-16 11:26:38: Port 1 raw data: ['4/16/2025 11:26:38', '24.13', '35.58', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'PelletInWell', 'Left', '9', '36', '8', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:26:38: [2025-04-16 11:26:38.892] Port 1 - Event: PelletInWell
+"2025-04-16 11:26:38: Pellet dispensed in well, signal ON."
+"2025-04-16 11:26:42: Port 1 raw data: ['4/16/2025 11:26:42', '24.14', '35.60', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'RightWithPellet', 'Left', '9', '37', '8', '0', 'NaN', 'NaN', '0.33']"
+2025-04-16 11:26:42: [2025-04-16 11:26:42.335] Port 1 - Event: RightWithPellet
+2025-04-16 11:26:42: TTL signal sent on Port 1 for RightWithPellet
+2025-04-16 11:26:42: Delay from FED3 data received to TTL start: 0.000153 seconds
+2025-04-16 11:26:42: Delay from TTL start to end (GPIO toggling): 0.100126 seconds
+"2025-04-16 11:26:45: Port 1 raw data: ['4/16/2025 11:26:45', '24.15', '35.62', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'LeftWithPellet', 'Left', '10', '37', '8', '0', 'NaN', 'NaN', '0.38']"
+2025-04-16 11:26:45: [2025-04-16 11:26:45.361] Port 1 - Event: LeftWithPellet
+2025-04-16 11:26:45: TTL signal sent on Port 1 for LeftWithPellet
+2025-04-16 11:26:45: Delay from FED3 data received to TTL start: 0.000138 seconds
+2025-04-16 11:26:45: Delay from TTL start to end (GPIO toggling): 0.100145 seconds
+"2025-04-16 11:26:47: Port 1 raw data: ['4/16/2025 11:26:47', '24.15', '35.63', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'RightWithPellet', 'Left', '10', '38', '8', '0', 'NaN', 'NaN', '0.35']"
+2025-04-16 11:26:47: [2025-04-16 11:26:47.535] Port 1 - Event: RightWithPellet
+2025-04-16 11:26:47: TTL signal sent on Port 1 for RightWithPellet
+2025-04-16 11:26:47: Delay from FED3 data received to TTL start: 0.000356 seconds
+2025-04-16 11:26:47: Delay from TTL start to end (GPIO toggling): 0.100148 seconds
+"2025-04-16 11:26:50: Port 1 raw data: ['4/16/2025 11:26:50', '24.15', '35.68', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'LeftWithPellet', 'Left', '11', '38', '8', '0', 'NaN', 'NaN', '0.44']"
+2025-04-16 11:26:50: [2025-04-16 11:26:50.417] Port 1 - Event: LeftWithPellet
+2025-04-16 11:26:50: TTL signal sent on Port 1 for LeftWithPellet
+2025-04-16 11:26:50: Delay from FED3 data received to TTL start: 0.000239 seconds
+2025-04-16 11:26:50: Delay from TTL start to end (GPIO toggling): 0.100121 seconds
+"2025-04-16 11:26:52: Port 1 raw data: ['4/16/2025 11:26:52', '24.15', '35.65', '1.16.3', 'FR1', '14', '4.20', '8', '1', 'Pellet', 'Left', '11', '38', '9', '0', '13.57', '61', 'NaN']"
+2025-04-16 11:26:52: [2025-04-16 11:26:52.508] Port 1 - Event: Pellet
+"2025-04-16 11:26:52: Pellet taken, signal turned OFF."
+2025-04-16 11:26:52: TTL signal sent on Port 1 for Pellet
+2025-04-16 11:26:52: Delay from FED3 data received to TTL start: 0.000156 seconds
+2025-04-16 11:26:52: Delay from TTL start to end (GPIO toggling): 0.100326 seconds
+"2025-04-16 11:26:57: Port 2 raw data: ['4/16/2025 11:26:56', '25.82', '26.34', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Left', 'Left', '12', '35', '10', '0', 'NaN', 'NaN', '0.18']"
+2025-04-16 11:26:57: [2025-04-16 11:26:56.978] Port 2 - Event: Left
+2025-04-16 11:26:57: TTL signal sent on Port 2 for Left
+2025-04-16 11:26:57: Delay from FED3 data received to TTL start: 0.000273 seconds
+2025-04-16 11:26:57: Delay from TTL start to end (GPIO toggling): 0.100173 seconds
+"2025-04-16 11:26:58: Port 2 raw data: ['4/16/2025 11:26:58', '25.82', '26.35', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'PelletInWell', 'Left', '12', '35', '10', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:26:58: [2025-04-16 11:26:58.428] Port 2 - Event: PelletInWell
+"2025-04-16 11:26:58: Pellet dispensed in well, signal ON."
+"2025-04-16 11:27:00: Port 2 raw data: ['4/16/2025 11:27:00', '25.81', '26.35', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'RightWithPellet', 'Left', '12', '36', '10', '0', 'NaN', 'NaN', '0.23']"
+2025-04-16 11:27:00: [2025-04-16 11:27:00.320] Port 2 - Event: RightWithPellet
+2025-04-16 11:27:00: TTL signal sent on Port 2 for RightWithPellet
+2025-04-16 11:27:00: Delay from FED3 data received to TTL start: 0.000268 seconds
+2025-04-16 11:27:00: Delay from TTL start to end (GPIO toggling): 0.100725 seconds
+"2025-04-16 11:27:04: Port 2 raw data: ['4/16/2025 11:27:03', '25.80', '26.37', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'LeftWithPellet', 'Left', '13', '36', '10', '0', 'NaN', 'NaN', '0.49']"
+2025-04-16 11:27:04: [2025-04-16 11:27:03.977] Port 2 - Event: LeftWithPellet
+2025-04-16 11:27:04: TTL signal sent on Port 2 for LeftWithPellet
+2025-04-16 11:27:04: Delay from FED3 data received to TTL start: 0.000271 seconds
+2025-04-16 11:27:04: Delay from TTL start to end (GPIO toggling): 0.100164 seconds
+"2025-04-16 11:27:05: Port 2 raw data: ['4/16/2025 11:27:05', '25.82', '26.36', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'RightWithPellet', 'Left', '13', '37', '10', '0', 'NaN', 'NaN', '0.35']"
+2025-04-16 11:27:05: [2025-04-16 11:27:05.585] Port 2 - Event: RightWithPellet
+2025-04-16 11:27:05: TTL signal sent on Port 2 for RightWithPellet
+2025-04-16 11:27:05: Delay from FED3 data received to TTL start: 0.000356 seconds
+2025-04-16 11:27:05: Delay from TTL start to end (GPIO toggling): 0.100165 seconds
+"2025-04-16 11:27:07: Port 2 raw data: ['4/16/2025 11:27:06', '25.82', '26.36', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'LeftWithPellet', 'Left', '14', '37', '10', '0', 'NaN', 'NaN', '0.27']"
+2025-04-16 11:27:07: [2025-04-16 11:27:06.971] Port 2 - Event: LeftWithPellet
+2025-04-16 11:27:07: TTL signal sent on Port 2 for LeftWithPellet
+2025-04-16 11:27:07: Delay from FED3 data received to TTL start: 0.000209 seconds
+2025-04-16 11:27:07: Delay from TTL start to end (GPIO toggling): 0.100213 seconds
+"2025-04-16 11:27:07: Port 2 raw data: ['4/16/2025 11:27:07', '25.84', '26.35', '1.16.3', 'FR1', '10', '4.14', '2', '1', 'Pellet', 'Left', '14', '37', '11', '0', '9.41', '30', 'NaN']"
+2025-04-16 11:27:07: [2025-04-16 11:27:07.877] Port 2 - Event: Pellet
+"2025-04-16 11:27:07: Pellet taken, signal turned OFF."
+2025-04-16 11:27:08: TTL signal sent on Port 2 for Pellet
+2025-04-16 11:27:08: Delay from FED3 data received to TTL start: 0.000160 seconds
+2025-04-16 11:27:08: Delay from TTL start to end (GPIO toggling): 0.100965 seconds
+"2025-04-16 11:27:09: Port 3 raw data: ['7/11/2085 11:29:45', '24.67', '29.28', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Left', 'Left', '4', '15', '3', '0', 'NaN', 'NaN', '0.24']"
+2025-04-16 11:27:09: [2025-04-16 11:27:09.786] Port 3 - Event: Left
+2025-04-16 11:27:09: TTL signal sent on Port 3 for Left
+2025-04-16 11:27:09: Delay from FED3 data received to TTL start: 0.000215 seconds
+2025-04-16 11:27:09: Delay from TTL start to end (GPIO toggling): 0.100105 seconds
+"2025-04-16 11:27:11: Port 3 raw data: ['7/11/2085 11:29:46', '24.67', '29.28', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'PelletInWell', 'Left', '4', '15', '3', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:27:11: [2025-04-16 11:27:11.053] Port 3 - Event: PelletInWell
+"2025-04-16 11:27:11: Pellet dispensed in well, signal ON."
+"2025-04-16 11:27:13: Port 3 raw data: ['7/11/2085 11:29:48', '24.67', '29.26', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'RightWithPellet', 'Left', '4', '16', '3', '0', 'NaN', 'NaN', '0.29']"
+2025-04-16 11:27:13: [2025-04-16 11:27:13.027] Port 3 - Event: RightWithPellet
+2025-04-16 11:27:13: TTL signal sent on Port 3 for RightWithPellet
+2025-04-16 11:27:13: Delay from FED3 data received to TTL start: 0.000138 seconds
+2025-04-16 11:27:13: Delay from TTL start to end (GPIO toggling): 0.100134 seconds
+"2025-04-16 11:27:14: Port 3 raw data: ['7/11/2085 11:29:50', '24.67', '29.27', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'LeftWithPellet', 'Left', '5', '16', '3', '0', 'NaN', 'NaN', '0.23']"
+2025-04-16 11:27:14: [2025-04-16 11:27:14.533] Port 3 - Event: LeftWithPellet
+2025-04-16 11:27:14: TTL signal sent on Port 3 for LeftWithPellet
+2025-04-16 11:27:14: Delay from FED3 data received to TTL start: 0.000256 seconds
+2025-04-16 11:27:14: Delay from TTL start to end (GPIO toggling): 0.100201 seconds
+"2025-04-16 11:27:16: Port 3 raw data: ['7/11/2085 11:29:51', '24.68', '29.26', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'RightWithPellet', 'Left', '5', '17', '3', '0', 'NaN', 'NaN', '0.28']"
+2025-04-16 11:27:16: [2025-04-16 11:27:16.158] Port 3 - Event: RightWithPellet
+2025-04-16 11:27:16: TTL signal sent on Port 3 for RightWithPellet
+2025-04-16 11:27:16: Delay from FED3 data received to TTL start: 0.000287 seconds
+2025-04-16 11:27:16: Delay from TTL start to end (GPIO toggling): 0.100124 seconds
+"2025-04-16 11:27:18: Port 3 raw data: ['7/11/2085 11:29:54', '24.67', '29.24', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'LeftWithPellet', 'Left', '6', '17', '3', '0', 'NaN', 'NaN', '0.72']"
+2025-04-16 11:27:18: [2025-04-16 11:27:18.431] Port 3 - Event: LeftWithPellet
+2025-04-16 11:27:18: TTL signal sent on Port 3 for LeftWithPellet
+2025-04-16 11:27:18: Delay from FED3 data received to TTL start: 0.000538 seconds
+2025-04-16 11:27:18: Delay from TTL start to end (GPIO toggling): 0.100152 seconds
+"2025-04-16 11:27:21: Port 3 raw data: ['7/11/2085 11:29:57', '24.67', '29.24', '1.16.3', 'FR1', '20', '4.20', '2', '1', 'Pellet', 'Left', '6', '17', '4', '0', '10.64', '47', 'NaN']"
+2025-04-16 11:27:21: [2025-04-16 11:27:21.756] Port 3 - Event: Pellet
+"2025-04-16 11:27:21: Pellet taken, signal turned OFF."
+2025-04-16 11:27:21: TTL signal sent on Port 3 for Pellet
+2025-04-16 11:27:21: Delay from FED3 data received to TTL start: 0.000432 seconds
+2025-04-16 11:27:21: Delay from TTL start to end (GPIO toggling): 0.100131 seconds
+"2025-04-16 11:27:25: Port 4 raw data: ['4/16/2025 11:27:24', '23.91', '32.67', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Left', 'Left', '8', '28', '7', '0', 'NaN', 'NaN', '0.30']"
+2025-04-16 11:27:25: [2025-04-16 11:27:25.008] Port 4 - Event: Left
+2025-04-16 11:27:25: TTL signal sent on Port 4 for Left
+2025-04-16 11:27:25: Delay from FED3 data received to TTL start: 0.000281 seconds
+2025-04-16 11:27:25: Delay from TTL start to end (GPIO toggling): 0.100158 seconds
+"2025-04-16 11:27:26: Port 4 raw data: ['4/16/2025 11:27:26', '23.91', '32.64', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'PelletInWell', 'Left', '8', '28', '7', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:27:26: [2025-04-16 11:27:26.722] Port 4 - Event: PelletInWell
+"2025-04-16 11:27:26: Pellet dispensed in well, signal ON."
+"2025-04-16 11:27:29: Port 4 raw data: ['4/16/2025 11:27:29', '23.91', '32.62', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'RightWithPellet', 'Left', '8', '29', '7', '0', 'NaN', 'NaN', '1.90']"
+2025-04-16 11:27:29: [2025-04-16 11:27:29.650] Port 4 - Event: RightWithPellet
+2025-04-16 11:27:29: TTL signal sent on Port 4 for RightWithPellet
+2025-04-16 11:27:29: Delay from FED3 data received to TTL start: 0.000283 seconds
+2025-04-16 11:27:29: Delay from TTL start to end (GPIO toggling): 0.100162 seconds
+"2025-04-16 11:27:34: Port 4 raw data: ['4/16/2025 11:27:34', '23.92', '32.66', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'LeftWithPellet', 'Left', '9', '29', '7', '0', 'NaN', 'NaN', '1.68']"
+2025-04-16 11:27:34: [2025-04-16 11:27:34.630] Port 4 - Event: LeftWithPellet
+2025-04-16 11:27:34: TTL signal sent on Port 4 for LeftWithPellet
+2025-04-16 11:27:34: Delay from FED3 data received to TTL start: 0.000272 seconds
+2025-04-16 11:27:34: Delay from TTL start to end (GPIO toggling): 0.100214 seconds
+"2025-04-16 11:27:37: Port 4 raw data: ['4/16/2025 11:27:36', '23.91', '32.67', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'LeftWithPellet', 'Left', '10', '29', '7', '0', 'NaN', 'NaN', '0.44']"
+2025-04-16 11:27:37: [2025-04-16 11:27:37.028] Port 4 - Event: LeftWithPellet
+2025-04-16 11:27:37: TTL signal sent on Port 4 for LeftWithPellet
+2025-04-16 11:27:37: Delay from FED3 data received to TTL start: 0.000283 seconds
+2025-04-16 11:27:37: Delay from TTL start to end (GPIO toggling): 0.100389 seconds
+"2025-04-16 11:27:40: Port 4 raw data: ['4/16/2025 11:27:40', '23.92', '32.68', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'RightWithPellet', 'Left', '10', '30', '7', '0', 'NaN', 'NaN', '1.77']"
+2025-04-16 11:27:40: [2025-04-16 11:27:40.661] Port 4 - Event: RightWithPellet
+2025-04-16 11:27:40: TTL signal sent on Port 4 for RightWithPellet
+2025-04-16 11:27:40: Delay from FED3 data received to TTL start: 0.000220 seconds
+2025-04-16 11:27:40: Delay from TTL start to end (GPIO toggling): 0.100117 seconds
+"2025-04-16 11:27:41: Port 4 raw data: ['4/16/2025 11:27:41', '23.92', '32.68', '1.16.3', 'FR1', '11', '4.20', '2', '1', 'Pellet', 'Left', '10', '30', '8', '0', '15.19', '70', 'NaN']"
+2025-04-16 11:27:41: [2025-04-16 11:27:41.971] Port 4 - Event: Pellet
+"2025-04-16 11:27:41: Pellet taken, signal turned OFF."
+2025-04-16 11:27:42: TTL signal sent on Port 4 for Pellet
+2025-04-16 11:27:42: Delay from FED3 data received to TTL start: 0.000304 seconds
+2025-04-16 11:27:42: Delay from TTL start to end (GPIO toggling): 0.100164 seconds
+"2025-04-16 11:27:45: Port 1 raw data: ['4/16/2025 11:27:45', '24.19', '35.46', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Right', 'Left', '11', '39', '9', '0', 'NaN', 'NaN', '0.18']"
+2025-04-16 11:27:45: [2025-04-16 11:27:45.727] Port 1 - Event: Right
+2025-04-16 11:27:45: TTL signal sent on Port 1 for Right
+2025-04-16 11:27:45: Delay from FED3 data received to TTL start: 0.000266 seconds
+2025-04-16 11:27:45: Delay from TTL start to end (GPIO toggling): 0.100218 seconds
+"2025-04-16 11:27:47: Port 2 raw data: ['4/16/2025 11:27:46', '25.84', '26.39', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Right', 'Left', '14', '38', '11', '0', 'NaN', 'NaN', '0.22']"
+2025-04-16 11:27:47: [2025-04-16 11:27:46.930] Port 2 - Event: Right
+2025-04-16 11:27:47: TTL signal sent on Port 2 for Right
+2025-04-16 11:27:47: Delay from FED3 data received to TTL start: 0.000258 seconds
+2025-04-16 11:27:47: Delay from TTL start to end (GPIO toggling): 0.100120 seconds
+"2025-04-16 11:27:48: Port 3 raw data: ['7/11/2085 11:30:24', '24.76', '29.24', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Right', 'Left', '6', '18', '4', '0', 'NaN', 'NaN', '0.28']"
+2025-04-16 11:27:48: [2025-04-16 11:27:48.761] Port 3 - Event: Right
+2025-04-16 11:27:48: TTL signal sent on Port 3 for Right
+2025-04-16 11:27:48: Delay from FED3 data received to TTL start: 0.000269 seconds
+2025-04-16 11:27:48: Delay from TTL start to end (GPIO toggling): 0.100283 seconds
+"2025-04-16 11:27:50: Port 4 raw data: ['4/16/2025 11:27:50', '23.93', '32.71', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Right', 'Left', '10', '31', '8', '0', 'NaN', 'NaN', '0.15']"
+2025-04-16 11:27:50: [2025-04-16 11:27:50.691] Port 4 - Event: Right
+2025-04-16 11:27:50: TTL signal sent on Port 4 for Right
+2025-04-16 11:27:50: Delay from FED3 data received to TTL start: 0.000288 seconds
+2025-04-16 11:27:50: Delay from TTL start to end (GPIO toggling): 0.100177 seconds
+"2025-04-16 11:27:52: Port 4 raw data: ['4/16/2025 11:27:52', '23.92', '32.72', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Right', 'Left', '10', '32', '8', '0', 'NaN', 'NaN', '0.20']"
+2025-04-16 11:27:52: [2025-04-16 11:27:52.584] Port 4 - Event: Right
+2025-04-16 11:27:52: TTL signal sent on Port 4 for Right
+2025-04-16 11:27:52: Delay from FED3 data received to TTL start: 0.000287 seconds
+2025-04-16 11:27:52: Delay from TTL start to end (GPIO toggling): 0.100155 seconds
+"2025-04-16 11:27:54: Port 3 raw data: ['7/11/2085 11:30:30', '24.76', '29.25', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Right', 'Left', '6', '19', '4', '0', 'NaN', 'NaN', '0.18']"
+2025-04-16 11:27:54: [2025-04-16 11:27:54.321] Port 3 - Event: Right
+2025-04-16 11:27:54: TTL signal sent on Port 3 for Right
+2025-04-16 11:27:54: Delay from FED3 data received to TTL start: 0.000271 seconds
+2025-04-16 11:27:54: Delay from TTL start to end (GPIO toggling): 0.100176 seconds
+"2025-04-16 11:27:55: Port 2 raw data: ['4/16/2025 11:27:55', '25.82', '26.34', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Right', 'Left', '14', '39', '11', '0', 'NaN', 'NaN', '0.33']"
+2025-04-16 11:27:55: [2025-04-16 11:27:55.469] Port 2 - Event: Right
+2025-04-16 11:27:55: TTL signal sent on Port 2 for Right
+2025-04-16 11:27:55: Delay from FED3 data received to TTL start: 0.000258 seconds
+2025-04-16 11:27:55: Delay from TTL start to end (GPIO toggling): 0.100142 seconds
+"2025-04-16 11:27:56: Port 1 raw data: ['4/16/2025 11:27:56', '24.21', '35.49', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Right', 'Left', '11', '40', '9', '0', 'NaN', 'NaN', '0.25']"
+2025-04-16 11:27:56: [2025-04-16 11:27:56.730] Port 1 - Event: Right
+2025-04-16 11:27:56: TTL signal sent on Port 1 for Right
+2025-04-16 11:27:56: Delay from FED3 data received to TTL start: 0.000152 seconds
+2025-04-16 11:27:56: Delay from TTL start to end (GPIO toggling): 0.100126 seconds
+"2025-04-16 11:28:00: Port 4 raw data: ['4/16/2025 11:28:00', '23.92', '32.72', '1.16.3', 'FR1', '11', '4.19', 'NaN', '1', 'Right', 'Left', '10', '33', '8', '0', 'NaN', 'NaN', '0.95']"
+2025-04-16 11:28:00: [2025-04-16 11:28:00.611] Port 4 - Event: Right
+"2025-04-16 11:28:00: Port 1 raw data: ['4/16/2025 11:28:00', '24.20', '35.45', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Right', 'Left', '11', '41', '9', '0', 'NaN', 'NaN', '1.12']"
+2025-04-16 11:28:00: [2025-04-16 11:28:00.696] Port 1 - Event: Right
+2025-04-16 11:28:00: TTL signal sent on Port 4 for Right
+2025-04-16 11:28:00: Delay from FED3 data received to TTL start: 0.000259 seconds
+2025-04-16 11:28:00: Delay from TTL start to end (GPIO toggling): 0.100299 seconds
+2025-04-16 11:28:00: TTL signal sent on Port 1 for Right
+2025-04-16 11:28:00: Delay from FED3 data received to TTL start: 0.000506 seconds
+2025-04-16 11:28:00: Delay from TTL start to end (GPIO toggling): 0.100166 seconds
+"2025-04-16 11:28:04: Port 2 raw data: ['4/16/2025 11:28:03', '25.84', '26.39', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Right', 'Left', '14', '40', '11', '0', 'NaN', 'NaN', '0.80']"
+2025-04-16 11:28:04: [2025-04-16 11:28:04.034] Port 2 - Event: Right
+2025-04-16 11:28:04: TTL signal sent on Port 2 for Right
+2025-04-16 11:28:04: Delay from FED3 data received to TTL start: 0.000298 seconds
+2025-04-16 11:28:04: Delay from TTL start to end (GPIO toggling): 0.100157 seconds
+"2025-04-16 11:28:04: Port 3 raw data: ['7/11/2085 11:30:40', '24.75', '29.21', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Right', 'Left', '6', '20', '4', '0', 'NaN', 'NaN', '0.98']"
+2025-04-16 11:28:04: [2025-04-16 11:28:04.253] Port 3 - Event: Right
+2025-04-16 11:28:04: TTL signal sent on Port 3 for Right
+2025-04-16 11:28:04: Delay from FED3 data received to TTL start: 0.000321 seconds
+2025-04-16 11:28:04: Delay from TTL start to end (GPIO toggling): 0.100175 seconds
+"2025-04-16 11:28:07: Port 2 raw data: ['4/16/2025 11:28:07', '25.84', '26.36', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Right', 'Left', '14', '41', '11', '0', 'NaN', 'NaN', '0.60']"
+2025-04-16 11:28:07: [2025-04-16 11:28:07.171] Port 2 - Event: Right
+2025-04-16 11:28:07: TTL signal sent on Port 2 for Right
+2025-04-16 11:28:07: Delay from FED3 data received to TTL start: 0.000270 seconds
+2025-04-16 11:28:07: Delay from TTL start to end (GPIO toggling): 0.100202 seconds
+"2025-04-16 11:28:07: Port 3 raw data: ['7/11/2085 11:30:43', '24.73', '29.22', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Right', 'Left', '6', '21', '4', '0', 'NaN', 'NaN', '0.59']"
+2025-04-16 11:28:07: [2025-04-16 11:28:07.377] Port 3 - Event: Right
+2025-04-16 11:28:07: TTL signal sent on Port 3 for Right
+2025-04-16 11:28:07: Delay from FED3 data received to TTL start: 0.000353 seconds
+2025-04-16 11:28:07: Delay from TTL start to end (GPIO toggling): 0.100161 seconds
+"2025-04-16 11:28:10: Port 1 raw data: ['4/16/2025 11:28:10', '24.21', '35.46', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Right', 'Left', '11', '42', '9', '0', 'NaN', 'NaN', '0.60']"
+2025-04-16 11:28:10: [2025-04-16 11:28:10.710] Port 1 - Event: Right
+"2025-04-16 11:28:10: Port 4 raw data: ['4/16/2025 11:28:10', '23.91', '32.71', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Right', 'Left', '10', '34', '8', '0', 'NaN', 'NaN', '0.50']"
+2025-04-16 11:28:10: [2025-04-16 11:28:10.739] Port 4 - Event: Right
+2025-04-16 11:28:10: TTL signal sent on Port 1 for Right
+2025-04-16 11:28:10: Delay from FED3 data received to TTL start: 0.000268 seconds
+2025-04-16 11:28:10: Delay from TTL start to end (GPIO toggling): 0.100154 seconds
+2025-04-16 11:28:10: TTL signal sent on Port 4 for Right
+2025-04-16 11:28:10: Delay from FED3 data received to TTL start: 0.000171 seconds
+2025-04-16 11:28:10: Delay from TTL start to end (GPIO toggling): 0.100179 seconds
+"2025-04-16 11:28:14: Port 1 raw data: ['4/16/2025 11:28:14', '24.23', '35.44', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'Left', 'Left', '12', '42', '9', '0', 'NaN', 'NaN', '1.19']"
+2025-04-16 11:28:14: [2025-04-16 11:28:14.890] Port 1 - Event: Left
+2025-04-16 11:28:15: TTL signal sent on Port 1 for Left
+2025-04-16 11:28:15: Delay from FED3 data received to TTL start: 0.000164 seconds
+2025-04-16 11:28:15: Delay from TTL start to end (GPIO toggling): 0.100210 seconds
+"2025-04-16 11:28:15: Port 2 raw data: ['4/16/2025 11:28:15', '25.85', '26.37', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'Left', 'Left', '15', '41', '11', '0', 'NaN', 'NaN', '0.75']"
+2025-04-16 11:28:15: [2025-04-16 11:28:15.221] Port 2 - Event: Left
+2025-04-16 11:28:15: TTL signal sent on Port 2 for Left
+2025-04-16 11:28:15: Delay from FED3 data received to TTL start: 0.000276 seconds
+2025-04-16 11:28:15: Delay from TTL start to end (GPIO toggling): 0.100132 seconds
+"2025-04-16 11:28:16: Port 3 raw data: ['7/11/2085 11:30:52', '24.72', '29.25', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'Left', 'Left', '7', '21', '4', '0', 'NaN', 'NaN', '0.26']"
+2025-04-16 11:28:16: [2025-04-16 11:28:16.742] Port 3 - Event: Left
+2025-04-16 11:28:16: TTL signal sent on Port 3 for Left
+2025-04-16 11:28:16: Delay from FED3 data received to TTL start: 0.000243 seconds
+2025-04-16 11:28:16: Delay from TTL start to end (GPIO toggling): 0.100152 seconds
+"2025-04-16 11:28:18: Port 4 raw data: ['4/16/2025 11:28:18', '23.93', '32.72', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'Left', 'Left', '11', '34', '8', '0', 'NaN', 'NaN', '0.93']"
+2025-04-16 11:28:18: [2025-04-16 11:28:18.441] Port 4 - Event: Left
+2025-04-16 11:28:18: TTL signal sent on Port 4 for Left
+2025-04-16 11:28:18: Delay from FED3 data received to TTL start: 0.000307 seconds
+2025-04-16 11:28:18: Delay from TTL start to end (GPIO toggling): 0.100196 seconds
+"2025-04-16 11:28:20: Port 1 raw data: ['4/16/2025 11:28:20', '24.23', '35.44', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'PelletInWell', 'Left', '12', '42', '9', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:28:20: [2025-04-16 11:28:20.592] Port 1 - Event: PelletInWell
+"2025-04-16 11:28:20: Pellet dispensed in well, signal ON."
+"2025-04-16 11:28:23: Port 1 raw data: ['4/16/2025 11:28:22', '24.22', '35.44', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'LeftWithPellet', 'Left', '13', '42', '9', '0', 'NaN', 'NaN', '0.34']"
+2025-04-16 11:28:23: [2025-04-16 11:28:23.157] Port 1 - Event: LeftWithPellet
+2025-04-16 11:28:23: TTL signal sent on Port 1 for LeftWithPellet
+2025-04-16 11:28:23: Delay from FED3 data received to TTL start: 0.000249 seconds
+2025-04-16 11:28:23: Delay from TTL start to end (GPIO toggling): 0.100161 seconds
+"2025-04-16 11:28:26: Port 1 raw data: ['4/16/2025 11:28:26', '24.24', '35.42', '1.16.3', 'FR1', '14', '4.20', 'NaN', '1', 'LeftWithPellet', 'Left', '14', '42', '9', '0', 'NaN', 'NaN', '0.66']"
+2025-04-16 11:28:26: [2025-04-16 11:28:26.592] Port 1 - Event: LeftWithPellet
+2025-04-16 11:28:26: TTL signal sent on Port 1 for LeftWithPellet
+2025-04-16 11:28:26: Delay from FED3 data received to TTL start: 0.000280 seconds
+2025-04-16 11:28:26: Delay from TTL start to end (GPIO toggling): 0.100533 seconds
+"2025-04-16 11:28:27: Port 1 raw data: ['4/16/2025 11:28:27', '24.23', '35.42', '1.16.3', 'FR1', '14', '4.20', '4', '1', 'Pellet', 'Left', '14', '42', '10', '0', '6.73', '95', 'NaN']"
+2025-04-16 11:28:27: [2025-04-16 11:28:27.381] Port 1 - Event: Pellet
+"2025-04-16 11:28:27: Pellet taken, signal turned OFF."
+2025-04-16 11:28:27: TTL signal sent on Port 1 for Pellet
+2025-04-16 11:28:27: Delay from FED3 data received to TTL start: 0.000179 seconds
+2025-04-16 11:28:27: Delay from TTL start to end (GPIO toggling): 0.100258 seconds
+"2025-04-16 11:28:28: Port 2 raw data: ['4/16/2025 11:28:28', '25.86', '26.37', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'PelletInWell', 'Left', '15', '41', '11', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:28:28: [2025-04-16 11:28:28.507] Port 2 - Event: PelletInWell
+"2025-04-16 11:28:28: Pellet dispensed in well, signal ON."
+"2025-04-16 11:28:30: Port 2 raw data: ['4/16/2025 11:28:30', '25.86', '26.38', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'LeftWithPellet', 'Left', '16', '41', '11', '0', 'NaN', 'NaN', '0.23']"
+2025-04-16 11:28:30: [2025-04-16 11:28:30.187] Port 2 - Event: LeftWithPellet
+2025-04-16 11:28:30: TTL signal sent on Port 2 for LeftWithPellet
+2025-04-16 11:28:30: Delay from FED3 data received to TTL start: 0.000145 seconds
+2025-04-16 11:28:30: Delay from TTL start to end (GPIO toggling): 0.100120 seconds
+"2025-04-16 11:28:33: Port 2 raw data: ['4/16/2025 11:28:33', '25.85', '26.36', '1.16.3', 'FR1', '10', '4.14', 'NaN', '1', 'RightWithPellet', 'Left', '16', '42', '11', '0', 'NaN', 'NaN', '0.44']"
+2025-04-16 11:28:33: [2025-04-16 11:28:33.867] Port 2 - Event: RightWithPellet
+2025-04-16 11:28:33: TTL signal sent on Port 2 for RightWithPellet
+2025-04-16 11:28:33: Delay from FED3 data received to TTL start: 0.000283 seconds
+2025-04-16 11:28:33: Delay from TTL start to end (GPIO toggling): 0.100165 seconds
+"2025-04-16 11:28:34: Port 2 raw data: ['4/16/2025 11:28:34', '25.87', '26.35', '1.16.3', 'FR1', '10', '4.14', '7', '1', 'Pellet', 'Left', '16', '42', '12', '0', '6.01', '87', 'NaN']"
+2025-04-16 11:28:34: [2025-04-16 11:28:34.571] Port 2 - Event: Pellet
+"2025-04-16 11:28:34: Pellet taken, signal turned OFF."
+2025-04-16 11:28:34: TTL signal sent on Port 2 for Pellet
+2025-04-16 11:28:34: Delay from FED3 data received to TTL start: 0.000438 seconds
+2025-04-16 11:28:34: Delay from TTL start to end (GPIO toggling): 0.100202 seconds
+"2025-04-16 11:28:36: Port 3 raw data: ['7/11/2085 11:31:12', '24.68', '29.19', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'PelletInWell', 'Left', '7', '21', '4', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:28:36: [2025-04-16 11:28:36.242] Port 3 - Event: PelletInWell
+"2025-04-16 11:28:36: Pellet dispensed in well, signal ON."
+"2025-04-16 11:28:38: Port 3 raw data: ['7/11/2085 11:31:14', '24.68', '29.18', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'LeftWithPellet', 'Left', '8', '21', '4', '0', 'NaN', 'NaN', '0.33']"
+2025-04-16 11:28:38: [2025-04-16 11:28:38.320] Port 3 - Event: LeftWithPellet
+2025-04-16 11:28:38: TTL signal sent on Port 3 for LeftWithPellet
+2025-04-16 11:28:38: Delay from FED3 data received to TTL start: 0.000178 seconds
+2025-04-16 11:28:38: Delay from TTL start to end (GPIO toggling): 0.100181 seconds
+"2025-04-16 11:28:40: Port 3 raw data: ['7/11/2085 11:31:16', '24.69', '29.21', '1.16.3', 'FR1', '20', '4.20', 'NaN', '1', 'RightWithPellet', 'Left', '8', '22', '4', '0', 'NaN', 'NaN', '0.65']"
+2025-04-16 11:28:40: [2025-04-16 11:28:40.516] Port 3 - Event: RightWithPellet
+2025-04-16 11:28:40: TTL signal sent on Port 3 for RightWithPellet
+2025-04-16 11:28:40: Delay from FED3 data received to TTL start: 0.000165 seconds
+2025-04-16 11:28:40: Delay from TTL start to end (GPIO toggling): 0.100522 seconds
+"2025-04-16 11:28:41: Port 3 raw data: ['7/11/2085 11:31:17', '24.70', '29.20', '1.16.3', 'FR1', '20', '4.20', '10', '1', 'Pellet', 'Left', '8', '22', '5', '0', '5.06', '79', 'NaN']"
+2025-04-16 11:28:41: [2025-04-16 11:28:41.372] Port 3 - Event: Pellet
+"2025-04-16 11:28:41: Pellet taken, signal turned OFF."
+2025-04-16 11:28:41: TTL signal sent on Port 3 for Pellet
+2025-04-16 11:28:41: Delay from FED3 data received to TTL start: 0.000188 seconds
+2025-04-16 11:28:41: Delay from TTL start to end (GPIO toggling): 0.100203 seconds
+"2025-04-16 11:28:42: Port 4 raw data: ['4/16/2025 11:28:42', '23.92', '32.68', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'PelletInWell', 'Left', '11', '34', '8', '0', 'NaN', 'NaN', 'NaN']"
+2025-04-16 11:28:42: [2025-04-16 11:28:42.455] Port 4 - Event: PelletInWell
+"2025-04-16 11:28:42: Pellet dispensed in well, signal ON."
+"2025-04-16 11:28:44: Port 4 raw data: ['4/16/2025 11:28:43', '23.93', '32.66', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'LeftWithPellet', 'Left', '12', '34', '8', '0', 'NaN', 'NaN', '0.44']"
+2025-04-16 11:28:44: [2025-04-16 11:28:44.068] Port 4 - Event: LeftWithPellet
+2025-04-16 11:28:44: TTL signal sent on Port 4 for LeftWithPellet
+2025-04-16 11:28:44: Delay from FED3 data received to TTL start: 0.000150 seconds
+2025-04-16 11:28:44: Delay from TTL start to end (GPIO toggling): 0.100135 seconds
+"2025-04-16 11:28:46: Port 4 raw data: ['4/16/2025 11:28:46', '23.92', '32.64', '1.16.3', 'FR1', '11', '4.20', 'NaN', '1', 'RightWithPellet', 'Left', '12', '35', '8', '0', 'NaN', 'NaN', '0.25']"
+2025-04-16 11:28:46: [2025-04-16 11:28:46.454] Port 4 - Event: RightWithPellet
+2025-04-16 11:28:46: TTL signal sent on Port 4 for RightWithPellet
+2025-04-16 11:28:46: Delay from FED3 data received to TTL start: 0.000143 seconds
+2025-04-16 11:28:46: Delay from TTL start to end (GPIO toggling): 0.100185 seconds
+"2025-04-16 11:28:47: Port 4 raw data: ['4/16/2025 11:28:47', '23.94', '32.64', '1.16.3', 'FR1', '11', '4.20', '11', '1', 'Pellet', 'Left', '12', '35', '9', '0', '5.24', '66', 'NaN']"
+2025-04-16 11:28:47: [2025-04-16 11:28:47.762] Port 4 - Event: Pellet
+"2025-04-16 11:28:47: Pellet taken, signal turned OFF."
+2025-04-16 11:28:47: TTL signal sent on Port 4 for Pellet
+2025-04-16 11:28:47: Delay from FED3 data received to TTL start: 0.000201 seconds
+2025-04-16 11:28:47: Delay from TTL start to end (GPIO toggling): 0.100121 sec
