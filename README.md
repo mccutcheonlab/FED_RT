@@ -55,6 +55,9 @@ Here I share a walkthrough of the process of setting up RTFED and incorporating 
 **Now the users can select modes directly from their computer, once the FEDs are plugged and identified by RTFED, you can choose which FED (or all FEDs) you want to change the modes on and RTFED handles it by restarting the FEDs with the new mode.**
 **Additionally, new modes are included in the .ino file, that includes Deterministic Bandit, Bandit (80/20), ProbReversal and ClosedEconomy_PR2** 
 
+## Upgrade V12 (October 2025)
+**Enhanced GUI experience and added Offline mode after reviewers' comments"**
+
 # DOWNLOAD THE [RTFED_GUI.ZIP](https://github.com/Htbibalan/FED_RT/blob/main/source/) and run the RTFED.exe from /dist.
 ## The first time you run the RTFED.exe file you might face a security error,  to fix it, right click on the RTFED icon and go to properties, under the General tab you will find an Unblock option.
 ![EXE](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/exe_security.png)
@@ -173,79 +176,99 @@ Now to allow the Service Account access the Google spreadsheet we need to share 
  **Also to receive a email alerts for JAM and Pellets Consumed, you need to add your own email address to the last snippet of the code where it indicates: var emailAddress. You can also change the variable ***var pelletThreshold*** to set a threshold in case you want to receive emails when certain amounts of pellets are consumed by mice**
 
 
+////##### in the trigger settings, I recommend to choose Time driven under Select event source , and maybe run every 5 min?/// also Failure notification settings is better to be set on Weekly////
 
-        function checkForJam() {
-        var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-        var sheets = spreadsheet.getSheets(); // Get all sheets in the spreadsheet
-        var eventColumn = 10; // Column J where the "Event" data is located
-        var deviceColumn = 6; // Column F where the device number is located
-        var timestampColumn = 1; // Column A where the timestamp is located
-        var pelletCountColumn = 14; // Column N where the Pellet_Count data is located
-        var pelletThreshold = 3; // Threshold for Pellet_Count
+function checkForJam() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheets = ss.getSheets();
 
-        var scriptProperties = PropertiesService.getScriptProperties();
+  // 1-based columns
+  var COL = { timestamp: 1, device: 6, event: 10, pellet: 14 };
 
-        for (var i = 0; i < sheets.length; i++) {
-            var sheet = sheets[i];
-            var lastRow = sheet.getLastRow();
-            
-            if (lastRow > 0) { // Check if the sheet has any data
-            var event = sheet.getRange(lastRow, eventColumn).getValue();
-            var deviceNumber = sheet.getRange(lastRow, deviceColumn).getValue();
-            var timestamp = sheet.getRange(lastRow, timestampColumn).getValue();
-            var pelletCount = sheet.getRange(lastRow, pelletCountColumn).getValue();
-            
-            // Create unique keys for JAM and Pellet Count alerts
-            var jamEventKey = "JAM_" + sheet.getName() + "_" + deviceNumber + "_" + timestamp;
-            var pelletEventKey = "PELLET_" + sheet.getName() + "_" + deviceNumber;
+  // Tunables, change the numbers if you wish to have different settings
+  var PELLET_THRESHOLD = 100;   // this one triggers the daily pellet alert
+  var TAIL_ROWS = 500;        // how many most-recent rows to scan each time
 
-            // Check and send JAM alert
-            var lastProcessedJamEvent = scriptProperties.getProperty(jamEventKey);
-            if (event === "JAM" && lastProcessedJamEvent !== jamEventKey) {
-                sendJamAlert(sheet.getName(), lastRow, event, deviceNumber);
-                scriptProperties.setProperty(jamEventKey, jamEventKey); // Mark JAM event as processed
-            }
+  var props = PropertiesService.getScriptProperties();
+  var tz = Session.getScriptTimeZone(); // keep in sync with script’s timezone (in my case it is set to Europe/Oslo in File > Project settings if needed, not sure necessary at all!)
 
-            // Check and send Pellet Count alert
-            var lastProcessedPelletEvent = scriptProperties.getProperty(pelletEventKey);
-            if (pelletCount >= pelletThreshold && lastProcessedPelletEvent !== pelletEventKey) {
-                sendPelletAlert(sheet.getName(), deviceNumber, pelletCount);
-                scriptProperties.setProperty(pelletEventKey, pelletEventKey); // Mark Pellet Count event as processed
-            }
-            }
+  sheets.forEach(function(sheet) {
+    var sheetName = sheet.getName();
+    var lastRow = sheet.getLastRow();
+    if (lastRow < 2) return; // header only / empty
+
+    var startRow = Math.max(2, lastRow - TAIL_ROWS + 1);
+    var lastCol  = Math.max(COL.timestamp, COL.device, COL.event, COL.pellet);
+    var values   = sheet.getRange(startRow, 1, lastRow - startRow + 1, lastCol).getValues();
+
+    values.forEach(function(r, idx) {
+      var rowNum = startRow + idx;
+
+      var event  = String(r[COL.event  - 1] || "").trim();
+      var device = String(r[COL.device - 1] || "").trim();
+      var pellet = Number(r[COL.pellet - 1]);
+
+      // Parse timestamp -> yyyy-MM-dd (daily key)
+      var tsCell = r[COL.timestamp - 1];
+      var ts = (tsCell instanceof Date) ? tsCell : (tsCell ? new Date(tsCell) : null);
+      var dayKey = ts ? Utilities.formatDate(ts, tz, "yyyy-MM-dd") : "(no-date)";
+
+      // ############################
+      // JAM alarm once per row (so this should make sure repeated jams in a day WILL alert again, in case the user fixes a JAM and again a JAM happens)
+      // ######
+      if (event === "JAM") {
+        var jamRowKey = "JAMROW__" + sheetName + "__" + rowNum;
+        if (!props.getProperty(jamRowKey)) {
+          sendJamAlert(sheetName, rowNum, event, device || "(unknown)");
+          props.setProperty(jamRowKey, "1");
         }
+      }
+
+      // -####-##-#-#-#-#-#-#
+      // Pellet threshold: once per (sheet, device, day)
+      //
+      if (!device || isNaN(pellet)) return;
+
+      if (pellet >= PELLET_THRESHOLD) {
+        var pelletKey = "PELLET__" + sheetName + "__" + device + "__" + dayKey;
+        if (!props.getProperty(pelletKey)) {
+          sendPelletAlert(sheetName, device, pellet);
+          props.setProperty(pelletKey, "1");
         }
+      }
+    });
+  });
+}
 
-        function sendJamAlert(sheetName, row, event, deviceNumber) {
-        var emailAddress = "Add_your_email_address"; // Replace with your email address
-        var subject = "FED3 Device Alert: JAM Detected";
-        var message = "A FED unit has failed.\n\n"
-                    + "Details:\n"
-                    + "Sheet: " + sheetName + "\n"
-                    + "Row: " + row + "\n"
-                    + "Device Number: " + deviceNumber + "\n"
-                    + "Event: " + event + "\n"
-                    + "Please go and check your device.";
-        
-        MailApp.sendEmail(emailAddress, subject, message);
-        }
+/******** EMAILS  ********/
+function sendJamAlert(sheetName, row, event, deviceNumber) {
+  var email = "ENTER YOUR EMAIL ADDRESS HERE";
+  var subject = "🚨 FED3 Device Alert: JAM Detected 🚨";
+  var message = "🚧 A FED unit has failed.🚧\n\n" +
+    "Details:\n" +
+    "Sheet: " + sheetName + "\n" +
+    "Row: " + row + "\n" +
+    "Device Number: " + deviceNumber + "\n" +
+    "Event: " + event + "\n" +
+    "Please go and check your device! ";
+  MailApp.sendEmail(email, subject, message);
+}
 
-        function sendPelletAlert(sheetName, deviceNumber, pelletCount) {
-        var emailAddress = "Add_your_email_address"; // Replace with your email address
-        var subject = "FED3 Device Alert: Pellet Threshold Reached";
-        var message = "A FED unit has reached the pellet count threshold.\n\n"
-                    + "Details:\n"
-                    + "Sheet: " + sheetName + "\n"
-                    + "Device Number: " + deviceNumber + "\n"
-                    + "Pellet Count: " + pelletCount + "\n"
-                    + "Please review the data or refill pellets as needed.";
-        
-        MailApp.sendEmail(emailAddress, subject, message);
-        }
+function sendPelletAlert(sheetName, deviceNumber, pelletCount) {
+  var email = "ENTER YOUR EMAIL ADDRESS HERE";
+  var subject = "🧀🐭FED3 Device Alert: Pellet Threshold Reached🐭🧀";
+  var message = "A FED unit has reached the pellet count threshold for today🧀🐁.\n\n" +
+    "Details:\n" +
+    "Sheet: " + sheetName + "\n" +
+    "Device Number: " + deviceNumber + "\n" +
+    "Pellet Count: " + pelletCount + "\n" +
+    "This alert fires once per device per day.";
+  MailApp.sendEmail(email, subject, message);#### you do not need to enter your email address here, it is calling the function not defining a parameter#####
+}
 
 
- ![Apps_script_email_address](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Apps_script_email.png)
- *As shown in the image, just change the email address in the "var emailAdress" and leave the emailAddress parameter in the function unchanged*
+ <!-- ![Apps_script_email_address](https://github.com/Htbibalan/FED_RT/blob/main/source/Images/Apps_script_email.png)
+ *As shown in the image, just change the email address in the "var emailAdress" and leave the emailAddress parameter in the function unchanged* -->
 
 
 3) **To activate the Alarm email**,  in the Apps Script control panel, from the left panel menu, select **Triggers** and then right bottom corner select **+ Add Trigger** 
