@@ -22,8 +22,8 @@ This device includes hardware and code from:
   Copyright (c) 2019, 2020 Lex Kravitz
 */
 
-#define VER "RTT525"
-
+#define VER "RTT925"
+//////Real Time Tromso Version 09 2025
 #ifndef FED3_H
 #define FED3_H
 
