@@ -1,15 +1,15 @@
 #!/bin/bash
 set -e
 
-# ---------- CONFIG ----------
-TARGET_USER="hpfed"
-HOME_DIR="/home/$TARGET_USER"
+# Detect current (target) user even under sudo
+TARGET_USER="${SUDO_USER:-$USER}"
+HOME_DIR="$(eval echo "~$TARGET_USER")"
 DESKTOP="$HOME_DIR/Desktop"
-LOCAL_REPO="$HOME_DIR/HOMEPHOTOFED/GitHub/FED_RT"
+
+REPO_URL="https://github.com/mccutcheonlab/FED_RT.git"
 BRANCH="RTFEDPi"
 INSTALL_ROOT="/opt/FED_RT"
 
-# ---------- 1) System deps ----------
 echo "🔧 Updating apt and installing system packages..."
 sudo apt update -y
 sudo apt install -y \
@@ -17,25 +17,27 @@ sudo apt install -y \
   git ffmpeg v4l-utils libatlas-base-dev libopenblas-dev \
   libjpeg-dev zlib1g-dev rsync
 
-# ---------- 2) Copy project to /opt/FED_RT ----------
-echo "📦 Copying from local repository ($LOCAL_REPO)..."
-if [ ! -d "$LOCAL_REPO/.git" ]; then
-  echo "❌ Local repo not found at $LOCAL_REPO"
-  exit 1
+echo "📦 Preparing $INSTALL_ROOT..."
+sudo mkdir -p "$INSTALL_ROOT"
+
+# If we are inside a git working copy, install from here; else clone from GitHub
+if [ -d .git ]; then
+  echo "➡️ Installing from local working copy: $(pwd)"
+  sudo rsync -a --delete ./ "$INSTALL_ROOT"/
+else
+  echo "➡️ Cloning from GitHub ($BRANCH)..."
+  sudo rm -rf "$INSTALL_ROOT"/*
+  sudo git clone -b "$BRANCH" "$REPO_URL" "$INSTALL_ROOT"
 fi
 
-sudo mkdir -p "$INSTALL_ROOT"
-sudo rsync -a --delete "$LOCAL_REPO"/ "$INSTALL_ROOT"/
 sudo chown -R "$TARGET_USER:$TARGET_USER" "$INSTALL_ROOT"
 
-# ---------- 3) Create HOMEPHOTOFED venv ----------
-echo "🐍 Creating HOMEPHOTOFED environment in $INSTALL_ROOT..."
+echo "🐍 Creating HOMEPHOTOFED environment..."
 python3 -m venv "$INSTALL_ROOT/HOMEPHOTOFED"
 source "$INSTALL_ROOT/HOMEPHOTOFED/bin/activate"
 
-# ---------- 4) Install Python deps ----------
-REQ_FILE="$INSTALL_ROOT/requirements.txt"
 echo "📚 Installing Python packages..."
+REQ_FILE="$INSTALL_ROOT/requirements.txt"
 pip install --upgrade pip
 if [ -f "$REQ_FILE" ]; then
   pip install -r "$REQ_FILE"
@@ -45,7 +47,6 @@ else
 fi
 deactivate
 
-# ---------- 5) Create launcher scripts ----------
 echo "🚀 Creating launcher scripts..."
 sudo -u "$TARGET_USER" mkdir -p "$INSTALL_ROOT/launchers"
 
@@ -76,11 +77,10 @@ EOF
 sudo chmod +x "$INSTALL_ROOT/launchers/"*.sh
 sudo chown -R "$TARGET_USER:$TARGET_USER" "$INSTALL_ROOT/launchers"
 
-# ---------- 6) Create Desktop icons ----------
 echo "🖥 Creating Desktop icons..."
-mkdir -p "$DESKTOP"
+sudo -u "$TARGET_USER" mkdir -p "$DESKTOP"
 
-cat >"$DESKTOP/RTFED_Basic.desktop" <<'EOF'
+sudo -u "$TARGET_USER" tee "$DESKTOP/RTFED_Basic.desktop" >/dev/null <<'EOF'
 [Desktop Entry]
 Type=Application
 Name=RTFED Basic
@@ -91,7 +91,7 @@ Categories=Education;Science;
 Terminal=false
 EOF
 
-cat >"$DESKTOP/RTFED_PiCAM.desktop" <<'EOF'
+sudo -u "$TARGET_USER" tee "$DESKTOP/RTFED_PiCAM.desktop" >/dev/null <<'EOF'
 [Desktop Entry]
 Type=Application
 Name=RTFED PiCAM
@@ -102,7 +102,7 @@ Categories=Education;Science;
 Terminal=false
 EOF
 
-cat >"$DESKTOP/RTFED_PiTTL.desktop" <<'EOF'
+sudo -u "$TARGET_USER" tee "$DESKTOP/RTFED_PiTTL.desktop" >/dev/null <<'EOF'
 [Desktop Entry]
 Type=Application
 Name=RTFED PiTTL
@@ -113,8 +113,8 @@ Categories=Education;Science;
 Terminal=false
 EOF
 
-chmod +x "$DESKTOP"/RTFED_*.desktop
+sudo chmod +x "$DESKTOP"/RTFED_*.desktop
 
-echo "✅ Installation complete!"
-echo "• Non-coders: double-click the three icons on your Desktop."
-echo "• Experts: source /opt/FED_RT/HOMEPHOTOFED/bin/activate, then edit/run code in /opt/FED_RT/scripts/..."
+echo "✅ Done!"
+echo "• Non-coders: double-click the three Desktop icons."
+echo "• Experts: source $INSTALL_ROOT/HOMEPHOTOFED/bin/activate, then run/edit code under $INSTALL_ROOT/scripts/ ..."
