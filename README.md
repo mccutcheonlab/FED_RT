@@ -62,7 +62,7 @@
 ##### Purchase the rest of the items needed in your experiment, e.g. usb camera, long USB cables, USB hub, DB25 cables, etc.
 
 #### 1️⃣ Get a Raspberry Pi
-##### As noted on our [shopping list](https://github.com/mccutcheonlab/FED_RT/blob/RTFEDPi/source/RTFED_SHOPPING_LIST.pdf), we used a Raspberry Pi 4 B model (4GB RAM version), and we recommend using the similar model since we have tested the system on this particular model. You can visit the Raspberrypi ([webpage](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)) to choose your location and online supplier to order the board.
+##### As noted on our [shopping list](https://github.com/mccutcheonlab/FED_RT/blob/RTFEDPi/source/RTFED_SHOPPING_LIST.pdf), we used a Raspberry Pi 4 B model (4GB RAM version), and we recommend using a similar model since we have tested the system on this particular model. You can visit the Raspberrypi ([webpage](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)) to choose your location and online supplier to order the board.
 
 <div align="center">
   <img src="https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/20241213_104636(1).gif" alt="RBPITOWER">
@@ -72,7 +72,26 @@
 
 
 #### 2️⃣ Quick route
-##### You can use this IMAGE file (🚧🚧🚧Under construction 🚧🚧🚧 ) to flash your Raspberry Pi's microSD card, this way, you will have exactly the same folders and files that we used in our validation experiments. After connecting your Pi to a monitor, you will find 3 folders named RTFED(PiTTL, PiCAM and PiOS), inside each folder you will find a subfolder named /dist and there you can run the executable file to access the GUIs. 
+##### On a freshly installed Raspberry Pi OS system, open a terminal and run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/mccutcheonlab/FED_RT/RTFEDPi/install.sh)"
+This command will:
+
+Install required system packages (Python, FFmpeg, etc.)
+
+Clone this repository to /opt/FED_RT
+
+Create the HOMEPHOTOFED virtual environment
+
+Install all Python dependencies
+
+Place three launcher icons on your desktop:
+
+RTFED Basic
+
+RTFED PiCAM
+
+RTFED PiTTL
+
+After installation, simply double-click an icon to start the GUI.
 
 #### 3️⃣ Advanced route
 ##### Alternatively, you can build your own Raspberry Pi from the scratch, follow the instructions on Raspberry Pi ([webpage](https://www.raspberrypi.com/software/)) to install the Raspberry Pi OS. Now you can structure your Raspberry Pi as you wish.
