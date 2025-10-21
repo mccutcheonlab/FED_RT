@@ -121,7 +121,8 @@ After installation, simply double-click an icon to start the GUI.
                     pip install -r requirements.txt
 
 *Now you can clone the whole repository by running the command below:
-              git clone -b RTFEDPi --single-branch https://github.com/mccutcheonlab/FED_RT.git
+
+                git clone -b RTFEDPi --single-branch https://github.com/mccutcheonlab/FED_RT.git
 
  or copy the specific  .py files of RTFEDPiOS, RTFEDPiCAM and RTFEDPiTTL from this [directory](https://github.com/mccutcheonlab/FED_RT/tree/RTFEDPi/scripts), paste them in a proper location on your Raspberry Pi and use the command below, to run your desired GUI, e.g. for the PiTTL GUI you can use:*
 
