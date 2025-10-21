@@ -1,7 +1,10 @@
 
-# Under construction👷‍♂️🚧⚠️
-<!-- ![RTFED_HOME_CAGE](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/20250424_125536(1).gif) -->
+[👉 Jump to Quick Installation](#2️⃣-quick-route-with-installation-file)
 
+
+
+
+<!-- ![RTFED_HOME_CAGE](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/20250424_125536(1).gif) -->
 
 
 
@@ -25,9 +28,9 @@
 
 
 
-# ❓ What are GUIs of RTFEDPi?
-## 🐭🧀RTFED(PiOS)
-##### RTFED(PiOS) can be used to remotely monitor feeding behaviour and other interactions made by mice on FED3, the data is automatically transferred to a Google spreadsheet where you can view it or define alarm notification using the Google Apps Scripts. Using the RTFEDPiOS you can also change the Mode of your FED3s without the hassle of poking one by one, or synchronize time on all FED3 units! 
+# ❓ What are the GUIs of RTFEDPi?
+## 🐭🧀RTFEDPi(Basic)
+##### RTFEDPi (Baisc) can be used to remotely monitor feeding behaviour and other interactions made by mice on FED3, the data is automatically transferred to a Google spreadsheet where you can view it or define alarm notification using the Google Apps Scripts. Using the RTFEDPi(Basic) you can also change the Mode of your FED3s without the hassle of poking one by one, or synchronize time on all FED3 units! 
 ***However, if you are just aiming for monitoring feeding behaviour, we recommend using the basic([RTFED](https://github.com/mccutcheonlab/FED_RT/tree/main)) on Windows, as it is more efficient just to use your Windows computers/laptops instead of setting up a Raspberry Pi.***
 ![RTFED_PiOS](https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/RTFED_Pi.png)
 
@@ -42,7 +45,7 @@
 *An example of a video captured using RTFEDPiCAM at the moment a mouse collects a food pellet from a FED3 device*
 
 ## 🚨🐭🧀RTFED(PiTTL)
-##### The TTL station of RTFED logs behavioural events made on FED3 devices and transmit them to the TDT RZ10 processors as TTL pulses. This feature enables you to study event-locked signals in your experiments. However the PiTTL version does not send data online to reduce any processing load that might delay the rapid TTL puls transmission. The PiTTL also stores the behavioural session data in structured folders and provides a summary of behavioural events at the end of the recording session.
+##### The TTL station of RTFED logs behavioural events made on FED3 devices and transmit them to the TDT RZ10 processors as TTL pulses. This feature enables you to study event-locked signals in your experiments. Optionally you can choose to transmit the data online to a google spreadsheet which helps you monitor the behavioural events remotely during long sessions of recording. The PiTTL also stores the behavioural session data in structured folders and provides a summary of behavioural events at the end of the recording session.
 
 ![RTFED_PiTTL](https://github.com/Htbibalan/HOME_PHOTOMETRY/blob/main/source/RTFED(PiTTL).png)
 <div align="center">
@@ -62,34 +65,37 @@
 ##### Purchase the rest of the items needed in your experiment, e.g. usb camera, long USB cables, USB hub, DB25 cables, etc.
 
 #### 1️⃣ Get a Raspberry Pi
-##### As noted on our [shopping list](https://github.com/mccutcheonlab/FED_RT/blob/RTFEDPi/source/RTFED_SHOPPING_LIST.pdf), we used a Raspberry Pi 4 B model (4GB RAM version), and we recommend using a similar model since we have tested the system on this particular model. You can visit the Raspberrypi ([webpage](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)) to choose your location and online supplier to order the board.
+##### As noted on our [shopping list](https://github.com/mccutcheonlab/FED_RT/blob/RTFEDPi/source/RTFED_SHOPPING_LIST.pdf), we used a Raspberry Pi 4 B model (4GB RAM version), and we recommend using a similar model ( RAM capacity can be better but not lower than 4 GB) since we have tested the system on this particular model. You can visit the Raspberrypi ([webpage](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)) to choose your location and online supplier to order the board.
 
 <div align="center">
   <img src="https://github.com/Htbibalan/FED_RT/blob/RTFEDPi/source/RTFED_Pi_Images/20241213_104636(1).gif" alt="RBPITOWER">
 </div>
 
-*We recommend purchasing a Raspberry Pi tower case, listed on our shopping list, to help with management of cables and wires and protecting your electronic parts in the animal facility.*
+⚠️ **We recommend purchasing a Raspberry Pi tower case, listed on our shopping list, to help with management of cables and wires and protecting your electronic parts in the animal facility.**
 
 
-#### 2️⃣ Quick route
-##### On a freshly installed Raspberry Pi OS system, open a terminal and run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/mccutcheonlab/FED_RT/RTFEDPi/install.sh)"
-This command will:
+#### 2️⃣ Quick route with installation file
+##### First; Follow the instructions on [Raspberrypi.com](https://www.raspberrypi.com/documentation/computers/getting-started.html) for installation of the operating system on a new microSD card.
+##### Second; Using Imager software, Choose Raspberry Pi 4 as your device
+##### Third; Select Operating System >>> ⚠️ It is important to select Raspberry Pi OS (Legacy, 64-bit A port of Debian Bookworm with security updates and desktop environment - - since the installation file would only work on this version )
 
-Install required system packages (Python, FFmpeg, etc.)
+#### Finally wait for installation to finish and when your Pi is ready, connect to the internet, open a terminal and run:         
+        bash -c "$(curl -fsSL https://raw.githubusercontent.com/mccutcheonlab/FED_RT/RTFEDPi/install.sh)"
 
-Clone this repository to /opt/FED_RT
 
-Create the HOMEPHOTOFED virtual environment
+##### This command will:
 
-Install all Python dependencies
+* Install required system packages (Python, FFmpeg, etc.)
 
-Place three launcher icons on your desktop:
+* Clone this repository to /opt/FED_RT
 
-RTFED Basic
+* Create the HOMEPHOTOFED virtual environment
 
-RTFED PiCAM
+* Install all Python dependencies
 
-RTFED PiTTL
+* Place three launcher icons on your desktop:
+
+    RTFED Basic / RTFED PiCAM / RTFED PiTTL
 
 After installation, simply double-click an icon to start the GUI.
 
@@ -108,48 +114,24 @@ After installation, simply double-click an icon to start the GUI.
                         
                     (RTFEDPi) pi@raspberrypi:~ $
 
-*Download [RTFEDPi.txt](https://github.com/mccutcheonlab/FED_RT/tree/RTFEDPi/source/ENV_FILES/RTFEDPi.txt) and place it in the current directory (you will probably be in your HOME directory)*
+*Download [requirements.txt](https://github.com/mccutcheonlab/FED_RT/tree/RTFEDPi/requirements.txt) and place it in the current directory (you will probably be in your HOME directory)*
 
 *Run the command below to install all the necessary packages in your newly created environment*
 
-                    pip install -r RTFEDPi.txt
+                    pip install -r requirements.txt
 
-*Now you can either copy the .py files of RTFEDPiOS, RTFEDPiCAM and RTFEDPiTTL from this [directory](https://github.com/mccutcheonlab/FED_RT/tree/RTFEDPi/scripts), paste them in a proper location on your Raspberry Pi and use the command below, to reach your desired GUI, e.g. for the PiTTL GUI you can use:*
+*Now you can clone the whole repository by running the command below:
+              git clone -b RTFEDPi --single-branch https://github.com/mccutcheonlab/FED_RT.git
+
+ or copy the specific  .py files of RTFEDPiOS, RTFEDPiCAM and RTFEDPiTTL from this [directory](https://github.com/mccutcheonlab/FED_RT/tree/RTFEDPi/scripts), paste them in a proper location on your Raspberry Pi and use the command below, to run your desired GUI, e.g. for the PiTTL GUI you can use:*
 
                      python RTFEDPiTTL.py
 *Please note that you must run that command in the directory where the file is located*
 
 * Alternatively, you can run jupyter lab from your terminal in case you are interested in making changes to the codes using the .ipynb files from the same [directory](https://github.com/mccutcheonlab/FED_RT/tree/RTFEDPi/scripts) 
 
-
-
-
-# 🚧👷‍♂️
-
-
-
-# License
+# 🪪License
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-# Author of this repository
+# ✍🏻Author of this repository
 Hamid Taghipourbibalan, Ph.D. student at [McCutcheon_lab](https://www.mccutcheonlab.com/) at UiT The Arctic University of Norway.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
