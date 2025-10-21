@@ -24,7 +24,7 @@
 
 
 
-##### RTFEDPi is the Raspberry Pi variant of the classic ([RTFED](https://github.com/mccutcheonlab/FED_RT/tree/main)) and  is an open-source versatile tool for home-cage monitoring of behaviour and fiber photometry recording in mice. The RTFEDPi comes with 3 separate GUIs including RTFED(PiOS), RTFED(PiCAM) and RTFED(PiTTL). This system is developed as a home-cage setup to incorporate [FED3](https://github.com/KravitzLabDevices/FED3/wiki) units with TDT [RZ10](https://www.tdt.com/docs/hardware/rz10-lux-integrated-processor/) photometry processor for TTL-locked brain recording or to couple with USB cameras to capture event-triggered videos of behaviour.
+##### RTFEDPi is the Raspberry Pi variant of the classic ([RTFED](https://github.com/mccutcheonlab/FED_RT/tree/main)) and  is an open-source versatile tool for home-cage monitoring of behaviour and fiber photometry recording in mice. The RTFEDPi comes with 3 separate GUIs including RTFEDPi(Basic), RTFED(PiCAM) and RTFED(PiTTL). This system is developed as a home-cage setup to incorporate [FED3](https://github.com/KravitzLabDevices/FED3/wiki) units with TDT [RZ10](https://www.tdt.com/docs/hardware/rz10-lux-integrated-processor/) photometry processor for TTL-locked brain recording or to couple with USB cameras to capture event-triggered videos of behaviour.
 
 
 
@@ -73,7 +73,7 @@
 
 ⚠️ **We recommend purchasing a Raspberry Pi tower case, listed on our shopping list, to help with management of cables and wires and protecting your electronic parts in the animal facility.**
 
-
+👉
 #### 2️⃣ Quick route with installation file
 ##### First; Follow the instructions on [Raspberrypi.com](https://www.raspberrypi.com/documentation/computers/getting-started.html) for installation of the operating system on a new microSD card.
 ##### Second; Using Imager software, Choose Raspberry Pi 4 as your device
